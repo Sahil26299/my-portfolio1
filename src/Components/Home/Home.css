@@ -1,0 +1,69 @@
+.WrapperHome{
+    /* margin: 2vw 5vw; */
+}
+.IntroWrapper{
+    /* border: 1px solid rgba(255, 166, 0, 0.3); */
+    border-radius: 5px;
+    padding: 10px;
+    width: 50vw;
+}
+.heading1{
+    font-size: 24px;
+}
+.heading2{
+    font-size: 14px;
+}
+.heading3{
+    font-size: 14px;
+}
+.IntroWrapper span{
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+.ContactMeBtn{
+    background-color: orange;
+    border: none;
+    margin-top: 10px;
+}
+.OrangeButton{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 2px 10px 15px 3px rgba(255, 166, 0, 0.25);
+    background: linear-gradient(-10deg, orange, orange, rgb(255, 255, 0));
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    transition: transform 0.2s linear;
+}
+.OrangeButton:hover{
+    transform: scale(1.05);
+}
+.SmileyImage{
+    height:10vh;
+    width:10vw;
+    object-fit: contain;
+}
+.card-Title{
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+.card-Content{
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; 
+}
+.card-Btn{
+    font-family: 'Poppins', sans-serif;
+}
+.d-flex{
+    justify-content: space-around;
+    align-self: flex-start;
+}
+.Card1Description{
+    font-family: 'Poppins', sans-serif;
+    width: 25rem;
+    text-align: end;
+}
+/* borderRadius:25, borderWidth:0, */
