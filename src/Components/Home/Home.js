@@ -5,7 +5,7 @@ import Button from '../Commons/Button'
 import {ColorSchema} from '../../Utils/Context/ColorThemes'
 import Cards from '../Commons/Cards'
 
-export default function Home() {
+export default function Home(props) {
     const Colors = useContext(ColorSchema);
   return (
     <div className='WrapperHome'>
@@ -18,7 +18,7 @@ export default function Home() {
                     Experienced React Developer,
                     with strong grip on React Native, proficient in programming including good grasp in data structure and algorithms.
                 </span><br />
-                <Button BtnStyle={{  padding:10, marginTop:25}} BtnContent={'Contact Me'} />
+                <Button BtnStyle={{  padding:10, marginTop:25}} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
             </div>
             <div>
                 <img src={Images.SmileyEmoji} className='SmileyImage' />

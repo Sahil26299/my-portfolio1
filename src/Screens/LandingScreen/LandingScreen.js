@@ -15,7 +15,7 @@ export default function LandingScreen() {
             <SideNav TabBar = {TabSelected} ImagePath={Images.ProfilePicture} HomePressed={()=>setTabSelected('Home')} IntroPressed={()=>setTabSelected('Intro')} ServicesPressed={()=>setTabSelected('Services')} ExtraCurrPressed={()=>setTabSelected('Extra')} ContactPressed={()=>setTabSelected('Contact')} />
             <div className='ContentBody'>
               {TabSelected=='Home' ? 
-              <Home/> : null}
+              <Home ContactMeClicked={()=>setTabSelected('Contact')} /> : null}
             </div>
         </div>
     </div>

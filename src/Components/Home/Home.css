@@ -43,6 +43,15 @@
     height:10vh;
     width:10vw;
     object-fit: contain;
+    transform: rotate(-15deg);
+    animation-name: smiley;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes smiley{
+    from {transform: rotate(-15deg);}
+    to{transform: rotate(15deg);}
 }
 .card-Title{
     font-weight: 800;
