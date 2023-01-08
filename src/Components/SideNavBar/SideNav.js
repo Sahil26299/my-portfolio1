@@ -3,6 +3,8 @@ import { colors } from '../../Utils/Themes'
 import { LightMode, DarkMode } from '@mui/icons-material';
 import { ColorSchema } from '../../Utils/Context/ColorThemes';
 import { Home, Person, DeveloperMode, VolunteerActivism, AlternateEmail } from '@mui/icons-material';
+import ProfileCarousel from '../Commons/ProfileCarousel';
+import { Images } from '../../Utils/Images';
 
 export default function SideNav(props) {
     const Colors = useContext(ColorSchema)
@@ -13,13 +15,20 @@ export default function SideNav(props) {
     return (
         <div>
             <nav className="sideNav" style={{backgroundColor:Colors.newVar.BGColor}}>
-                <div className='ProfileContainer' style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight: 20}}>
-                    <img src={props.ImagePath} className="ProfilePicStyle" />
-                    <button className='ThemeSwitchBtn' onClick={()=>switchModes()} >
-                        {Colors.isDarkMode ? 
-                        <DarkMode color='dark' fontSize='large' style={{marginTop:10}} /> :
-                        <LightMode color='light' fontSize='large' style={{marginTop:10}} />}
-                    </button>
+                <div className='ProfileContainer' >
+                    <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight: 20}}>
+                        {/* <img src={props.ImagePath} className="ProfilePicStyle" /> */}
+                        <ProfileCarousel ImagePath1={Images.ProfilePicture} ImagePath2={Images.ProfilePicture2} />
+                        <button className='ThemeSwitchBtn' onClick={()=>switchModes()} >
+                            {Colors.isDarkMode ? 
+                            <DarkMode color='dark' fontSize='large' style={{marginTop:10}} /> :
+                            <LightMode color='light' fontSize='large' style={{marginTop:10}} />}
+                        </button>
+                    </div>
+                    <div>
+                        <p className='ProfileDetails' >Sahil Dattatray Lokhande</p>
+                        <p className='ProfileDetails' >+91 9175098814</p>
+                    </div>
                 </div>
                 <ul className="navListContainer">
                     <div style={{color:props.TabBar=='Home' ? 'orange' : Colors.newVar.TXTColor}}>
@@ -28,7 +37,7 @@ export default function SideNav(props) {
                     </div>
                     <div style={{color:props.TabBar=='Intro' ? 'orange' : Colors.newVar.TXTColor}}>
                         <Person className='UserIcon' />
-                        <li className="ListItem1" onClick={props.IntroPressed}>My Introduction</li><br />
+                        <li className="ListItem2" onClick={props.IntroPressed}>My Introduction</li><br />
                     </div>
                     <div style={{color:props.TabBar=='Services' ? 'orange' : Colors.newVar.TXTColor}}>
                         <DeveloperMode className='ServicesIcon' />

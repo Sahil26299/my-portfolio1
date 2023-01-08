@@ -16,6 +16,10 @@
 .heading3{
     font-size: 14px;
 }
+.headingProject{
+    font-size: 24px;
+    margin-top: 5%;
+}
 .IntroWrapper span{
     font-family: 'Poppins', sans-serif;
     color: #fff;
@@ -49,6 +53,17 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
+.carouselImage{
+    height:60vh;
+    width: 60vw;
+    object-fit: contain;
+}
+.carouselVideo{
+    height:60vh;
+    width: 15vw;
+    align-self: center;
+}
+
 @keyframes smiley{
     from {transform: rotate(-15deg);}
     to{transform: rotate(15deg);}
@@ -74,5 +89,9 @@
     font-family: 'Poppins', sans-serif;
     width: 25rem;
     text-align: end;
+}
+.CarouselWrapper{
+    width:60vw;
+    margin-left: 10%;
 }
 /* borderRadius:25, borderWidth:0, */

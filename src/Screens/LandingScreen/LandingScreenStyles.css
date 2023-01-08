@@ -50,7 +50,14 @@
     transform-origin: bottom left;
 }
 
-.ProfilePicStyle{
+.ProfilePicStyle1{
+    height:5vw;
+    width:5vw;
+    object-fit: cover;
+    border-radius: 100%;
+    margin: 3vh;
+}
+.ProfilePicStyle2{
     height:5vw;
     width:5vw;
     object-fit: cover;
@@ -77,6 +84,11 @@
     border-bottom-right-radius: 25px;
     background: linear-gradient(-10deg, orange, orange, rgb(255, 255, 0));
     padding: 2vh 0px;
+}
+.ProfileDetails{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vw;
+    margin-left: 10%;
 }
 .Icon{
     margin-right: 5px;

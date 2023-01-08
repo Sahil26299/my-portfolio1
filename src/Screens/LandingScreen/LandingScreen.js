@@ -12,7 +12,7 @@ export default function LandingScreen() {
   return (
     <div className='Container'>
         <div className='Wrapper' style={{backgroundColor:Colors.newVar.BGColor}}>
-            <SideNav TabBar = {TabSelected} ImagePath={Images.ProfilePicture} HomePressed={()=>setTabSelected('Home')} IntroPressed={()=>setTabSelected('Intro')} ServicesPressed={()=>setTabSelected('Services')} ExtraCurrPressed={()=>setTabSelected('Extra')} ContactPressed={()=>setTabSelected('Contact')} />
+            <SideNav TabBar = {TabSelected} HomePressed={()=>setTabSelected('Home')} IntroPressed={()=>setTabSelected('Intro')} ServicesPressed={()=>setTabSelected('Services')} ExtraCurrPressed={()=>setTabSelected('Extra')} ContactPressed={()=>setTabSelected('Contact')} />
             <div className='ContentBody'>
               {TabSelected=='Home' ? 
               <Home ContactMeClicked={()=>setTabSelected('Contact')} /> : null}
