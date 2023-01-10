@@ -4,7 +4,8 @@ import './Home.css'
 import Button from '../Commons/Button'
 import {ColorSchema} from '../../Utils/Context/ColorThemes'
 import Cards from '../Commons/Cards'
-import ShowcaseCarousel from '../Commons/ShowcaseCarousel'
+import ShowcaseCarousel from '../Commons/ShowcaseCarousel';
+import { requirePropFactory } from '@mui/material'
 
 export default function Home(props) {
     const Colors = useContext(ColorSchema);
@@ -19,7 +20,12 @@ export default function Home(props) {
                     Experienced React Developer,
                     with strong grip on React Native, proficient in programming including good grasp in data structure and algorithms.
                 </span><br />
-                <Button BtnStyle={{  padding:10, marginTop:25}} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
+                <div style={{display:'flex', flexDirection:'row', alignItems:'center'}} >
+                    <Button BtnStyle={{  padding:10, marginTop:25, marginRight:15}} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
+                    <a href={require('../../Assets/DownloadFiles/Resume_Sahil.pdf')} download={'Resume_Sahil'} className={'ResumeDownloadLink'} >
+                        <Button BtnStyle={{  padding:10, marginTop:25}} BtnContent={'Download Resume'} />
+                    </a>
+                </div>
             </div>
             <div>
                 <img src={Images.SmileyEmoji} className='SmileyImage' />

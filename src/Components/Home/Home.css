@@ -94,4 +94,7 @@
     width:60vw;
     margin-left: 10%;
 }
+.ResumeDownloadLink{
+    text-decoration: none;
+}
 /* borderRadius:25, borderWidth:0, */

@@ -35,9 +35,9 @@ export default function SideNav(props) {
                         <Home className='HomeIcon' />
                         <li className="ListItem1" onClick={props.HomePressed} >Home</li><br />
                     </div>
-                    <div style={{color:props.TabBar=='Intro' ? 'orange' : Colors.newVar.TXTColor}}>
+                    <div style={{color:props.TabBar=='Profile' ? 'orange' : Colors.newVar.TXTColor}}>
                         <Person className='UserIcon' />
-                        <li className="ListItem2" onClick={props.IntroPressed}>My Introduction</li><br />
+                        <li className="ListItem2" onClick={props.ProfilePressed}>My Profile</li><br />
                     </div>
                     <div style={{color:props.TabBar=='Services' ? 'orange' : Colors.newVar.TXTColor}}>
                         <DeveloperMode className='ServicesIcon' />

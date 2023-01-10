@@ -1,0 +1,26 @@
+.basic-intro-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: 'center';
+    width:50vw;
+}
+.basic-intro-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.verticalLine{
+    background-color: rgba(255,255,255,0.25);
+    width: 0.25px;
+    height: 12vw;
+}
+.Intro-Text{
+    font-family: 'Poppins', sans-serif;
+}
+.ProfileMyImage{
+    height: 10vw;
+    width:10vw;
+    object-fit: cover;
+    border-radius: 100%;
+}
