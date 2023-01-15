@@ -22,9 +22,52 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.5vw; 
 }
+.ListHeaderRight{
+    font-weight: 300;
+}
 .ProfileMyImage{
     height: 10vw;
     width:10vw;
     object-fit: cover;
     border-radius: 100%;
 }
+.CertificateHyperLink{
+    text-decoration: underline;
+}
+.ProgressWrapper{
+    width: 30vw;
+}
+.SkillProgressContainer{
+    padding:0px 6vw
+}
+.LinearBufferProgress{
+    width: 70%;
+}
+.ProgressTextStyle{
+    font-family: 'Poppins', sans-serif;
+}
+.TechnicalSkillDD{
+    border: 1px solid white;
+}
+.TechnicalSkillDT{
+    font-size: 18px;
+    position: absolute;
+    top: -20px;
+    left: 50px;
+}
+.TechnicalSkillDT1{
+    font-size: 18px;
+    position: absolute;
+    top: -20px;
+    right: 50px;
+}
+
+.carouselVideo{
+    height:60vh;
+    width: 50vw;
+}
+/* .CoverImage{
+    width: 70vw;
+    height: 40vh;
+    object-fit: cover;
+} */

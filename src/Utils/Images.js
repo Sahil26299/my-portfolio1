@@ -23,6 +23,8 @@ export const Images = {
     TaralShowcase15 : require('../Assets/Images/TaralShowcase/Taral-15.jpg'),
     TaralShowcase16 : require('../Assets/Images/TaralShowcase/Taral-16.mp4'),
     TaralShowcase17 : require('../Assets/Images/TaralShowcase/Taral-17.mp4'),
-    // TaralShowcase18 : require('../Assets/Images/TaralShowcase/Taral-18.mp4'),
-
+    CoverPhoto : require('../Assets/Images/ReactBackgroundImage.jpg'),
+    CalorieTrackerShowcaseImage1 : require('../Assets/Images/CaloriesBurnSS.png'),
+    CalorieTrackerShowcaseImage2 : require('../Assets/Images/CaloriesBurnSS1.png'),
+    CalorieTrackerShowcaseVideo : require('../Assets/Images/TrackCalShowcase/trackCalShowcase.mp4'),
 }
