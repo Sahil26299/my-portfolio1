@@ -35,16 +35,21 @@
     text-decoration: underline;
 }
 .ProgressWrapper{
-    width: 30vw;
+    width: 50vw;
+}
+.progressTitle{
+    font-family: 'Poppins', sans-serif;
+    width:20%;
 }
 .SkillProgressContainer{
     padding:0px 6vw
 }
 .LinearBufferProgress{
-    width: 70%;
+    width: 50%;
 }
 .ProgressTextStyle{
     font-family: 'Poppins', sans-serif;
+    width:20%;
 }
 .TechnicalSkillDD{
     border: 1px solid white;
@@ -66,8 +71,8 @@
     height:60vh;
     width: 50vw;
 }
-/* .CoverImage{
+.CoverImage{
     width: 70vw;
     height: 40vh;
     object-fit: cover;
-} */
+}

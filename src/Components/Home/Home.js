@@ -7,6 +7,21 @@ import Cards from '../Commons/Cards'
 import ShowcaseCarousel from '../Commons/ShowcaseCarousel';
 import { requirePropFactory } from '@mui/material'
 
+const ImagesArray = [Images.TaralShowcase1, 
+    Images.TaralShowcase2, 
+    Images.TaralShowcase3, 
+    Images.TaralShowcase4, 
+    Images.TaralShowcase5,
+    Images.TaralShowcase6, 
+    Images.TaralShowcase7, 
+    Images.TaralShowcase8, 
+    Images.TaralShowcase9, 
+    Images.TaralShowcase10, 
+    Images.TaralShowcase11, 
+    Images.TaralShowcase12, 
+    Images.TaralShowcase13, 
+    Images.TaralShowcase14, 
+    Images.TaralShowcase15]
 export default function Home(props) {
     const Colors = useContext(ColorSchema);
   return (
@@ -21,9 +36,9 @@ export default function Home(props) {
                     with strong grip on React Native, proficient in programming including good grasp in data structure and algorithms.
                 </span><br />
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}} >
-                    <Button BtnStyle={{  padding:10, marginTop:25, marginRight:15}} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
+                    <Button BtnStyle={{height:50, width:120, marginTop:25, marginRight:15}} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
                     <a href={require('../../Assets/DownloadFiles/Resume_Sahil.pdf')} download={'Resume_Sahil'} className={'ResumeDownloadLink'} >
-                        <Button BtnStyle={{  padding:10, marginTop:25}} BtnContent={'Download Resume'} />
+                        <Button BtnStyle={{height:50, width:120, marginTop:25}} BtnContent={'Download CV'} />
                     </a>
                 </div>
             </div>
@@ -32,39 +47,21 @@ export default function Home(props) {
             </div>
         </div>
         <div className="d-flex my-5 align-items-center">
-            <Cards ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap '} CardBtnContent={'Know More'} />
+            <Cards isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap '} CardBtnContent={'Know More'} />
             <h5 style={{color:Colors.newVar.TXTColor}} className='Card1Description' >Learned fundamentals of Web and App Development from scratch till deployment...</h5>
         </div>
         <div className="d-flex my-5 align-items-center">
             <h5 style={{color:Colors.newVar.TXTColor, textAlign:'start'}} className='Card1Description' >Good hands on app development using React Native, worked on live projects...</h5>
-            <Cards ImagePath={Images.AppDeveloperTheme} CardTitle={'React Native {}'} CardContent={'React Native | React Native paper | Android | iOS '} CardBtnContent={'Know More'} />
+            <Cards isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React Native {}'} CardContent={'React Native | React Native paper | Android | iOS '} CardBtnContent={'Know More'} />
         </div>
         <div className="d-flex my-5 align-items-center">
-            <Cards ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
+            <Cards isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
             <h5 style={{color:Colors.newVar.TXTColor}} className='Card1Description' >Used various platforms for development and deployment...</h5>
         </div>
         <div className='CarouselWrapper' >
             <span className='headingProject' style={{color:Colors.newVar.TXTColor}}>{'<'}Project Snapshots{'/>'}</span>
-            <ShowcaseCarousel 
-            items={4}
-            ImagePath1 = {Images.TaralShowcase1} 
-            ImagePath2 = {Images.TaralShowcase2}  
-            ImagePath3 = {Images.TaralShowcase3}
-            ImagePath4 = {Images.TaralShowcase4}
-            ImagePath5 = {Images.TaralShowcase5}
-            ImagePath6 = {Images.TaralShowcase6}
-            ImagePath7 = {Images.TaralShowcase7}
-            ImagePath8 = {Images.TaralShowcase8}
-            ImagePath9 = {Images.TaralShowcase9}
-            ImagePath10 = {Images.TaralShowcase10}
-            ImagePath11 = {Images.TaralShowcase11}
-            ImagePath12 = {Images.TaralShowcase12}
-            ImagePath13 = {Images.TaralShowcase13}
-            ImagePath14 = {Images.TaralShowcase14}
-            ImagePath15 = {Images.TaralShowcase15}
-            ImagePath16 = {Images.TaralShowcase16}
-            ImagePath17 = {Images.TaralShowcase17}
-            // ImagePath18 = {Images.TaralShowcase18}
+            <ShowcaseCarousel
+            ImageArray = {ImagesArray}
             />
         </div>
     </div>

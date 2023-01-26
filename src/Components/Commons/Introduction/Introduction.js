@@ -10,8 +10,7 @@ export default function Introduction() {
     const SkillProgressIndicator = (skill, prog, buff) => {
         return (
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} className='SkillProgressContainer'  >
-                <span className='Intro-Text' style={{ color: Colors.newVar.TXTColor, fontSize: 20 }} >{skill}</span>
-                <LinearBufferProgress Progress={prog} Buffer={buff} />
+                <LinearBufferProgress Progress={prog} Buffer={buff} Skill={skill} />
             </div>
         )
     }
@@ -138,7 +137,7 @@ export default function Introduction() {
 
                     <div style={{ marginTop: 50 }} >
                         <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text'} >
-                            <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Tools/ Platforms</dt> <br />
+                            <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Database</dt> <br />
                             <dd >
                                 {SkillProgressIndicator('MySQL', 40, 50)}
                             </dd>

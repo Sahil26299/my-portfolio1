@@ -60,8 +60,11 @@
 }
 .carouselVideo{
     height:60vh;
-    width: 15vw;
-    align-self: center;
+    width: 60vw;
+    object-fit: contain;
+}
+.SliderClass{
+    width: 60vw;
 }
 
 @keyframes smiley{

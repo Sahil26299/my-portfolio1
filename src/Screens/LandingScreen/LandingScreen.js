@@ -1,11 +1,10 @@
 import React, {useState, useContext} from 'react'
 import SideNav from '../../Components/SideNavBar/SideNav'
 import './LandingScreenStyles.css'
-import { Images } from '../../Utils/Images'
-import {colors} from '../../Utils/Themes'
 import Home from '../../Components/Home/Home'
 import { ColorSchema } from '../../Utils/Context/ColorThemes'
 import Introduction from '../../Components/Commons/Introduction/Introduction'
+import Services from '../../Components/Commons/Services/Services'
 
 export default function LandingScreen() {
   const [TabSelected, setTabSelected] = useState('Home');
@@ -18,7 +17,9 @@ export default function LandingScreen() {
               {TabSelected=='Home' ? 
               <Home ContactMeClicked={()=>setTabSelected('Contact')} /> : 
               TabSelected=='Profile' ? 
-              <Introduction  /> : null
+              <Introduction  /> : 
+              TabSelected=='Services' ? 
+              <Services/> : null
               }
             </div>
         </div>
