@@ -5,6 +5,7 @@ import Home from '../../Components/Home/Home'
 import { ColorSchema } from '../../Utils/Context/ColorThemes'
 import Introduction from '../../Components/Commons/Introduction/Introduction'
 import Services from '../../Components/Commons/Services/Services'
+import ExtraCurricular from '../../Components/Commons/ExtraCurricular/ExtraCurricular'
 
 export default function LandingScreen() {
   const [TabSelected, setTabSelected] = useState('Home');
@@ -19,7 +20,9 @@ export default function LandingScreen() {
               TabSelected=='Profile' ? 
               <Introduction  /> : 
               TabSelected=='Services' ? 
-              <Services/> : null
+              <Services/> : 
+              TabSelected=='Extra' ?
+              <ExtraCurricular/> : null 
               }
             </div>
         </div>

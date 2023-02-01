@@ -22,8 +22,8 @@ export default function ShowcaseCarousel(props) {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 30000,
-        slidesToShow: 4,
+        speed: props.Speed ? props.Speed : 30000,
+        slidesToShow: props.SlidesToShow ? props.SlidesToShow :  4,
         slidesToScroll: props.ImageArray.length,
         autoplay: true,
         autoplaySpeed: 0,
@@ -103,12 +103,16 @@ export default function ShowcaseCarousel(props) {
         //         </div>}
         //     {props.ImagePath15 && <div><img className="carouselImage" src={props.ImagePath15} /></div>}
         // </OwlCarousel>
-        <div className={'SliderClass'} >
+        <div className={props.CarouselWrapperStyle} >
             <Slider {...settings} >
                 {props.ImageArray && props.ImageArray.map((item) => {
                     return (
                         <div>
-                            <img className="carouselImage" src={item} />
+                            {item.includes('.mp4') ?
+                                <video loop autoPlay muted className="carouselVideo" >
+                                    <source src={props.ImagePath16} type="video/mp4" />
+                                </video> :
+                                <img className={props.ImageStyleName} src={item} />}
                         </div>
                     )
                 })}

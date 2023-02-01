@@ -61,6 +61,8 @@ export default function Home(props) {
         <div className='CarouselWrapper' >
             <span className='headingProject' style={{color:Colors.newVar.TXTColor}}>{'<'}Project Snapshots{'/>'}</span>
             <ShowcaseCarousel
+            ImageStyleName={'HomeCarouselImage'}
+            CarouselWrapperStyle={'HomeCarouselWrapper'}
             ImageArray = {ImagesArray}
             />
         </div>

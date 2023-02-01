@@ -53,7 +53,7 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-.carouselImage{
+.HomeCarouselImage{
     height:60vh;
     width: 60vw;
     object-fit: contain;
@@ -63,7 +63,7 @@
     width: 60vw;
     object-fit: contain;
 }
-.SliderClass{
+.HomeCarouselWrapper{
     width: 60vw;
 }
 

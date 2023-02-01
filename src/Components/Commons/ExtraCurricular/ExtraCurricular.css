@@ -1,0 +1,19 @@
+.ExtraCurrCarouselWrapper{
+    width: 70vw;
+}
+.ExtraCurrCarouselImage{
+    height:30vh;
+    width: 20vw;
+    object-fit: cover;
+}
+.ActivityWrapper{
+    width: 70vw;
+    margin:15vh 0px;
+}
+.Title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5vw; 
+}
+.Body{
+    font-family: 'Poppins', sans-serif;
+}
