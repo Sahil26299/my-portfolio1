@@ -6,6 +6,12 @@
     width: 20vw;
     object-fit: cover;
 }
+.ExtraCurrCarouselVideo{
+    height:30vh;
+    width: 20vw;
+    object-fit: cover;
+    background-color: #fff;
+}
 .ActivityWrapper{
     width: 70vw;
     margin:15vh 0px;

@@ -39,4 +39,17 @@ export const Images = {
     NSSImage7 : require('../Assets/Images/NSS_Pics/NSS7.jpg'),
     NSSImage8 : require('../Assets/Images/NSS_Pics/NSS8.jpg'),
     NSSImage9 : require('../Assets/Images/NSS_Pics/NSS9.jpg'),
+    MPulseImage1 : require('../Assets/Images/Mpulse/Mpulse1.jpg'),
+    MPulseImage2 : require('../Assets/Images/Mpulse/Mpulse2.jpg'),
+    MPulseImage3 : require('../Assets/Images/Mpulse/Mpulse3.jpg'),
+    MPulseImage4 : require('../Assets/Images/Mpulse/Mpulse4.jpg'),
+    MPulseImage6 : require('../Assets/Images/Mpulse/Mpulse6.jpg'),
+    MPulseImage7 : require('../Assets/Images/Mpulse/Mpulse7.jpg'),
+    MPulseImage8 : require('../Assets/Images/Mpulse/Mpulse8.jpg'),
+    MPulseImage9 : require('../Assets/Images/Mpulse/Mpulse9.jpg'),
+    MPulseImage11 : require('../Assets/Images/Mpulse/Mpulse11.jpg'),
+    MPulseImage12 : require('../Assets/Images/Mpulse/Mpulse12.jpg'),
+    MPulseImage13 : require('../Assets/Images/Mpulse/Mpulse13.mp4'),
+    MPulseImage14 : require('../Assets/Images/Mpulse/Mpulse14.mp4'),
+
 }

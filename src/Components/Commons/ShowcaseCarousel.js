@@ -109,8 +109,8 @@ export default function ShowcaseCarousel(props) {
                     return (
                         <div>
                             {item.includes('.mp4') ?
-                                <video loop autoPlay muted className="carouselVideo" >
-                                    <source src={props.ImagePath16} type="video/mp4" />
+                                <video loop autoPlay muted className={props.VideoStyleName} >
+                                    <source src={item} type="video/mp4" />
                                 </video> :
                                 <img className={props.ImageStyleName} src={item} />}
                         </div>
