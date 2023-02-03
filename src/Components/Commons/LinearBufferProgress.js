@@ -49,7 +49,7 @@ export default function LinearBufferProgress(props) {
     return (
         <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}} className={'ProgressWrapper'} >
             <span className='progressTitle' style={{ color: Colors.newVar.TXTColor, fontSize: 18 }} >{props.Skill}</span>
-            <LinearProgress className='LinearBufferProgress' variant="buffer" value={progress} ani valueBuffer={buffer} />
+            <LinearProgress className='LinearBufferProgress' variant="buffer" value={progress} valueBuffer={buffer} />
             <span className='ProgressTextStyle' style={{color:Colors.newVar.TXTColor, fontSize: 16}} >{progressText}</span>
         </div>
     )

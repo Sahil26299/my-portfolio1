@@ -13,7 +13,7 @@ export default function SideNav(props) {
     }
 
     return (
-        <div>
+        <div className='StickyWrapper' >
             <nav className="sideNav" style={{backgroundColor:Colors.newVar.BGColor}}>
                 <div className='ProfileContainer' >
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingRight: 20}}>

@@ -13,6 +13,11 @@
     overflow: hidden;
     box-shadow: 5px white;
 }
+.StickyWrapper{
+    position: sticky;
+    top: 0px;;
+    left: 0px;
+}
 .ContentBody{
     /* background-color: yellow; */
     width: 85vw;
