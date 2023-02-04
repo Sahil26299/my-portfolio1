@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 export default function Cards(props) {
     return (
-        <div>
+        <div className='cardsWrapper animate__animated animate__bounceIn' >
             <Card style={{ width: '18rem', minHeight:'18rem'}}>
                 <Card.Img variant="top" src={props.ImagePath} className='CardImageStyle' />
                 <Card.Body>
@@ -12,7 +12,7 @@ export default function Cards(props) {
                     <Card.Text className='card-Content'>
                         {props.CardContent}
                     </Card.Text>
-                    {props.isDemo && <Button className='card-Btn' variant="warning">{props.CardBtnContent}</Button>}
+                    {props.isDemo && <Button className='card-Btn animate__animated animate__shakeX animate__delay-5s animate__faster' variant="warning" onClick={props.ReadMorePressed} >{props.CardBtnContent}</Button>}
                 </Card.Body>
             </Card>
         </div>

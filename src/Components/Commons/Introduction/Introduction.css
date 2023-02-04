@@ -13,7 +13,8 @@
     height: 12vw;
 }
 .IntroBodyWrapper{
-    padding: 2% 5%; 
+    padding-left: 5%;
+    padding-top: 5%; 
 }
 .Intro-Text{
     font-family: 'Poppins', sans-serif;

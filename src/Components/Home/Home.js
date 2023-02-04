@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { Images } from '../../Utils/Images'
 import './Home.css'
 import Button from '../Commons/Button'
@@ -23,6 +23,7 @@ const ImagesArray = [Images.TaralShowcase1,
     Images.TaralShowcase14, 
     Images.TaralShowcase15]
 export default function Home(props) {
+    
     const Colors = useContext(ColorSchema);
   return (
     <div className='WrapperHome'>
@@ -47,19 +48,19 @@ export default function Home(props) {
             </div>
         </div>
         <div className="d-flex my-5 align-items-center">
-            <Cards isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap '} CardBtnContent={'Know More'} />
-            <h5 style={{color:Colors.newVar.TXTColor}} className='Card1Description' >Learned fundamentals of Web and App Development from scratch till deployment...</h5>
+            <Cards ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap '} CardBtnContent={'Know More'} />
+            <h5 style={{color:Colors.newVar.TXTColor}} className={`Card1Description animate__animated animate__bounceIn`} >Learned fundamentals of Web and App Development from scratch till deployment...</h5>
         </div>
         <div className="d-flex my-5 align-items-center">
-            <h5 style={{color:Colors.newVar.TXTColor, textAlign:'start'}} className='Card1Description' >Good hands on app development using React Native, worked on live projects...</h5>
-            <Cards isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React Native {}'} CardContent={'React Native | React Native paper | Android | iOS '} CardBtnContent={'Know More'} />
+            <h5 style={{color:Colors.newVar.TXTColor, textAlign:'start'}} className='Card2Description' >Good hands on app development using React Native, worked on live projects...</h5>
+            <Cards ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React Native {}'} CardContent={'React Native | React Native paper | Android | iOS '} CardBtnContent={'Know More'} />
         </div>
         <div className="d-flex my-5 align-items-center">
-            <Cards isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
-            <h5 style={{color:Colors.newVar.TXTColor}} className='Card1Description' >Used various platforms for development and deployment...</h5>
+            <Cards ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
+            <h5 style={{color:Colors.newVar.TXTColor}} className='Card3Description' >Used various platforms for development and deployment...</h5>
         </div>
         <div className='CarouselWrapper' >
-            <span className='headingProject' style={{color:Colors.newVar.TXTColor}}>{'<'}Project Snapshots{'/>'}</span>
+            <span className='headingProject' style={{color:'orange'}}>Project Snapshots</span>
             <ShowcaseCarousel
             ImageStyleName={'HomeCarouselImage'}
             CarouselWrapperStyle={'HomeCarouselWrapper'}

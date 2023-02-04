@@ -3,8 +3,9 @@ import './Introduction.css';
 import { ColorSchema } from '../../../Utils/Context/ColorThemes';
 import { Images } from '../../../Utils/Images';
 import LinearBufferProgress from '../LinearBufferProgress';
+import TabHeader from '../TabHeader';
 
-export default function Introduction() {
+export default function Introduction(props) {
 
     const Colors = useContext(ColorSchema);
     const SkillProgressIndicator = (skill, prog, buff) => {
@@ -17,9 +18,7 @@ export default function Introduction() {
 
     return (
         <div className='wrapper-container' >
-            {/* <div>
-                <img src={Images.CoverPhoto} alt="" className='CoverImage' />
-            </div> */}
+            <TabHeader Children={'My Profile'} />
             <div className="basic-intro-wrapper" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }} >
                 <div className="basic-intro-text">
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Full Name : Sahil Dattatray Lokhande</span><br />
@@ -27,7 +26,7 @@ export default function Introduction() {
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Loaction : Pune, Maharashtra, India</span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Status : Looking forward for good career opportunities...</span><br />
                 </div>
-                <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div>
+                {/* <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div> */}
                 <div>
                     <img src={Images.ProfilePicture} className='ProfileMyImage' />
                 </div>
