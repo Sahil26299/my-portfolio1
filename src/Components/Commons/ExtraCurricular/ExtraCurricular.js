@@ -22,7 +22,7 @@ export default function ExtraCurricular() {
         </ul>
        
        
-        <div style={{ marginTop: '3%' }} >
+        <div style={{}} >
           <ShowcaseCarousel Speed={carouselSpeed} CarouselWrapperStyle={'ExtraCurrCarouselWrapper'} ImageStyleName={'ExtraCurrCarouselImage'} VideoStyleName={'ExtraCurrCarouselVideo'} ImageArray={ImagesArr} SlidesToShow={3} />
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function ExtraCurricular() {
   }
   return (
     <Box>
-      <TabHeader Children={'Extra-Curricular'} />
+      <TabHeader Animation={'HeaderExtraCurr'} Children={'Extra-Curricular'} />
       {showActivity('MESA', 'Represented myself as an active MESA(Mechanical Engineering Student Association) volunteer for the acedemic year 2018-19 and Treasurer for the acedemic year 2019-20, wherein we used to organize various technical and non-technical events as a team.', MesaImages, 25000)}
       {showActivity('NSS', `Represented myself as an active NSS(National Service Scheme) volunteer for the acedemic year 2018-19 and Technical head for the acedemic year 2019-20, wherein we used to organize various events, workshops and seminars based on social awareness and social affairs as a team.`, NSSImages, 35000, `And finally arranged a annual 7 day winter camp in a village Khamgaon, near Singahad, where we spread basic awareness regarding health, cleanliness, management and knowledge regarding science and history through some guest lectures, events, street plays, dramas, acts etc.`)}
       {showActivity('MPulse', `Participated in an annual departmental event MPulse Mechnicax 2019 as a volunteer and MPulse Mechverse 2020 as a Technical Head wherein we used to organized technical and non-technical games and competitions and announced winners and runner-ups.`, MPulseImages, 45000, `Here as a Technical Lead, I was responsible for photo and video editing for marketing and advertising of the event.`)}

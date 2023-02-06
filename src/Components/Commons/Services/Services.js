@@ -15,7 +15,7 @@ export default function Services() {
     
     return (
         <Box sx={{ alignItems: 'center' }} className={'ServicesWrapper'} >
-            <TabHeader Children={'My Services'} />
+            <TabHeader Animation={'HeaderServices'} Children={'My Services'} />
             <Grid sx={{}} container alignSelf={'center'} spacing={2} >
                 <Grid item lg={4} md={6} sm={12} >
                     <div style={{width:'20rem', textAlign:'center', alignItems:'center', display:'flex', flexDirection:'column'}} >

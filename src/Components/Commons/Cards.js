@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export default function Cards(props) {
+
     return (
-        <div className='cardsWrapper animate__animated animate__bounceIn' >
+        <div className={`${props.classID}`} >
             <Card style={{ width: '18rem', minHeight:'18rem'}}>
                 <Card.Img variant="top" src={props.ImagePath} className='CardImageStyle' />
                 <Card.Body>

@@ -21,6 +21,7 @@ export default function ShowcaseCarousel(props) {
 
     const settings = {
         dots: false,
+        arrows:false,
         infinite: true,
         speed: props.Speed ? props.Speed : 30000,
         slidesToShow: props.SlidesToShow ? props.SlidesToShow :  4,
@@ -30,6 +31,7 @@ export default function ShowcaseCarousel(props) {
         pauseOnHover: false,
         initialSlide: 0,
         cssEase: "linear",
+        
         responsive: [
             {
                 breakpoint: 1024,

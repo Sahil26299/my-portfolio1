@@ -21,6 +21,9 @@
     font-size: 1.5vw; 
     margin-top: 10px;
 }
+.AllCardsWrapper{
+    margin: 10% 0px;
+}
 .IntroWrapper span{
     font-family: 'Poppins', sans-serif;
     color: #fff;
