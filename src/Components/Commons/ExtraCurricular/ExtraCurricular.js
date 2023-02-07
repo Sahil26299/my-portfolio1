@@ -14,7 +14,7 @@ export default function ExtraCurricular() {
   const Colors = useContext(ColorSchema);
   const showActivity = (Org, Descr, ImagesArr, carouselSpeed, Descr2) => {
     return (
-      <div className='ActivityWrapper' >
+      <div className='ActivityWrapper' id='Extra_ID' >
         <span style={{ color: 'orange', }} className={'Title'} >{Org}</span><br />
         <ul style={{color:'#fff'}} >
           <li> <span style={{ color: Colors.newVar.TXTColor, }} className={'Body'} >{Descr}</span></li><br />

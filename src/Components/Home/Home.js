@@ -26,7 +26,7 @@ export default function Home(props) {
     
     const Colors = useContext(ColorSchema);
   return (
-    <div className='WrapperHome'>
+    <div className='WrapperHome' id='Home_ID' >
         <div style={{flexDirection:'row', display:'flex', alignItems:'flex-start', justifyContent:'center'}}>
             <div className="IntroWrapper">
                 <span className="heading1" style={{color:Colors.newVar.TXTColor}}>

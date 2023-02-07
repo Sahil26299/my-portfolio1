@@ -127,27 +127,47 @@ export default function LandingScreen() {
 
   const ScrollToHome = () => {
     setTabSelected('Home')
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-    window.alert('hello')
+    const element = document.getElementById('Home_ID');
+    element.scrollIntoView({behavior:'smooth'})
   }
 
+  const ScrollToIntroduction = () => {
+    setTabSelected('Profile');
+    const element = document.getElementById('Introduction_ID');
+    element.scrollIntoView({behavior:'smooth'})
+  }
+
+  const ScrollToServices = () => {
+    setTabSelected('Services');
+    const element = document.getElementById('Services_ID');
+    element.scrollIntoView({behavior:'smooth'})
+  }
+
+  const ScrollToExtraCurricular = () => {
+    setTabSelected('Extra')
+    const element = document.getElementById('Extra_ID');
+    element.scrollIntoView({behavior:'smooth'})
+  }
+
+  const ScrollToContact = () => {
+    setTabSelected('Contact');
+    const element = document.getElementById('Contact_ID');
+    element.scrollIntoView({behavior:'smooth'})
+  }
 
   return (
     <div className='Container'>
       <div onScroll={(e) => handleScroll(e.target)} className='Wrapper' style={{ backgroundColor: Colors.newVar.BGColor }}>
         <SideNav TabBar={TabSelected}
           HomePressed={() =>
-            // ScrollToHome
-            setTabSelected('Home')
+            ScrollToHome()
+            // setTabSelected('Home')
           }
           ProfilePressed={() =>
             // handleScroll()
-            setTabSelected('Profile')
+            ScrollToIntroduction()
           }
-          ServicesPressed={() => setTabSelected('Services')} ExtraCurrPressed={() => setTabSelected('Extra')} ContactPressed={() => setTabSelected('Contact')} />
+          ServicesPressed={() => ScrollToServices()} ExtraCurrPressed={() => ScrollToExtraCurricular()} ContactPressed={() => ScrollToContact()} />
         <div className='ContentBody'>
           {/* {TabSelected == 'Home' ?
             <Home ContactMeClicked={() => setTabSelected('Contact')} /> :
