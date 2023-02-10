@@ -99,52 +99,48 @@ export default function Introduction(props) {
                 </span><br />
                 <div style={{ marginTop: 25 }} >
                     <div>
-                        {props.showSkillSet1 &&
-                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation1'} >
-                                <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Programming Languages</dt> <br />
-                                <dd >
-                                    {SkillProgressIndicator('Javascript', 80, 90)} <br />
-                                    {SkillProgressIndicator('C', 65, 80)} <br />
-                                    {SkillProgressIndicator('Python', 70, 90)}
-                                </dd>
-                            </dl>}
+                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation1'} >
+                            <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Programming Languages</dt> <br />
+                            <dd >
+                                {SkillProgressIndicator('Javascript', 80, 90)} <br />
+                                {SkillProgressIndicator('C', 65, 80)} <br />
+                                {SkillProgressIndicator('Python', 70, 90)}
+                            </dd>
+                        </dl>
                     </div>
 
                     <div style={{ marginTop: 50 }} >
-                        {props.showSkillSet2 &&
-                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation2'} >
-                                <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Front-End Technologies</dt> <br />
-                                <dd >
-                                    {SkillProgressIndicator('HTML5', 80, 90)} <br />
-                                    {SkillProgressIndicator('CSS & Bootstrap', 65, 80)} <br />
-                                    {SkillProgressIndicator('React Js.', 50, 70)} <br />
-                                    {SkillProgressIndicator('React Native', 80, 90)} <br />
-                                    {SkillProgressIndicator('Redux', 40, 60)}
-                                </dd>
-                            </dl>}
+                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation2'} >
+                            <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Front-End Technologies</dt> <br />
+                            <dd >
+                                {SkillProgressIndicator('HTML5', 80, 90)} <br />
+                                {SkillProgressIndicator('CSS & Bootstrap', 65, 80)} <br />
+                                {SkillProgressIndicator('React Js.', 50, 70)} <br />
+                                {SkillProgressIndicator('React Native', 80, 90)} <br />
+                                {SkillProgressIndicator('Redux', 40, 60)}
+                            </dd>
+                        </dl>
                     </div>
 
                     <div style={{ marginTop: 50 }} >
-                        {props.showSkillSet3 &&
-                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation3'} >
-                                <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Tools/ Platforms</dt> <br />
-                                <dd >
-                                    {SkillProgressIndicator('Git/Github', 80, 90)} <br />
-                                    {SkillProgressIndicator('VSCode', 80, 90)} <br />
-                                    {SkillProgressIndicator('XCode', 30, 45)} <br />
-                                    {SkillProgressIndicator('Android Studios', 40, 50)}
-                                </dd>
-                            </dl>}
+                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation3'} >
+                            <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Tools/ Platforms</dt> <br />
+                            <dd >
+                                {SkillProgressIndicator('Git/Github', 80, 90)} <br />
+                                {SkillProgressIndicator('VSCode', 80, 90)} <br />
+                                {SkillProgressIndicator('XCode', 30, 45)} <br />
+                                {SkillProgressIndicator('Android Studios', 40, 50)}
+                            </dd>
+                        </dl>
                     </div>
 
                     <div style={{ marginTop: 50 }} >
-                        {props.showSkillSet4 &&
-                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation4'} >
-                                <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Database</dt> <br />
-                                <dd >
-                                    {SkillProgressIndicator('MySQL', 40, 50)}
-                                </dd>
-                            </dl>}
+                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation4'} >
+                            <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Database</dt> <br />
+                            <dd >
+                                {SkillProgressIndicator('MySQL', 40, 50)}
+                            </dd>
+                        </dl>
                     </div>
                 </div>
             </div>

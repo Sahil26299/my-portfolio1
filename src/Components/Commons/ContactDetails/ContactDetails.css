@@ -46,13 +46,13 @@
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     margin:10px 0px;
-    width: 80%;
+    width: 90%;
     min-height: 120px;
     text-align: left;
     
 }
 #emailInputdiv{
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid;
     width: 25vw;
     display: flex;
     flex-direction: row;
@@ -61,7 +61,7 @@
     margin-top: 10px;
 }
 #messageInputdiv{
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid;
     width: 25vw;
     display: flex;
     flex-direction: row;
@@ -75,4 +75,24 @@
 }
 #sendIcon{
     font-size: 25px;
+}
+.CommonClass{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+}
+.SmileyEndImage{
+    height:10vh;
+    width:10vw;
+    object-fit: contain;
+    transform: translate(0px,-10px);
+    animation-name: smiley_end;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes smiley_end{
+    from {transform: translate(0px,-10px);}
+    to{transform: translate(0px,10px);}
 }

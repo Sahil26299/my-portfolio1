@@ -8,12 +8,8 @@ import Services from '../../Components/Commons/Services/Services'
 import ExtraCurricular from '../../Components/Commons/ExtraCurricular/ExtraCurricular'
 import ContactDetails from '../../Components/Commons/ContactDetails/ContactDetails'
 var element = null;
-export default function LandingScreen() {
+const LandingScreen = () => {
   const [TabSelected, setTabSelected] = useState('Home');
-  const [showskilleset1, setshowskillset1] = useState(false);
-  const [showskillset2, setshowskillset2] = useState(false);
-  const [showskillset3, setshowskillset3] = useState(false);
-  const [showskillset4, setshowskillset4] = useState(false);
   const Colors = useContext(ColorSchema);
 
   const animationReplace = (currentAnim, newAnim, class1, ...otherClass) => {
@@ -93,30 +89,32 @@ export default function LandingScreen() {
     else {
       AnimationRemove('animate__tada', '.HeaderExtraCurr')
     }
+    if(element.scrollTop>8300){
+      animationAdd('animate__tada','.ContactHeader')
+    }
+    else{
+      AnimationRemove('animate__tada','.ContactHeader')
+    }
 
 
     if (element.scrollTop > 2800 && element.scrollTop < 3680) {
-      setshowskillset1(true)
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation1')
     } else {
       animationReplace('animate__fadeIn', 'animate__fadeOut', '.fadeAnimation1')
     }
     if (element.scrollTop > 3100 && element.scrollTop < 4020) {
-      setshowskillset2(true)
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation2')
     }
     else {
       animationReplace('animate__fadeIn', 'animate__fadeOut', '.fadeAnimation2')
     }
     if (element.scrollTop > 3450 && element.scrollTop < 4350) {
-      setshowskillset3(true)
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation3')
     }
     else {
       animationReplace('animate__fadeIn', 'animate__fadeOut', '.fadeAnimation3')
     }
     if (element.scrollTop > 3740 && element.scrollTop < 4520) {
-      setshowskillset4(true)
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation4')
     }
     else {
@@ -179,7 +177,7 @@ export default function LandingScreen() {
                   <ExtraCurricular /> : null
           } */}
           <Home ReadMorePressed_={() => setTabSelected('Profile')} ContactMeClicked={() => setTabSelected('Contact')} />
-          <Introduction showSkillSet1={showskilleset1} showSkillSet2={showskillset2} showSkillSet3={showskillset3} showSkillSet4={showskillset4} />
+          <Introduction/>
           <Services />
           <ExtraCurricular />
           <ContactDetails />
@@ -188,3 +186,5 @@ export default function LandingScreen() {
     </div>
   )
 }
+
+export default LandingScreen;
