@@ -2,12 +2,12 @@
     width: 70vw;
 }
 .ExtraCurrCarouselImage{
-    height:30vh;
+    height:220px;
     width: 20vw;
     object-fit: cover;
 }
 .ExtraCurrCarouselVideo{
-    height:30vh;
+    height:220px;
     width: 20vw;
     object-fit: cover;
     background-color: #fff;

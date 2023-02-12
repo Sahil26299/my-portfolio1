@@ -30,7 +30,7 @@ export default function Home(props) {
         <div style={{flexDirection:'row', display:'flex', alignItems:'flex-start', justifyContent:'center'}}>
             <div className="IntroWrapper">
                 <span className="heading1" style={{color:Colors.newVar.TXTColor}}>
-                    {'<Hello'}, I am <span style={{color:'orange'}}>Sahil Lokhande</span>{'/>'}
+                    {'<Hello'}, I am <span className="heading1" style={{color:'orange'}}>Sahil Lokhande</span>{'/>'}
                 </span><br />
                 <span className="heading2" style={{color:Colors.newVar.TXTColor}}>
                     Experienced React Developer,

@@ -8,10 +8,9 @@
 }
 .sideNav{
     /* background-color: red; */
-    width: 15vw;
-    height:100vh;
-    overflow: hidden;
-    box-shadow: 5px white;
+    width: 16vw;
+    /* height:100vh; */
+    /* overflow: hidden; */
 }
 .StickyWrapper{
     position: sticky;
@@ -23,21 +22,23 @@
     width: 85vw;
     height:100vh;
 }
+
 .navListContainer{
-    margin-top: 2vw;
+    margin-top: 1vw;
     padding-left: 10px;
+}
+.navListContainer div{
+    margin-top: 10px;
 }
 .navListContainer li{
     list-style-type: none;
-    margin: 12% 10px;
-    font-size: 1vw;
-    font-family: 'Poppins', sans-serif;
+    margin: 12% 0px;
+    font-size: 16px;
     font-weight: 400;
     cursor: pointer;
-    display: inline-block;
-    position: relative;
+    display: flex;
+    position: relative;  
 }
-
 .navListContainer li:after{
     content: '';
     position: absolute;
@@ -53,6 +54,10 @@
 .navListContainer li:hover:after{
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.navListContainer li p{
+    margin-left: 10px;
 }
 
 .ProfilePicStyle1{
@@ -89,17 +94,25 @@
     border-bottom-right-radius: 25px;
     background: linear-gradient(-10deg, orange, orange, rgb(255, 255, 0));
     padding: 2vh 0px;
+    width:100%
+
 }
 .ProfileDetails{
-    font-family: 'Poppins', sans-serif;
-    font-size: 1vw;
+    font-size: 16px;
     margin-left: 10%;
 }
 .Icon{
     margin-right: 5px;
+    
 }
 .CardImageStyle{
-    height: 25vh;
+    height: 150px;
     width: 100%;
     object-fit: contain;
+}
+.ShowHideNavbar{
+    border:none;
+}
+.CollapseSideBarDiv{
+    padding:0px 10px;
 }

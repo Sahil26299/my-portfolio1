@@ -52,38 +52,38 @@ const LandingScreen = () => {
       setTabSelected('Home')
     }
 
-    if (element.scrollTop < 520) {
+    if (element.scrollTop < 550) {
       animationReplace('animate__zoomOut', 'animate__bounceIn', '.CardWrapper1');
     }
     else {
       animationReplace('animate__bounceIn', 'animate__zoomOut', '.CardWrapper1');
     }
-    if (element.scrollTop < 900) {
+    if (element.scrollTop < 920) {
       animationReplace('animate__zoomOut', 'animate__bounceIn', '.CardWrapper2');
     }
     else {
       animationReplace('animate__bounceIn', 'animate__zoomOut', '.CardWrapper2');
     }
-    if (element.scrollTop > 480 && element.scrollTop < 1300) {
+    if (element.scrollTop >420 && element.scrollTop < 1300) {
       animationReplace('animate__zoomOut', 'animate__bounceIn', '.CardWrapper3');
     }
     else {
       animationReplace('animate__bounceIn', 'animate__zoomOut', '.CardWrapper3');
     }
 
-    if ((element.scrollTop > 1900 && element.scrollTop < 2300)) {
+    if ((element.scrollTop > 1750 && element.scrollTop < 2200)) {
       animationAdd('animate__tada', '.HeaderIntro')
     }
     else {
       AnimationRemove('animate__tada', '.HeaderIntro')
     }
-    if ((element.scrollTop > 5800 && element.scrollTop < 6150)) {
+    if ((element.scrollTop > 5580 && element.scrollTop < 6000)) {
       animationAdd('animate__tada', '.HeaderServices')
     }
     else {
       AnimationRemove('animate__tada', '.HeaderServices')
     }
-    if ((element.scrollTop > 6600 && element.scrollTop < 7050)) {
+    if ((element.scrollTop > 6500 && element.scrollTop < 6800)) {
       animationAdd('animate__tada', '.HeaderExtraCurr')
     }
     else {
@@ -97,24 +97,24 @@ const LandingScreen = () => {
     }
 
 
-    if (element.scrollTop > 2800 && element.scrollTop < 3680) {
+    if (element.scrollTop > 2700 && element.scrollTop < 3550) {
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation1')
     } else {
       animationReplace('animate__fadeIn', 'animate__fadeOut', '.fadeAnimation1')
     }
-    if (element.scrollTop > 3100 && element.scrollTop < 4020) {
+    if (element.scrollTop > 2930 && element.scrollTop < 3920) {
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation2')
     }
     else {
       animationReplace('animate__fadeIn', 'animate__fadeOut', '.fadeAnimation2')
     }
-    if (element.scrollTop > 3450 && element.scrollTop < 4350) {
+    if (element.scrollTop > 3300 && element.scrollTop < 4220) {
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation3')
     }
     else {
       animationReplace('animate__fadeIn', 'animate__fadeOut', '.fadeAnimation3')
     }
-    if (element.scrollTop > 3740 && element.scrollTop < 4520) {
+    if (element.scrollTop > 3620 && element.scrollTop < 4400) {
       animationReplace('animate__fadeOut', 'animate__fadeIn', '.fadeAnimation4')
     }
     else {
@@ -155,7 +155,9 @@ const LandingScreen = () => {
 
   return (
     <div className='Container'>
-      <div onScroll={(e) => handleScroll(e.target)} className='Wrapper' style={{ backgroundColor: Colors.newVar.BGColor }}>
+      <div 
+      onScroll={(e) => handleScroll(e.target)} 
+      className='Wrapper' style={{ backgroundColor: Colors.newVar.BGColor }}>
         <SideNav TabBar={TabSelected}
           HomePressed={() =>
             ScrollToHome()
