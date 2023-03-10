@@ -15,12 +15,12 @@ export default function Services() {
     
     return (
         <div id='Services_ID' >
-            <Box sx={{ alignItems: 'center' }} className={'ServicesWrapper'} >
+            <Box sx={{ alignItems: 'center' }} className={'ServicesWrapper'} style={{ backgroundColor: Colors.newVar.BGColor }} >
                 <TabHeader Animation={'HeaderServices'} Children={'My Services'} />
-                <Grid sx={{}} container alignSelf={'center'} spacing={2} >
+                <Grid sx={{}} container  spacing={2} >
                     <Grid item lg={4} md={6} sm={12} >
                         <div style={{width:'20rem', textAlign:'center', alignItems:'center', display:'flex', flexDirection:'column'}} >
-                            <Cards isDemo={false} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap '} CardBtnContent={'Know More'} />
+                            <Cards isDemo={false} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap '} />
                             <span style={{ color: Colors.newVar.TXTColor, marginTop:'5%'}} className={'serviceBody'} >
                                 {servicesBody[0]}
                             </span>
@@ -28,7 +28,7 @@ export default function Services() {
                     </Grid>
                     <Grid item lg={4} md={6} sm={12} >
                         <div style={{width:'20rem', textAlign:'center', alignItems:'center', display:'flex', flexDirection:'column'}}>
-                            <Cards isDemo={false} ImagePath={Images.AppDeveloperTheme} CardTitle={'React Native {}'} CardContent={'React Native | React Native paper | Android | iOS '} CardBtnContent={'Know More'} />
+                            <Cards isDemo={false} ImagePath={Images.AppDeveloperTheme} CardTitle={'React Native {}'} CardContent={'React Native | React Native paper | Android | iOS '} />
                             <span style={{ color: Colors.newVar.TXTColor, marginTop:'5%' }} className={'serviceBody'} >
                                 {servicesBody[1]}
                             </span>
@@ -36,7 +36,7 @@ export default function Services() {
                     </Grid>
                     <Grid item lg={4} md={6} sm={12} >
                         <div style={{width:'20rem', textAlign:'center', alignItems:'center', display:'flex', flexDirection:'column'}} >
-                            <Cards isDemo={false} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
+                            <Cards isDemo={false} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} />
                             <span style={{ color: Colors.newVar.TXTColor, marginTop:'5%' }} className={'serviceBody'} >
                                 {servicesBody[2]}
                             </span>

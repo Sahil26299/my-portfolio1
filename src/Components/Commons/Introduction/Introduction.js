@@ -17,7 +17,7 @@ export default function Introduction(props) {
     }
 
     return (
-        <div className='wrapper-container' id='Introduction_ID' >
+        <div className='wrapper-container' id='Introduction_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
             <TabHeader Animation={'HeaderIntro'} Children={'My Profile'} />
             <div className="basic-intro-wrapper" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }} >
                 <div className="basic-intro-text">
@@ -192,7 +192,7 @@ export default function Introduction(props) {
                     </li>
                 </ul>
                 <div className='CarouselWrapper' >
-                    <video loop autoPlay muted className="carouselVideo" >
+                    <video loop autoPlay muted controls className="carouselVideo" >
                         <source src={Images.CalorieTrackerShowcaseVideo} type="video/mp4" />
                     </video>
                 </div>
@@ -201,7 +201,7 @@ export default function Introduction(props) {
                 <span style={{ color: 'orange', }} className={'Intro-Title'} >
                     Certifications
                 </span><br />
-                <ul style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >
+                <ul style={{ color: Colors.newVar.TXTColor, margin:0 }} className={'Intro-Text'} >
                     <li>
                         Machine Learning Engineer and AI Analyst (Org. Symbiosis Skills and Professional University, Pune)
                     </li>

@@ -9,7 +9,7 @@ export default function ColorThemes(props) {
         TextInputColor: '#252631',
     };
     const lightMode = {
-        BGColor: '#fff',
+        BGColor: '#f5f5f5',
         TXTColor: '#282c34',
         TextInputColor: '#DBDBDB',
     };

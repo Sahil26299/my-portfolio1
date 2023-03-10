@@ -6,6 +6,7 @@ import { Home, Person, DeveloperMode, VolunteerActivism, AlternateEmail } from '
 import ProfileCarousel from '../Commons/ProfileCarousel';
 import { Images } from '../../Utils/Images';
 import { Sidebar, useProSidebar } from 'react-pro-sidebar';
+import { TAB_NAMES } from '../../Utils/Constants';
 
 export default function SideNav(props) {
     const Colors = useContext(ColorSchema);
@@ -41,52 +42,52 @@ export default function SideNav(props) {
         <div className='StickyWrapper' >
            {windowSize[0]>1000 ? 
            <nav className="sideNav" style={{ backgroundColor: Colors.newVar.BGColor }}>
-                <div className='ProfileContainer' >
+                {/* <div className='ProfileContainer' >
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
                         <ProfileCarousel ImagePath1={Images.ProfilePicture} ImagePath2={Images.ProfilePicture2} />
-                        <button className='ThemeSwitchBtn' onClick={() => switchModes()} >
-                            {Colors.isDarkMode ?
-                                <DarkMode color='dark' fontSize='large' style={{ marginTop: 10 }} /> :
-                                <LightMode color='light' fontSize='large' style={{ marginTop: 10 }} />}
-                        </button>
-                    </div>
-                    <div>
+                        </div>
+                        <div>
                         <p className='ProfileDetails' >Sahil Dattatray Lokhande</p>
                         <p className='ProfileDetails' >+91 9175098814</p>
-                    </div>
-                </div>
+                        </div>
+                    </div> */}
                 <ul className="navListContainer">
                         <div style={{ color: props.TabBar == 'Home' ? 'orange' : Colors.newVar.TXTColor }}>
                             <li style={{paddingBottom:collapsed && 5}} onClick={props.HomePressed} >
                                 <Home className='HomeIcon' fontSize={'medium'} />
-                                <p className="ListItem1" >Home</p><br />
+                                <p className="ListItem1" >{TAB_NAMES[0]}</p><br />
                             </li>
                         </div>
                         <div style={{ color: props.TabBar == 'Profile' ? 'orange' : Colors.newVar.TXTColor }}>
                             <li style={{paddingBottom:collapsed && 5}} onClick={props.ProfilePressed} >
                                 <Person className='UserIcon' fontSize={'medium'} />
-                                <p className="ListItem2" >My Profile</p><br />
+                                <p className="ListItem2" >{TAB_NAMES[1]}</p><br />
                             </li>
                         </div>
                         <div style={{ color: props.TabBar == 'Services' ? 'orange' : Colors.newVar.TXTColor }}>
                             <li style={{paddingBottom:collapsed && 5}} onClick={props.ServicesPressed} >
                                 <DeveloperMode className='ServicesIcon' fontSize={'medium'} />
-                                <p className="ListItem3" >Services</p><br />
+                                <p className="ListItem3" >{TAB_NAMES[2]}</p><br />
                             </li>
                         </div>
                         <div style={{ color: props.TabBar == 'Extra' ? 'orange' : Colors.newVar.TXTColor }}>
                             <li style={{paddingBottom:collapsed && 5}} onClick={props.ExtraCurrPressed} >
                                 <VolunteerActivism className='ExtraCurrIcon' fontSize={'medium'} />
-                                <p className="ListItem5" >Extra Curricular</p><br />
+                                <p className="ListItem5" >{TAB_NAMES[3]}</p><br />
                             </li>
                         </div>
                         <div style={{ color: props.TabBar == 'Contact' ? 'orange' : Colors.newVar.TXTColor }}>
                             <li style={{paddingBottom:collapsed && 5}} onClick={props.ContactPressed} >
                                 <AlternateEmail className='ContactIcon' fontSize={'medium'} />
-                                <p className="ListItem5" >Contact</p>
+                                <p className="ListItem5" >{TAB_NAMES[4]}</p>
                             </li>
                         </div>
                     </ul>
+                    {/* <button className='ThemeSwitchBtn' onClick={() => switchModes()} >
+                        {Colors.isDarkMode ?
+                            <DarkMode color='dark' fontSize='large' style={{ marginTop: 10 }} /> :
+                            <LightMode color='light' fontSize='large' style={{ marginTop: 10 }} />}
+                    </button> */}
             </nav> :
             <Sidebar backgroundColor={Colors.newVar.BGColor} defaultCollapsed={true} rootStyles={{ borderWidth: 0, flex: 1, display: 'flex', alignItems: 'center' }} >
                 <div className={!collapsed && "sideNav"}>

@@ -130,8 +130,8 @@ export default function ContactDetails() {
     };
 
     return (
-        <div id='Contact_ID' >
-            <Box className='ContactWrapper' >
+        <div id='Contact_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
+            <Box className='ContactWrapper'  >
                 <TabHeader Children={'Contact Details'} Animation={'ContactHeader'} />
                 <Grid container spacing={4}>
                     <Grid item lg={6} sm={12}>

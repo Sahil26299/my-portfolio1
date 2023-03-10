@@ -51,5 +51,6 @@ export const Images = {
     MPulseImage12 : require('../Assets/Images/Mpulse/Mpulse12.jpg'),
     MPulseImage13 : require('../Assets/Images/Mpulse/Mpulse13.mp4'),
     MPulseImage14 : require('../Assets/Images/Mpulse/Mpulse14.mp4'),
-
+    DeveloperCoverPhoto : require('../Assets/Images/developer_background.jpg'),
+    PortfolioCoverPhoto : require('../Assets/Images/portfolio_cover_photo.jpg')
 }

@@ -28,7 +28,7 @@ export default function ShowcaseCarousel(props) {
         slidesToScroll: props.ImageArray.length,
         autoplay: true,
         autoplaySpeed: 0,
-        pauseOnHover: false,
+        pauseOnHover: true,
         initialSlide: 0,
         cssEase: "linear",
         
@@ -37,7 +37,7 @@ export default function ShowcaseCarousel(props) {
                 breakpoint: 1400,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: props.SlidesToShow ? props.SlidesToShow-1 : 3,
                     infinite: true,
                     speed: 10000,
                 }

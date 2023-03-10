@@ -1,45 +1,54 @@
-*{
-    padding:0;
-    margin:0
-}
-.Wrapper{
-    display: flex;
-    overflow: auto;
-}
-.sideNav{
-    /* background-color: red; */
-    width: 16vw;
-    /* height:100vh; */
-    /* overflow: hidden; */
-}
-.StickyWrapper{
-    position: sticky;
-    top: 0px;;
-    left: 0px;
-}
-.ContentBody{
-    /* background-color: yellow; */
-    width: 85vw;
-    height:100vh;
+* {
+    padding: 0;
+    margin: 0
 }
 
-.navListContainer{
-    margin-top: 1vw;
-    padding-left: 10px;
+.Wrapper {
+    /* overflow: auto; */
 }
-.navListContainer div{
-    margin-top: 10px;
+
+.sideNav {
+    display: flex;
+    flex-direction: row;
+
 }
-.navListContainer li{
+
+.StickyWrapper {
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+
+.ContentBody {
+    /* background-color: yellow; */
+    /* width: 85vw; */
+    height: 100vh;
+}
+
+.navListContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    padding:0px
+}
+
+.navListContainer div {
+    align-items: center;
+    background-color: red;
+}
+
+.navListContainer li {
     list-style-type: none;
-    margin: 12% 0px;
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
     display: flex;
-    position: relative;  
+    position: relative;
+    justify-content: center;
 }
-.navListContainer li:after{
+
+.navListContainer li:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -51,68 +60,84 @@
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
-.navListContainer li:hover:after{
+
+.navListContainer li:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.navListContainer li p{
+.navListContainer li p {
     margin-left: 10px;
 }
 
-.ProfilePicStyle1{
-    height:5vw;
-    width:5vw;
+.ProfilePicStyle1 {
+    height: 5vw;
+    width: 5vw;
     object-fit: cover;
     border-radius: 100%;
     margin: 3vh;
 }
-.ProfilePicStyle2{
-    height:5vw;
-    width:5vw;
+
+.ProfilePicStyle2 {
+    height: 5vw;
+    width: 5vw;
     object-fit: cover;
     border-radius: 100%;
     margin: 3vh;
 }
-.HorizontalLine{
-    width:100%;
+
+.HorizontalLine {
+    width: 100%;
     align-self: flex-start;
     background-color: orange;
     height: 1px;
     border: none;
 }
-.ContentBody{
-    padding: 3vw 5vw;
+
+.ContentBody {
+    /* padding: 3vw 5vw; */
 }
-.ThemeSwitchBtn{
+
+.ThemeSwitchBtn {
     background-color: transparent;
     border: none;
 }
-.ProfileContainer{
+
+.ProfileContainer {
     /* box-shadow: 2px 10px 15px 3px rgba(255, 166, 0, 0.25); */
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     background: linear-gradient(-10deg, orange, orange, rgb(255, 255, 0));
     padding: 2vh 0px;
-    width:100%
-
+    width: 100%
 }
-.ProfileDetails{
+
+.ProfileDetails {
     font-size: 16px;
     margin-left: 10%;
 }
-.Icon{
+
+.Icon {
     margin-right: 5px;
-    
+
 }
-.CardImageStyle{
+
+.CardImageStyle {
     height: 150px;
     width: 100%;
     object-fit: contain;
 }
-.ShowHideNavbar{
-    border:none;
+
+.ShowHideNavbar {
+    border: none;
 }
-.CollapseSideBarDiv{
-    padding:0px 10px;
+
+.CollapseSideBarDiv {
+    padding: 0px 10px;
+}
+.AppHeader{
+    transition: color 0.25s ease;
+}
+.AppHeader:hover{
+    color:orange
 }
