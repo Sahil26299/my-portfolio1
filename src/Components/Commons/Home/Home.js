@@ -36,27 +36,27 @@ export default function Home(props) {
             </div>
             <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop:'7%', marginLeft:'5%' }}>
                 <div className="IntroWrapper">
-                    <div className="heading1" style={{ color: Colors.newVar.TXTColor }}>
-                        <span >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
+                    <div className="heading1" >
+                        <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
                     </div>
-                    <div className="heading1" style={{ color: Colors.newVar.TXTColor }}>
-                        <span>I am <span style={{color:'orange'}} >{FIRST_NAME} {LAST_NAME}</span></span> 
+                    <div className="heading1" >
+                        <span style={{ color: Colors.newVar.TXTColor }} >I am <span style={{color:'orange'}} >{FIRST_NAME} {LAST_NAME}</span></span> 
                     </div><br />
-                    <div>
-                        <span className="heading2" style={{ color: Colors.newVar.TXTColor }}>
+                    <div style={{marginLeft:7}} >
+                        {/* <span className="heading2" style={{ color: Colors.newVar.TXTColor }}>
                             Experienced React Developer,
                             with strong grip on React Native, proficient in programming including good grasp in data structure and algorithms.
-                        </span><br />
+                        </span><br /> */}
+                        <Typewriter
+                        
+                            options={{
+                                strings: ['Software Engineer', 'React Js. Developer', 'React Native Developer', ''],
+                                autoStart: true,
+                                loop: true,
+
+                            }}
+                        />
                     </div>
-                    <Typewriter
-
-                        options={{
-                            strings: ['Hello', 'World'],
-                            autoStart: true,
-                            loop: true,
-
-                        }}
-                    />
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
                         <Button BtnStyle={{ height: 50, width: 120, marginTop: 25, marginRight: 15 }} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
                         <a href={require('../../../Assets/DownloadFiles/Resume_Sahil.pdf')} download={'Resume_Sahil'} className={'ResumeDownloadLink'} >
@@ -64,9 +64,9 @@ export default function Home(props) {
                         </a>
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <img src={Images.SmileyEmoji} className='SmileyImage' />
-                </div>
+                </div> */}
             </div>
 
             <Grid className='CardContainer' container spacing={10} marginTop={5} marginBottom={10} >

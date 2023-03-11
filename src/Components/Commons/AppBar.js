@@ -14,32 +14,27 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Images } from '../../Utils/Images';
 import { ColorSchema } from '../../Utils/Context/ColorThemes';
+import { LightMode, DarkMode } from '@mui/icons-material';
+const pages = ['Home', 'Profile', 'Services', 'Extra Curricular', 'Contact'];
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
-
-function ResponsiveAppBar() {
+function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const Colors = React.useContext(ColorSchema)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+
+  const HandleSwitchTheme = () => {
+    Colors.setisDarkMode(!Colors.isDarkMode)
+  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
-    <AppBar position="sticky" style={{backgroundColor:Colors.newVar.BGColor}} >
+    <AppBar position="sticky" style={{ backgroundColor: Colors.newVar.BGColor }} >
       <Container maxWidth="xl" >
         <Toolbar disableGutters >
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -55,7 +50,7 @@ function ResponsiveAppBar() {
               display: { xs: 'none', md: 'flex' },
               fontWeight: 700,
               letterSpacing: '.2rem',
-              color: 'inherit',
+              color: Colors.newVar.TXTColor,
               textDecoration: 'none',
             }}
           >
@@ -110,18 +105,18 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: Colors.newVar.TXTColor,
               textDecoration: 'none',
             }}
           >
-            LOGO
+            PORTFOLIO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page} 
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: Colors.newVar.TXTColor, display: 'block', mx: 1 }}
               >
                 {page}
               </Button>
@@ -129,33 +124,20 @@ function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src={Images.ProfilePicture} />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
+              <Tooltip title={Colors.isDarkMode ? "Dark Theme" : "Light Theme"} >
+                <IconButton onClick={HandleSwitchTheme} sx={{ p: 0, mx: 3 }}>
+                  {Colors.isDarkMode ? 
+                  <DarkMode color='dark' fontSize='large' htmlColor='orange' /> :
+                  <LightMode color='light' fontSize='large' htmlColor='orange' />}
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Hello! 😄">
+                <IconButton onClick={null} sx={{ p: 0 }}>
+                  <Avatar alt="Remy Sharp" src={Images.ProfilePicture} />
+                </IconButton>
+              </Tooltip>
+            </div>
           </Box>
         </Toolbar>
       </Container>

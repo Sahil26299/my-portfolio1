@@ -156,7 +156,7 @@ const LandingScreen = () => {
 
   return (
     <div className='Container' style={{ backgroundColor: Colors.newVar.BGColor }} >
-      <ResponsiveAppBar/>
+      <ResponsiveAppBar />
       <div
         onScroll={(e) => handleScroll(e.target)}
         className='Wrapper'>
