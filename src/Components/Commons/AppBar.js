@@ -15,6 +15,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Images } from '../../Utils/Images';
 import { ColorSchema } from '../../Utils/Context/ColorThemes';
 import { LightMode, DarkMode } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+
 const pages = ['Home', 'Profile', 'Services', 'Extra Curricular', 'Contact'];
 
 function ResponsiveAppBar(props) {
@@ -93,12 +95,13 @@ function ResponsiveAppBar(props) {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
             component="a"
             href=""
+            className="AppHeader"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -114,7 +117,10 @@ function ResponsiveAppBar(props) {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+              className='NavigationButtons'
                 key={page} 
+                component={Link}
+                to={'/introduction'}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: Colors.newVar.TXTColor, display: 'block', mx: 1 }}
               >

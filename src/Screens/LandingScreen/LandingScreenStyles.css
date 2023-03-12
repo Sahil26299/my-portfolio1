@@ -135,9 +135,18 @@
 .CollapseSideBarDiv {
     padding: 0px 10px;
 }
+
+
+/* Top Navigation Bar */
 .AppHeader{
     transition: color 0.25s ease;
 }
 .AppHeader:hover{
     color:orange
+}
+.NavigationButtons{
+    transition: color 0.25s ease;
+}
+.NavigationButtons:hover{
+    color: orange;
 }

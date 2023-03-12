@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Images } from '../../../Utils/Images'
 import './Home.css'
 import Button from '../Button'
@@ -7,7 +7,7 @@ import Cards from '../Cards'
 import ShowcaseCarousel from '../ShowcaseCarousel';
 import { Grid } from '@mui/material'
 import { FIRST_NAME, INTRODUCTION_LINE, LAST_NAME } from '../../../Utils/Constants'
-import Typewriter from 'typewriter-effect';
+import { useTypewriter } from 'react-simple-typewriter'
 
 const ImagesArray = [Images.TaralShowcase1,
 Images.TaralShowcase2,
@@ -27,6 +27,14 @@ Images.TaralShowcase15]
 export default function Home(props) {
 
     const Colors = useContext(ColorSchema);
+    const [text] = useTypewriter({
+        words: ['Software Engineer', 'Front-End Developer', 'React Js.', 'React Native', 'Redux'],
+        loop: 0,
+        typeSpeed: 100,
+        deleteSpeed: 50,
+        delaySpeed: 2000
+    })
+
     return (
         <div className='WrapperHome' id='Home_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
             <div className='CoverPhoto' >
@@ -34,28 +42,21 @@ export default function Home(props) {
                     <img src={Images.ProfilePicture} className='ProfilePict' />
                 </div>
             </div>
-            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop:'7%', marginLeft:'5%' }}>
+            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '7%', marginLeft: '5%' }}>
                 <div className="IntroWrapper">
                     <div className="heading1" >
                         <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
                     </div>
                     <div className="heading1" >
-                        <span style={{ color: Colors.newVar.TXTColor }} >I am <span style={{color:'orange'}} >{FIRST_NAME} {LAST_NAME}</span></span> 
+                        <span style={{ color: Colors.newVar.TXTColor }} >I am <span style={{ color: 'orange' }} >{FIRST_NAME} {LAST_NAME}</span></span>
                     </div><br />
-                    <div style={{marginLeft:7}} >
+                    <div style={{ marginLeft: 7, display: 'inline-block' }} >
                         {/* <span className="heading2" style={{ color: Colors.newVar.TXTColor }}>
                             Experienced React Developer,
                             with strong grip on React Native, proficient in programming including good grasp in data structure and algorithms.
                         </span><br /> */}
-                        <Typewriter
-                        
-                            options={{
-                                strings: ['Software Engineer', 'React Js. Developer', 'React Native Developer', ''],
-                                autoStart: true,
-                                loop: true,
+                        <p class="typewriter">{text}<span className='Cursor'>|</span></p>
 
-                            }}
-                        />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
                         <Button BtnStyle={{ height: 50, width: 120, marginTop: 25, marginRight: 15 }} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />

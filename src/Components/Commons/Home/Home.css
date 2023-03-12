@@ -1,47 +1,55 @@
-.WrapperHome{
+.WrapperHome {
     /* margin: 2vw 5vw; */
 }
-.IntroWrapper{
+
+.IntroWrapper {
     /* border: 1px solid rgba(255, 166, 0, 0.3); */
     border-radius: 5px;
     padding: 10px;
     /* width: 50vw; */
 }
-.heading1{
+
+.heading1 {
     display: flex;
     flex-direction: row;
     font-size: 26px;
     line-height: 28px;
 }
 
-.heading1 p{
+.heading1 p {
     font-size: 30px;
 }
-.heading1 span{
+
+.heading1 span {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 3px;
 }
-.heading2{
+
+.heading2 {
     font-size: 0.9rem;
 }
 
-.headingProject{
-    font-size: 1.5vw; 
+.headingProject {
+    font-size: 1.5vw;
     margin-top: 10px;
 }
-.AllCardsWrapper{
+
+.AllCardsWrapper {
     margin: 10% 0px;
 }
-.IntroWrapper span{
+
+.IntroWrapper span {
     color: #fff;
 }
-.ContactMeBtn{
+
+.ContactMeBtn {
     background-color: orange;
     border: none;
     margin-top: 10px;
 }
-.OrangeButton{
+
+.OrangeButton {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -52,12 +60,14 @@
     font-size: 14px;
     transition: transform 0.2s linear;
 }
-.OrangeButton:hover{
+
+.OrangeButton:hover {
     transform: scale(1.05);
 }
-.SmileyImage{
-    height:75px;
-    width:10vw;
+
+.SmileyImage {
+    height: 75px;
+    width: 10vw;
     object-fit: contain;
     transform: rotate(-15deg);
     animation-name: smiley;
@@ -65,116 +75,179 @@
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-.HomeCarouselImage{
-    height:400px;
+
+.HomeCarouselImage {
+    height: 400px;
     width: 60vw;
     object-fit: contain;
 }
-.carouselVideo{
-    height:60vh;
+
+.carouselVideo {
+    height: 60vh;
     width: 60vw;
     object-fit: contain;
 }
-.HomeCarouselWrapper{
+
+.HomeCarouselWrapper {
     margin-top: 25px;
     width: 70vw;
 }
 
-@keyframes smiley{
-    from {transform: rotate(-15deg);}
-    to{transform: rotate(15deg);}
+@keyframes smiley {
+    from {
+        transform: rotate(-15deg);
+    }
+
+    to {
+        transform: rotate(15deg);
+    }
 }
-.card-Title{
+
+.card-Title {
     font-weight: 800;
     font-size: 16px;
 }
-.card-Content{
+
+.card-Content {
     font-weight: 400;
-    font-size: 14px; 
+    font-size: 14px;
 }
-.card-Btn{
-}
-.d-flex{
+
+.card-Btn {}
+
+.d-flex {
     justify-content: space-around;
     align-self: flex-start;
 }
-.Card1Description{
+
+.Card1Description {
     width: 25rem;
     text-align: end;
 }
-.Card2Description{
+
+.Card2Description {
     width: 25rem;
     text-align: end;
 }
-.Card3Description{
+
+.Card3Description {
     width: 25rem;
     text-align: end;
 }
-.ResumeDownloadLink{
+
+.ResumeDownloadLink {
     text-decoration: none;
 }
 
-.animate__animated.animate__bounceIn{
+.animate__animated.animate__bounceIn {
     --animate-duration: 1.5s;
 }
-.CardWrapper1{
+
+.CardWrapper1 {
     transform: translate(0px, -5px);
     animation-name: cardFloating;
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-@keyframes cardFloating{
-    from {transform: translate(0px, -5px);}
-    to{transform: translate(0px, 5px);}
+
+@keyframes cardFloating {
+    from {
+        transform: translate(0px, -5px);
+    }
+
+    to {
+        transform: translate(0px, 5px);
+    }
 }
-.CardWrapper3{
+
+.CardWrapper3 {
     transform: translate(0px, -3px);
     animation-name: card3Floating;
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-@keyframes card3Floating{
-    from {transform: translate(0px, -3px);}
-    to{transform: translate(0px, 8px);}
+
+@keyframes card3Floating {
+    from {
+        transform: translate(0px, -3px);
+    }
+
+    to {
+        transform: translate(0px, 8px);
+    }
 }
-.CardWrapper2{
+
+.CardWrapper2 {
     transform: translate(0px, 8px);
     animation-name: card2Floating;
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-@keyframes card2Floating{
-    from {transform: translate(0px, 8px);}
-    to{transform: translate(0px, -8px);}
+
+@keyframes card2Floating {
+    from {
+        transform: translate(0px, 8px);
+    }
+
+    to {
+        transform: translate(0px, -8px);
+    }
 }
+
 /* borderRadius:25, borderWidth:0, */
-.CoverPhoto{
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('../../../Assets/Images/portfolio_cover_photo.jpg');
-    height:50vh;
-    width:100%;
+.CoverPhoto {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url('../../../Assets/Images/portfolio_cover_photo.jpg');
+    height: 50vh;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-     padding-left: 3%;
-     padding-bottom: 3%;
-     position: relative;
+    padding-left: 3%;
+    padding-bottom: 3%;
+    position: relative;
 }
-.CardContainer{
+
+.CardContainer {
     padding: 3vh 5vw;
 }
-.ProfilePict{
+
+.ProfilePict {
     height: 150px;
-    width:150px;
+    width: 150px;
     object-fit: cover;
     border-radius: 100%;
-    border:3px solid white;
+    border: 3px solid white;
     position: absolute;
-    left:5%;
-    bottom:-75px
+    left: 5%;
+    bottom: -75px
 }
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    color: orange;
+    font-size: 2em;
+    white-space: nowrap;
+    min-height: 1.5em;
+    vertical-align: bottom;
+    /* border-right: .075em solid orange; */
+    /* animation: typing 2s steps(40, end),
+             blink-caret .75s step-end infinite; */
+  }
+  .Cursor{
+    height: 1.5em;
+    font-size: 1em;
+    font-weight: 300;
+    animation: blink-caret .75s step-end infinite
+  }
+  @keyframes blink-caret {
+    from, to { opacity: 0 }
+    50% { opacity: 1 }
+  }
+  
