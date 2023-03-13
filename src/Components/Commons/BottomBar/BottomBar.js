@@ -6,7 +6,7 @@ import './BottomBar.css'
 export default function BottomBar() {
     const Colors = useContext(ColorSchema)
     return (
-        <div style={{ width: '100%', backgroundColor: '#000', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: '5%', height: 60, paddingRight:'2%', paddingLeft:'2%' }} >
+        <div style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: '5%', height: 60, paddingRight:'2%', paddingLeft:'2%' }} >
             <span style={{ fontSize: 16, color: '#fff' }} >
                 Designed and Developed by Sahil Lokhande
             </span>
