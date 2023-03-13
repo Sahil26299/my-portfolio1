@@ -8,7 +8,8 @@ import ShowcaseCarousel from '../ShowcaseCarousel';
 import { Grid } from '@mui/material'
 import { FIRST_NAME, INTRODUCTION_LINE, LAST_NAME } from '../../../Utils/Constants'
 import { useTypewriter } from 'react-simple-typewriter'
-
+import { Call, Mail, LinkedIn, GitHub } from '@mui/icons-material';
+import BottomBar from '../BottomBar/BottomBar'
 const ImagesArray = [Images.TaralShowcase1,
 Images.TaralShowcase2,
 Images.TaralShowcase3,
@@ -42,7 +43,21 @@ export default function Home(props) {
                     <img src={Images.ProfilePicture} className='ProfilePict' />
                 </div>
             </div>
-            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '7%', marginLeft: '5%' }}>
+            <div style={{flexDirection:'row', alignItems:'center', display:'flex', justifyContent:'flex-end', marginRight:'5%', marginTop:'1%'}} >
+                <a href="" className={'socialIcons'}>
+                    <Call className='CallIcon' />
+                </a>
+                <a href="mailto:sahillokhande94@gmail.com" className={'socialIcons'}>
+                    <Mail className='MailIcon' />
+                </a>
+                <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'socialIcons'}>
+                    <LinkedIn className='MailIcon' />
+                </a>
+                <a href="https://github.com/Sahil26299" target={'_blank'} className={'socialIcons'}>
+                    <GitHub className='MailIcon' />
+                </a>
+            </div>
+            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft: '5%' }}>
                 <div className="IntroWrapper">
                     <div className="heading1" >
                         <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
@@ -99,9 +114,10 @@ export default function Home(props) {
                     ImageStyleName={'HomeCarouselImage'}
                     CarouselWrapperStyle={'HomeCarouselWrapper'}
                     ImageArray={ImagesArray}
-                    SlidesToShow={5}
+                    SlidesToShow={6}
                 />
             </div>
+            <BottomBar/>
         </div>
     )
 }

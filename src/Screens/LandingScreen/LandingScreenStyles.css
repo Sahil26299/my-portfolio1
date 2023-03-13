@@ -3,9 +3,6 @@
     margin: 0
 }
 
-.Wrapper {
-    /* overflow: auto; */
-}
 
 .sideNav {
     display: flex;
@@ -17,12 +14,6 @@
     position: sticky;
     top: 0px;
     z-index: 2;
-}
-
-.ContentBody {
-    /* background-color: yellow; */
-    /* width: 85vw; */
-    /* height: 100vh; */
 }
 
 .navListContainer {
@@ -94,9 +85,6 @@
     border: none;
 }
 
-.ContentBody {
-    /* padding: 3vw 5vw; */
-}
 
 .ThemeSwitchBtn {
     background-color: transparent;

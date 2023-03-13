@@ -1,5 +1,6 @@
-.WrapperHome {
-    /* margin: 2vw 5vw; */
+.WrapperHome{
+    display: flex;
+    flex-direction: column;
 }
 
 .IntroWrapper {
@@ -90,7 +91,10 @@
 
 .HomeCarouselWrapper {
     margin-top: 25px;
-    width: 70vw;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 }
 
 @keyframes smiley {
@@ -112,8 +116,6 @@
     font-weight: 400;
     font-size: 14px;
 }
-
-.card-Btn {}
 
 .d-flex {
     justify-content: space-around;
@@ -232,7 +234,8 @@
     display: inline-block;
     overflow: hidden;
     color: orange;
-    font-size: 2em;
+    font-size: 26px;
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     white-space: nowrap;
     min-height: 1.5em;
     vertical-align: bottom;
@@ -250,4 +253,22 @@
     from, to { opacity: 0 }
     50% { opacity: 1 }
   }
+  .socialIcons{
+    font-size: 30px;
+    margin-right: 1em;
+    background-color: orange;
+    height:50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #000;
+    transition: background-color 0.25s ease-in-out;
+}
+.socialIcons:hover{
+    color: #fff;
+    background-color: rgba(255, 166, 0, 0);
+    border: 2px solid orange;
+}
   
