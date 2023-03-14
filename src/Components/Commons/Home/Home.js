@@ -66,10 +66,7 @@ export default function Home(props) {
                         <span style={{ color: Colors.newVar.TXTColor }} >I am<span style={{ color: 'orange' }} >{FIRST_NAME} {LAST_NAME}</span></span>
                     </div><br />
                     <div style={{ marginLeft: 7, display: 'inline-block' }} >
-                        {/* <span className="heading2" style={{ color: Colors.newVar.TXTColor }}>
-                            Experienced React Developer,
-                            with strong grip on React Native, proficient in programming including good grasp in data structure and algorithms.
-                        </span><br /> */}
+                       
                         <p class="typewriter">{text}<span className='Cursor' style={{color:'orange'}} >|</span></p>
 
                     </div>
