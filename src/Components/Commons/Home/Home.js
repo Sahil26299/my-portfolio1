@@ -26,7 +26,10 @@ Images.TaralShowcase13,
 Images.TaralShowcase14,
 Images.TaralShowcase15]
 export default function Home(props) {
-
+    const [windowSize, setWindowSize] = useState([
+        window.innerWidth,
+        window.innerHeight,
+      ]);
     const Colors = useContext(ColorSchema);
     const [text] = useTypewriter({
         words: ['Software Engineer', 'Front-End Developer', 'React Js.', 'React Native', 'Redux'],
@@ -35,6 +38,24 @@ export default function Home(props) {
         deleteSpeed: 50,
         delaySpeed: 2000
     })
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+          setWindowSize([window.innerWidth, window.innerHeight]);
+        //   console.log(window.innerWidth,'window.innerWidth')
+        };
+        // console.log(window.innerWidth)
+    
+        window.addEventListener('resize', handleWindowResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleWindowResize);
+        };
+      });
+
+      const ScreenWidth = React.useMemo(()=>{
+        return window.innerWidth
+      },[window.innerWidth])
 
     return (
         <div className='WrapperHome' id='Home_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
@@ -63,17 +84,17 @@ export default function Home(props) {
                         <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
                     </div>
                     <div className="heading1" >
-                        <span style={{ color: Colors.newVar.TXTColor }} >I am<span style={{ color: 'orange' }} >{FIRST_NAME} {LAST_NAME}</span></span>
+                        <span style={{ color: Colors.newVar.TXTColor }} >I am<span style={{ color: 'orange' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
                     </div><br />
-                    <div style={{ marginLeft: 7, display: 'inline-block' }} >
+                    <div style={{ display: 'inline-block' }} >
                        
                         <p class="typewriter">{text}<span className='Cursor' style={{color:'orange'}} >|</span></p>
 
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
-                        <Button BtnStyle={{ height: 50, width: 120, marginTop: 25, marginRight: 15 }} BtnContent={'Contact Me'} onClick={props.ContactMeClicked} />
+                        <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25, marginRight: 15 }} BtnContent={'Contact Me'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} onClick={props.ContactMeClicked} />
                         <a href={require('../../../Assets/DownloadFiles/Resume_Sahil.pdf')} download={'Resume_Sahil'} className={'ResumeDownloadLink'} >
-                            <Button BtnStyle={{ height: 50, width: 120, marginTop: 25 }} BtnContent={'Download CV'} />
+                            <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} />
                         </a>
                     </div>
                 </div>
@@ -82,14 +103,14 @@ export default function Home(props) {
                 </div> */}
             </div>
 
-            <Grid className='CardContainer' container spacing={10} marginTop={5} marginBottom={10} >
-                <Grid item lg={4} md={12} >
+            <Grid className='CardContainer' container justifyContent={'center'} spacing={10} marginTop={5} marginBottom={10} >
+                <Grid item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper1'} ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap | Material UI'} CardBtnContent={'Know More'} />
                 </Grid>
-                <Grid item lg={4} md={12} >
+                <Grid item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper2'} ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React {}'} CardContent={'React Js. | React Native | Redux '} CardBtnContent={'Know More'} />
                 </Grid>
-                <Grid item lg={4} md={12} >
+                <Grid item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper3'} ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
                 </Grid>
             </Grid>

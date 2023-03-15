@@ -1,4 +1,4 @@
-.WrapperHome{
+.WrapperHome {
     display: flex;
     flex-direction: column;
 }
@@ -21,7 +21,7 @@
     font-size: 30px;
 }
 
-.heading1 span {
+#FullNameHome {
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 3px;
@@ -242,22 +242,32 @@
     /* border-right: .075em solid orange; */
     /* animation: typing 2s steps(40, end),
              blink-caret .75s step-end infinite; */
-  }
-  .Cursor{
+}
+
+.Cursor {
     height: 1.5em;
     font-size: 1em;
     font-weight: 300;
     animation: blink-caret .75s step-end infinite
-  }
-  @keyframes blink-caret {
-    from, to { opacity: 0 }
-    50% { opacity: 1 }
-  }
-  .socialIcons{
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+.socialIcons {
     font-size: 30px;
     margin-right: 1em;
     background-color: orange;
-    height:50px;
+    height: 50px;
     width: 50px;
     display: flex;
     align-items: center;
@@ -266,9 +276,48 @@
     color: #000;
     transition: background-color 0.25s ease-in-out;
 }
-.socialIcons:hover{
+
+.socialIcons:hover {
     color: #fff;
     background-color: rgba(255, 166, 0, 0);
     border: 2px solid orange;
 }
-  
+
+@media only screen and (max-width:650px) {
+    .socialIcons {
+        height: 40px;
+        width: 40px;
+        margin-right: 0.5em;
+    }
+    .CoverPhoto{
+        height: 30vh;
+        width: 100%;
+        background-size: cover;
+    }
+    .ProfilePict {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+        border: 2px solid white;
+        position: absolute;
+        left: 5%;
+        bottom: -50px
+    }
+    .heading1 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    
+    .heading1 p {
+        font-size: 24px;
+    }
+    .typewriter {
+        font-size: 20px;
+        min-height: 0.5em;
+    }
+}
+
+@media only screen and (max-width:450px){
+
+}

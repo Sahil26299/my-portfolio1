@@ -28,7 +28,27 @@ const pages = [{name:'Home', route:'/'}, {name:'Profile', route:'/introduction'}
 function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [SelectedTab, setSelectedTab] = React.useState('Home')
-  const Colors = React.useContext(ColorSchema)
+  const Colors = React.useContext(ColorSchema);
+
+  const [windowSize, setWindowSize] = React.useState([
+    window.innerWidth,
+    window.innerHeight,
+  ]);
+
+  React.useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize([window.innerWidth, window.innerHeight]);
+      // console.log(window.innerWidth,'window.innerWidth')
+    };
+    // console.log(window.innerWidth)
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -77,7 +97,7 @@ function ResponsiveAppBar(props) {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon />
+                <MenuIcon color={Colors.newVar.TXTColor} />
               </IconButton>
               <Menu
                 id="menu-appbar"
