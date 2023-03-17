@@ -138,3 +138,9 @@
 .NavigationButtons:hover{
     color: orange;
 }
+
+@media only screen and (max-width:450px){
+    .AppHeader{
+        font-size: 20px !important;
+    }
+}

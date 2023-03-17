@@ -4,27 +4,41 @@ import { Call, Mail, LinkedIn, GitHub } from '@mui/icons-material';
 import './BottomBar.css'
 
 export default function BottomBar() {
-    const Colors = useContext(ColorSchema)
+    const Colors = useContext(ColorSchema);
+    React.useEffect(() => {
+        const handleWindowResize = () => {
+        };
+    
+        window.addEventListener('resize', handleWindowResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleWindowResize);
+        };
+      });
+
+      const ScreenWidth = React.useMemo(()=>{
+        return window.innerWidth
+      },[window.innerWidth])
     return (
-        <div style={{ width: '100%', backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: '5%', height: 60, paddingRight:'2%', paddingLeft:'2%' }} >
-            <span style={{ fontSize: 16, color: '#fff' }} >
+        <div className='BottomBarWrapper' >
+            <span style={{ fontSize: ScreenWidth<350 ? 12 : ScreenWidth<850 ? 14 : ScreenWidth<1000 ? 14 : 16, color: '#fff', }} >
                 Designed and Developed by Sahil Lokhande
             </span>
-            <span style={{ fontSize: 16, color: '#fff' }} >
+            <span style={{ fontSize: ScreenWidth<350 ? 12 : ScreenWidth<850 ? 14 : ScreenWidth<1000 ? 14 : 16, color: '#fff', marginTop: ScreenWidth<850 && 10 }} >
                 Copyright &copy; 2023 Sahil Lokhande
             </span>
-            <div style={{ flexDirection: 'row', alignItems: 'center', display: 'flex', justifyContent: 'flex-end'}} >
+            <div style={{ flexDirection: 'row', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', marginTop: ScreenWidth<850 && 15}} >
                 <a href="" className={'socialIconsCopy'}>
-                    <Call className='CallIcon' />
+                    <Call className='CallIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={'socialIconsCopy'}>
-                    <Mail className='MailIcon' />
+                    <Mail className='MailIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'socialIconsCopy'}>
-                    <LinkedIn className='MailIcon' />
+                    <LinkedIn className='MailIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
                 <a href="https://github.com/Sahil26299" target={'_blank'} className={'socialIconsCopy'}>
-                    <GitHub className='MailIcon' />
+                    <GitHub className='MailIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
             </div>
         </div>

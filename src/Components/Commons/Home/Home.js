@@ -26,10 +26,6 @@ Images.TaralShowcase13,
 Images.TaralShowcase14,
 Images.TaralShowcase15]
 export default function Home(props) {
-    const [windowSize, setWindowSize] = useState([
-        window.innerWidth,
-        window.innerHeight,
-      ]);
     const Colors = useContext(ColorSchema);
     const [text] = useTypewriter({
         words: ['Software Engineer', 'Front-End Developer', 'React Js.', 'React Native', 'Redux'],
@@ -41,7 +37,7 @@ export default function Home(props) {
 
     useEffect(() => {
         const handleWindowResize = () => {
-          setWindowSize([window.innerWidth, window.innerHeight]);
+        //   setWindowSize([window.innerWidth, window.innerHeight]);
         //   console.log(window.innerWidth,'window.innerWidth')
         };
         // console.log(window.innerWidth)
@@ -64,21 +60,21 @@ export default function Home(props) {
                     <img src={Images.ProfilePicture} className='ProfilePict' />
                 </div>
             </div>
-            <div style={{flexDirection:'row', alignItems:'center', display:'flex', justifyContent:'flex-end', marginRight:'5%', marginTop:'1%'}} >
+            <div style={{flexDirection:'row', alignItems:'center', display:'flex', justifyContent:'flex-end', marginRight: ScreenWidth<450 ? '2%' : '5%', marginTop: ScreenWidth<450 ? '2%' : '1%'}} >
                 <a href="" className={'socialIcons'}>
-                    <Call className='CallIcon' />
+                    <Call className='CallIcon' style={{fontSize: ScreenWidth<450 && 18}} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={'socialIcons'}>
-                    <Mail className='MailIcon' />
+                    <Mail className='MailIcon' style={{fontSize: ScreenWidth<450 && 18}} />
                 </a>
                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'socialIcons'}>
-                    <LinkedIn className='MailIcon' />
+                    <LinkedIn className='MailIcon' style={{fontSize: ScreenWidth<450 && 18}} />
                 </a>
                 <a href="https://github.com/Sahil26299" target={'_blank'} className={'socialIcons'}>
-                    <GitHub className='MailIcon' />
+                    <GitHub className='MailIcon' style={{fontSize: ScreenWidth<450 && 18}} />
                 </a>
             </div>
-            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft: '5%' }}>
+            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft:'5%' }}>
                 <div className="IntroWrapper">
                     <div className="heading1" >
                         <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
@@ -133,6 +129,7 @@ export default function Home(props) {
                     CarouselWrapperStyle={'HomeCarouselWrapper'}
                     ImageArray={ImagesArray}
                     SlidesToShow={6}
+                    Speed = {30000}
                 />
             </div>
             <BottomBar/>

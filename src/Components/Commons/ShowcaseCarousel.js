@@ -36,27 +36,35 @@ export default function ShowcaseCarousel(props) {
             {
                 breakpoint: 1400,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: props.SlidesToShow ? props.SlidesToShow-1 : 3,
+                    slidesToShow: props.SlidesToShow ? props.SlidesToShow-2 : 3,
+                    slidesToScroll: props.ImageArray.length,
                     infinite: true,
-                    speed: 10000,
+                    speed: props.Speed ? props.Speed : 10000,
                 }
             },
             {
                 breakpoint: 1000,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow:props.SlidesToShow ? props.SlidesToShow-3 : 2,
+                    slidesToScroll: props.ImageArray.length,
                     initialSlide: 0,
-                    speed: 5000,
+                    speed: props.Speed ? props.Speed : 5000,
                 }
             },
             {
                 breakpoint: 700,
                 settings: {
+                    slidesToShow: props.SlidesToShow ? props.SlidesToShow-4 : 1,
+                    slidesToScroll: props.ImageArray.length,
+                    speed: props.Speed ? props.Speed-5000 : 5000,
+                }
+            },
+            {
+                breakpoint: 450,
+                settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
-                    speed: 5000,
+                    slidesToScroll: props.ImageArray.length,
+                    speed: props.Speed ? props.Speed-5000 : 5000,
                 }
             }
         ]

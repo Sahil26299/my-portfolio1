@@ -37,8 +37,8 @@ function ResponsiveAppBar(props) {
 
   React.useEffect(() => {
     const handleWindowResize = () => {
-      setWindowSize([window.innerWidth, window.innerHeight]);
-      // console.log(window.innerWidth,'window.innerWidth')
+    //   setWindowSize([window.innerWidth, window.innerHeight]);
+    //   console.log(window.innerWidth,'window.innerWidth')
     };
     // console.log(window.innerWidth)
 
@@ -48,6 +48,10 @@ function ResponsiveAppBar(props) {
       window.removeEventListener('resize', handleWindowResize);
     };
   });
+
+  const ScreenWidth = React.useMemo(()=>{
+    return window.innerWidth
+  },[window.innerWidth])
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -97,7 +101,7 @@ function ResponsiveAppBar(props) {
                 onClick={handleOpenNavMenu}
                 color="inherit"
               >
-                <MenuIcon color={Colors.newVar.TXTColor} />
+                <MenuIcon style={{color:Colors.newVar.TXTColor}} />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -136,7 +140,7 @@ function ResponsiveAppBar(props) {
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
                 fontWeight: 700,
-                letterSpacing: '.3rem',
+                letterSpacing: ScreenWidth<450 ? '.2rem' : '.3rem',
                 color: Colors.newVar.TXTColor,
                 textDecoration: 'none',
               }}
@@ -161,15 +165,15 @@ function ResponsiveAppBar(props) {
             <Box sx={{ flexGrow: 0 }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
                 <Tooltip title={Colors.isDarkMode ? "Dark Theme" : "Light Theme"} >
-                  <IconButton onClick={HandleSwitchTheme} sx={{ p: 0, mx: 3 }}>
+                  <IconButton onClick={HandleSwitchTheme} sx={{ p: 0, mx: ScreenWidth<450 ? 2 : 3 }}>
                     {Colors.isDarkMode ? 
-                    <DarkMode color='dark' fontSize='large' htmlColor='orange' /> :
-                    <LightMode color='light' fontSize='large' htmlColor='orange' />}
+                    <DarkMode color='dark' fontSize={ScreenWidth<450 ? 'medium' : 'large'} htmlColor='orange' /> :
+                    <LightMode color='light' fontSize={ScreenWidth<450 ? 'medium' : 'large'} htmlColor='orange' />}
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Hello! 😄">
                   <IconButton onClick={null} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src={Images.ProfilePicture} />
+                    <Avatar alt="Remy Sharp" src={Images.ProfilePicture} style={{height: ScreenWidth<450 && 25, width: ScreenWidth<450 && 25}} />
                   </IconButton>
                 </Tooltip>
               </div>
