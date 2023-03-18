@@ -7,9 +7,11 @@ import Cards from '../Cards'
 import ShowcaseCarousel from '../ShowcaseCarousel';
 import { Grid } from '@mui/material'
 import { FIRST_NAME, INTRODUCTION_LINE, LAST_NAME } from '../../../Utils/Constants'
+
 import { useTypewriter } from 'react-simple-typewriter'
 import { Call, Mail, LinkedIn, GitHub } from '@mui/icons-material';
 import BottomBar from '../BottomBar/BottomBar'
+import { Link } from 'react-router-dom'
 const ImagesArray = [Images.TaralShowcase1,
 Images.TaralShowcase2,
 Images.TaralShowcase3,
@@ -37,10 +39,7 @@ export default function Home(props) {
 
     useEffect(() => {
         const handleWindowResize = () => {
-        //   setWindowSize([window.innerWidth, window.innerHeight]);
-        //   console.log(window.innerWidth,'window.innerWidth')
         };
-        // console.log(window.innerWidth)
     
         window.addEventListener('resize', handleWindowResize);
     
@@ -61,34 +60,34 @@ export default function Home(props) {
                 </div>
             </div>
             <div style={{flexDirection:'row', alignItems:'center', display:'flex', justifyContent:'flex-end', marginRight: ScreenWidth<450 ? '2%' : '5%', marginTop: ScreenWidth<450 ? '2%' : '1%'}} >
-                <a href="" className={'socialIcons'}>
-                    <Call className='CallIcon' style={{fontSize: ScreenWidth<450 && 18}} />
+                <a href="" className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
+                    <Call className='CallIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
                 </a>
-                <a href="mailto:sahillokhande94@gmail.com" className={'socialIcons'}>
-                    <Mail className='MailIcon' style={{fontSize: ScreenWidth<450 && 18}} />
+                <a href="mailto:sahillokhande94@gmail.com" className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
+                    <Mail className='MailIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
                 </a>
-                <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'socialIcons'}>
-                    <LinkedIn className='MailIcon' style={{fontSize: ScreenWidth<450 && 18}} />
+                <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
+                    <LinkedIn className='MailIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
                 </a>
-                <a href="https://github.com/Sahil26299" target={'_blank'} className={'socialIcons'}>
-                    <GitHub className='MailIcon' style={{fontSize: ScreenWidth<450 && 18}} />
+                <a href="https://github.com/Sahil26299" target={'_blank'} className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
+                    <GitHub className='MailIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
                 </a>
             </div>
             <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft:'5%' }}>
                 <div className="IntroWrapper">
                     <div className="heading1" >
-                        <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>  <p className='animate__animated animate__tada animate__infinite' >👋</p>
+                        <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>
                     </div>
                     <div className="heading1" >
-                        <span style={{ color: Colors.newVar.TXTColor }} >I am<span style={{ color: 'orange' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
-                    </div><br />
+                        <span style={{ color: Colors.newVar.TXTColor, marginTop:5 }} >I am<span style={{ color: 'orange' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
+                    </div>
                     <div style={{ display: 'inline-block' }} >
                        
                         <p class="typewriter">{text}<span className='Cursor' style={{color:'orange'}} >|</span></p>
 
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
-                        <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25, marginRight: 15 }} BtnContent={'Contact Me'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} onClick={props.ContactMeClicked} />
+                        <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25, marginRight: 15,  }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} onClick={props.ContactMeClicked} />
                         <a href={require('../../../Assets/DownloadFiles/Resume_Sahil.pdf')} download={'Resume_Sahil'} className={'ResumeDownloadLink'} >
                             <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} />
                         </a>

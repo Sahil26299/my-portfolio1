@@ -128,12 +128,16 @@
 /* Top Navigation Bar */
 .AppHeader{
     transition: color 0.25s ease;
+    font-family: 'Times New Roman', Times, serif !important;
 }
 .AppHeader:hover{
     color:orange
 }
 .NavigationButtons{
     transition: color 0.25s ease;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600;
 }
 .NavigationButtons:hover{
     color: orange;
@@ -141,6 +145,6 @@
 
 @media only screen and (max-width:450px){
     .AppHeader{
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
 }

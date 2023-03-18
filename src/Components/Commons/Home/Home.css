@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: row;
     font-size: 26px;
-    line-height: 28px;
+    /* line-height: 10px; */
 }
 
 .heading1 p {
@@ -62,8 +62,20 @@
     font-size: 14px;
     transition: transform 0.2s linear;
 }
+.OrangeButtonNonGradient{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 2px 10px 15px 3px #40404045;
+    background: linear-gradient(-10deg, #181818, #404040);
+    /* background-color: #000; */
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    transition: transform 0.2s linear;
+}
 
-.OrangeButton:hover {
+.OrangeButton:hover, .OrangeButtonNonGradient:hover {
     transform: scale(1.05);
 }
 
@@ -110,7 +122,7 @@
 
 .card-Title {
     font-weight: 800;
-    font-size: 16px;
+    font-size: 20px !important;
 }
 
 .card-Content {
@@ -240,6 +252,8 @@
     white-space: nowrap;
     min-height: 1.5em;
     vertical-align: bottom;
+    margin-top: 5px;
+    /* line-height: 10px; */
     /* border-right: .075em solid orange; */
     /* animation: typing 2s steps(40, end),
              blink-caret .75s step-end infinite; */
@@ -277,9 +291,27 @@
     color: #000;
     transition: background-color 0.25s ease-in-out;
 }
+.SocialIconsDark{
+    font-size: 30px;
+    margin-right: 1em;
+    background-color: orange;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #000;
+    transition: background-color 0.25s ease-in-out;
+}
 
 .socialIcons:hover {
     color: #fff;
+    background-color: rgba(255, 166, 0, 0);
+    border: 2px solid orange;
+}
+.SocialIconsDark:hover{
+    color: #000;
     background-color: rgba(255, 166, 0, 0);
     border: 2px solid orange;
 }
@@ -307,7 +339,7 @@
     }
     .heading1 {
         font-size: 20px;
-        line-height: 22px;
+        /* line-height: 22px; */
     }
     
     .heading1 p {
@@ -340,7 +372,7 @@
     }
     .heading1 {
         font-size: 16px;
-        line-height: 16px;
+        /* line-height: 16px; */
     }
     
     .heading1 p {
@@ -352,5 +384,11 @@
     }
     .headingProject{
         font-size: 20px;
+    }
+    .CardImageStyle{
+        height: 120px;
+    }
+    .card-Title{
+        font-size: 18px !important;
     }
 }

@@ -56,7 +56,7 @@ export default function ShowcaseCarousel(props) {
                 settings: {
                     slidesToShow: props.SlidesToShow ? props.SlidesToShow-4 : 1,
                     slidesToScroll: props.ImageArray.length,
-                    speed: props.Speed ? props.Speed-5000 : 5000,
+                    speed: props.Speed ? props.Speed : 5000,
                 }
             },
             {
@@ -64,7 +64,7 @@ export default function ShowcaseCarousel(props) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: props.ImageArray.length,
-                    speed: props.Speed ? props.Speed-5000 : 5000,
+                    speed: props.Speed ? props.Speed : 5000,
                 }
             }
         ]
