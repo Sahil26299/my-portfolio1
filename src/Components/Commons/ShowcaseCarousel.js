@@ -1,7 +1,4 @@
 import React from 'react';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 // import "~slick-carousel/slick/slick.css"; 
 // import "~slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -62,7 +59,7 @@ export default function ShowcaseCarousel(props) {
             {
                 breakpoint: 450,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1.5,
                     slidesToScroll: props.ImageArray.length,
                     speed: props.Speed ? props.Speed : 5000,
                 }

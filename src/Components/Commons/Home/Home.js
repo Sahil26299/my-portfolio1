@@ -7,11 +7,11 @@ import Cards from '../Cards'
 import ShowcaseCarousel from '../ShowcaseCarousel';
 import { Grid } from '@mui/material'
 import { FIRST_NAME, INTRODUCTION_LINE, LAST_NAME } from '../../../Utils/Constants'
-
 import { useTypewriter } from 'react-simple-typewriter'
 import { Call, Mail, LinkedIn, GitHub } from '@mui/icons-material';
 import BottomBar from '../BottomBar/BottomBar'
-import { Link } from 'react-router-dom'
+import resumePDF from '../../../Assets/DownloadFiles/SahilLokhande_CV.pdf';
+import { Link, useNavigate } from 'react-router-dom'
 const ImagesArray = [Images.TaralShowcase1,
 Images.TaralShowcase2,
 Images.TaralShowcase3,
@@ -28,6 +28,7 @@ Images.TaralShowcase13,
 Images.TaralShowcase14,
 Images.TaralShowcase15]
 export default function Home(props) {
+    const navigate = useNavigate()
     const Colors = useContext(ColorSchema);
     const [text] = useTypewriter({
         words: ['Software Engineer', 'Front-End Developer', 'React Js.', 'React Native', 'Redux'],
@@ -40,17 +41,21 @@ export default function Home(props) {
     useEffect(() => {
         const handleWindowResize = () => {
         };
-    
-        window.addEventListener('resize', handleWindowResize);
-    
-        return () => {
-          window.removeEventListener('resize', handleWindowResize);
-        };
-      });
 
-      const ScreenWidth = React.useMemo(()=>{
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    });
+
+    const ScreenWidth = React.useMemo(() => {
         return window.innerWidth
-      },[window.innerWidth])
+    }, [window.innerWidth])
+
+    const OpenFile = () => {
+        window.open(resumePDF)
+    }
 
     return (
         <div className='WrapperHome' id='Home_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
@@ -59,38 +64,38 @@ export default function Home(props) {
                     <img src={Images.ProfilePicture} className='ProfilePict' />
                 </div>
             </div>
-            <div style={{flexDirection:'row', alignItems:'center', display:'flex', justifyContent:'flex-end', marginRight: ScreenWidth<450 ? '2%' : '5%', marginTop: ScreenWidth<450 ? '2%' : '1%'}} >
+            <div style={{ flexDirection: 'row', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', marginRight: ScreenWidth < 450 ? '2%' : '5%', marginTop: ScreenWidth < 450 ? '2%' : '1%' }} >
                 <a href="" className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <Call className='CallIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
+                    <Call className='CallIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <Mail className='MailIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
+                    <Mail className='MailIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
                 </a>
                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <LinkedIn className='MailIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
+                    <LinkedIn className='MailIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
                 </a>
                 <a href="https://github.com/Sahil26299" target={'_blank'} className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <GitHub className='MailIcon' style={{fontSize: ScreenWidth<450 ? 18 : ScreenWidth<650 ? 25 : 30}} />
+                    <GitHub className='MailIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
                 </a>
             </div>
-            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft:'5%' }}>
+            <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft: '5%' }}>
                 <div className="IntroWrapper">
                     <div className="heading1" >
                         <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>
                     </div>
                     <div className="heading1" >
-                        <span style={{ color: Colors.newVar.TXTColor, marginTop:5 }} >I am<span style={{ color: 'orange' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
+                        <span style={{ color: Colors.newVar.TXTColor, marginTop: 5 }} >I am<span style={{ color: 'orange' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
                     </div>
                     <div style={{ display: 'inline-block' }} >
-                       
-                        <p class="typewriter">{text}<span className='Cursor' style={{color:'orange'}} >|</span></p>
+
+                        <p class="typewriter">{text}<span className='Cursor' style={{ color: 'orange' }} >|</span></p>
 
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
-                        <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25, marginRight: 15,  }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} onClick={props.ContactMeClicked} />
-                        <a href={require('../../../Assets/DownloadFiles/Resume_Sahil.pdf')} download={'Resume_Sahil'} className={'ResumeDownloadLink'} >
-                            <Button BtnStyle={{ height: ScreenWidth>650 ? 50 : 45, width: ScreenWidth>650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: ScreenWidth>650 ? 16 : 14}} />
-                        </a>
+                        <Button BtnStyle={{ height: ScreenWidth > 650 ? 50 : 45, width: ScreenWidth > 650 ? 140 : 120, marginTop: 25, marginRight: 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: ScreenWidth > 650 ? 16 : 14 }} onClick={props.ContactMeClicked} />
+                        {/* <a href={resumePDF} download={'SahilLokhande_CV.pdf'} className={'ResumeDownloadLink'} > */}
+                        <Button onClick={()=>OpenFile()} BtnStyle={{ height: ScreenWidth > 650 ? 50 : 45, width: ScreenWidth > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: ScreenWidth > 650 ? 16 : 14 }} />
+                        {/* </a> */}
                     </div>
                 </div>
                 {/* <div>
@@ -100,13 +105,13 @@ export default function Home(props) {
 
             <Grid className='CardContainer' container justifyContent={'center'} spacing={10} marginTop={5} marginBottom={10} >
                 <Grid item lg={4} md={6} sm={12} >
-                    <Cards classID={'CardWrapper1'} ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap | Material UI'} CardBtnContent={'Know More'} />
+                    <Cards classID={'CardWrapper1'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap | Material UI'} CardBtnContent={'Know More'} />
                 </Grid>
                 <Grid item lg={4} md={6} sm={12} >
-                    <Cards classID={'CardWrapper2'} ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React {}'} CardContent={'React Js. | React Native | Redux '} CardBtnContent={'Know More'} />
+                    <Cards classID={'CardWrapper2'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React {}'} CardContent={'React Js. | React Native | Redux '} CardBtnContent={'Know More'} />
                 </Grid>
                 <Grid item lg={4} md={6} sm={12} >
-                    <Cards classID={'CardWrapper3'} ReadMorePressed={props.ReadMorePressed_} isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
+                    <Cards classID={'CardWrapper3'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
                 </Grid>
             </Grid>
 
@@ -128,10 +133,10 @@ export default function Home(props) {
                     CarouselWrapperStyle={'HomeCarouselWrapper'}
                     ImageArray={ImagesArray}
                     SlidesToShow={6}
-                    Speed = {30000}
+                    Speed={30000}
                 />
             </div>
-            <BottomBar/>
+            <BottomBar />
         </div>
     )
 }

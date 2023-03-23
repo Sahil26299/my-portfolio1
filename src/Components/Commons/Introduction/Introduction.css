@@ -1,79 +1,203 @@
-.basic-intro-wrapper{
-    width:70vw;
-    padding: 2% 5%; 
+.basic-intro-wrapper {
+    width: 85vw;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center
 }
-.basic-intro-text{
+
+.basic-intro-text {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-.verticalLine{
+
+.verticalLine {
     /* background-color: rgba(255,255,255,0.25); */
     width: 0.25px;
     height: 12vw;
 }
-.IntroBodyWrapper{
-    padding-left: 5%;
-    padding-top: 5%; 
+
+.IntroBodyWrapper {
+    padding: 3% 5%;
+    /* padding-top: 5%;  */
 }
-.Intro-Text{
+
+.Intro-TextTop {
     font-family: 'Poppins', sans-serif;
+    font-size: 18px;
 }
-.Intro-Title{
+
+.Intro-Text {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5vw; 
+    font-size: 16px;
 }
-.ListHeaderRight{
+
+.Intro-Title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+}
+
+.ListHeaderRight {
     font-weight: 300;
+    text-align: right;
+    width: 30%;
 }
-.ProfileMyImage{
-    height: 10vw;
-    width:10vw;
-    object-fit: cover;
-    border-radius: 100%;
+
+.ProfileMyImage {
+    height: 400px;
+    width: 400px;
+    object-fit: contain;
 }
-.CertificateHyperLink{
+
+.CertificateHyperLink {
     text-decoration: underline;
 }
-.ProgressWrapper{
-    width: 50vw;
+
+.ProgressWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
 }
-.progressTitle{
+
+.progressTitle {
     font-family: 'Poppins', sans-serif;
-    width:20%;
+    font-size: 18px;
+    width: 20%;
 }
-.SkillProgressContainer{
-    padding:0px 6vw
+
+.SkillProgressContainer {
+    padding: 0px 3vw;
+    /* background-color: red; */
 }
-.LinearBufferProgress{
+
+.LinearBufferProgress {
     width: 50%;
 }
-.ProgressTextStyle{
+
+.ProgressTextStyle {
     font-family: 'Poppins', sans-serif;
-    width:20%;
+    width: 20%;
+    font-size: 16px;
 }
-.TechnicalSkillDD{
+
+.TechnicalSkillDD {
     border: 1px solid white;
 }
-.TechnicalSkillDT{
+
+.TechnicalSkillDT {
     font-size: 18px;
     position: absolute;
     top: -20px;
     left: 50px;
 }
-.TechnicalSkillDT1{
+
+.TechnicalSkillDT1 {
     font-size: 18px;
     position: absolute;
     top: -20px;
     right: 50px;
 }
 
-.carouselVideo{
-    height:60vh;
+.carouselVideo {
+    height: 60vh;
     width: 50vw;
 }
-.CoverImage{
+
+.CoverImage {
     width: 70vw;
     height: 40vh;
     object-fit: cover;
+}
+
+@media only screen and (max-width:1000px) {
+    .ProfileMyImage {
+        height: 300px;
+        width: 300px;
+    }
+
+    .Intro-TextTop {
+        font-size: 16px;
+    }
+
+    .Intro-Title {
+        font-size: 26px;
+    }
+
+}
+
+@media only screen and (max-width:650px) {
+    .basic-intro-wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .ProfileMyImage {
+        height: 250px;
+        width: 250px;
+        object-fit: contain;
+    }
+
+    .Intro-TextTop {
+        font-size: 14px;
+    }
+
+    .Intro-Title {
+        font-size: 24px;
+    }
+
+    .Intro-Text {
+        font-size: 14px;
+    }
+
+    .progressTitle {
+        font-size: 16px;
+    }
+
+    .ProgressTextStyle {
+        font-size: 14px;
+    }
+    .carouselVideo {
+        height: 225px;
+        width: 480px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .ProfileMyImage {
+        height: 200px;
+        width: 200px;
+        object-fit: contain;
+    }
+
+    .Intro-Title {
+        font-size: 20px;
+    }
+
+    .Intro-Text {
+        font-size: 12px;
+    }
+
+    .ProgressTextStyle {
+        display: none;
+    }
+
+    .TechnicalSkillDT {
+        font-size: 16px;
+        top: -18px;
+        left: 25px;
+    }
+    .TechnicalSkillDT1 {
+        font-size: 16px;
+        top: -18px;
+        right: 25px;
+    }
+    .carouselVideo {
+        height: 175px;
+        width: 300px;
+    }
 }

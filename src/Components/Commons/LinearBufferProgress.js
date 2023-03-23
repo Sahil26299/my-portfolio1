@@ -46,11 +46,13 @@ export default function LinearBufferProgress(props) {
         clearInterval(timer);
       };
     }, []);
+
+    
     return (
-        <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}} className={'ProgressWrapper'} >
-            <span className='progressTitle' style={{ color: Colors.newVar.TXTColor, fontSize: 18 }} >{props.Skill}</span>
+        <div style={{}} className={'ProgressWrapper'} >
+            <span className='progressTitle' style={{ color: Colors.newVar.TXTColor }} >{props.Skill}</span>
             <LinearProgress className='LinearBufferProgress' variant="buffer" value={progress} valueBuffer={buffer} />
-            <span className='ProgressTextStyle' style={{color:Colors.newVar.TXTColor, fontSize: 16}} >{progressText}</span>
+            <span className='ProgressTextStyle' style={{color:Colors.newVar.TXTColor}} >{progressText}</span>
         </div>
     )
 }

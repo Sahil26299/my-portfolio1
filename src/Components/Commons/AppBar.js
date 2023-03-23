@@ -182,7 +182,7 @@ function ResponsiveAppBar(props) {
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Hello! 😄">
-                  <IconButton onClick={null} sx={{ p: 0 }}>
+                  <IconButton component={Link} to={'/profile'} onClick={null} sx={{ p: 0 }}>
                     <Avatar alt="Remy Sharp" src={Images.ProfilePicture} style={{height: ScreenWidth<450 && 22, width: ScreenWidth<450 && 22}} />
                   </IconButton>
                 </Tooltip>

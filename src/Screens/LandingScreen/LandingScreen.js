@@ -161,11 +161,11 @@ const LandingScreen = () => {
         onScroll={(e) => handleScroll(e.target)}
         className='Wrapper'>
         <div className='ContentBody'>
-          <Home ReadMorePressed_={() => ScrollToServices()} ContactMeClicked={() => ScrollToContact()} />
-          <Introduction />
+          {/* <Home ReadMorePressed_={() => ScrollToServices()} ContactMeClicked={() => ScrollToContact()} /> */}
+          {/* <Introduction />
           <Services />
           <ExtraCurricular />
-          <ContactDetails />
+          <ContactDetails /> */}
         </div>
       </div>
     </div>

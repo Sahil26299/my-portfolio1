@@ -96,12 +96,6 @@
     object-fit: contain;
 }
 
-.carouselVideo {
-    height: 60vh;
-    width: 60vw;
-    object-fit: contain;
-}
-
 .HomeCarouselWrapper {
     margin-top: 25px;
     width: 90vw;
@@ -121,7 +115,7 @@
 }
 
 .card-Title {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px !important;
 }
 
@@ -322,6 +316,11 @@
         width: 40px;
         margin-right: 0.5em;
     }
+    .SocialIconsDark{
+        height: 40px;
+        width: 40px;
+        margin-right: 0.5em;
+    }
     .CoverPhoto{
         height: 30vh;
         width: 100%;
@@ -366,6 +365,11 @@
         bottom: -37.5px
     }
     .socialIcons {
+        height: 28px;
+        width: 28px;
+        margin-right: 0.3em;
+    }
+    .SocialIconsDark{
         height: 28px;
         width: 28px;
         margin-right: 0.3em;

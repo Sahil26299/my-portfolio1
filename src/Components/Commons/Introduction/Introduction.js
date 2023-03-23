@@ -3,7 +3,7 @@ import './Introduction.css';
 import { ColorSchema } from '../../../Utils/Context/ColorThemes';
 import { Images } from '../../../Utils/Images';
 import LinearBufferProgress from '../LinearBufferProgress';
-import TabHeader from '../TabHeader';
+import BottomBar from '../BottomBar/BottomBar';
 
 export default function Introduction(props) {
 
@@ -17,41 +17,37 @@ export default function Introduction(props) {
     }
 
     return (
-        <div className='wrapper-container' id='Introduction_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
-            <TabHeader Animation={'HeaderIntro'} Children={'My Profile'} />
-            <div className="basic-intro-wrapper" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }} >
+        <div className='wrapper-container' id='Introduction_ID' style={{ backgroundColor: Colors.newVar.BGColor, marginTop: '3%', display: 'flex', flexDirection: 'column' }} >
+            <div className="basic-intro-wrapper" >
                 <div className="basic-intro-text">
-                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Full Name : Sahil Dattatray Lokhande</span><br />
-                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Current Role : React Developer at Mobiloitte</span><br />
-                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Loaction : Pune, Maharashtra, India</span><br />
-                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'} >Status : Looking forward for good career opportunities...</span><br />
+                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Full Name : Sahil Dattatray Lokhande</span><br />
+                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : React Developer at Mobiloitte</span><br />
+                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Loaction : Pune, Maharashtra, India</span><br />
+                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Status : Looking forward for good career opportunities...</span><br />
                 </div>
-                {/* <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div> */}
+                {/* <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div>*/}
                 <div>
-                    <img src={Images.ProfilePicture} className='ProfileMyImage' />
+                    <img src={Images.IntroductionCover} className='ProfileMyImage' />
                 </div>
             </div>
             <div className='IntroBodyWrapper' >
                 <span style={{ color: 'orange', }} className={'Intro-Title'} >
-                    About
+                    Headline
                 </span><br />
-                <span style={{ color: Colors.newVar.TXTColor, marginTop: 15 }} className={'Intro-Text'}>
-                    Mechanical Engineer
-                    & React Developer, seeking for entry level opportunities to assimilate my skills to help the company grow.
-                    Experienced React developer with strong grip on React Native, proficient in programming including good grasp in
-                    data structure and algorithms and worked on database as well. Experience in team work and project management,
-                    having led various college events and projects to completion.
+                <span style={{ color: Colors.newVar.TXTColor, marginTop: 20 }} className={'Intro-Text'}>
+                    Experienced front-end React developer with a solid understanding of data science and
+                    blockchain technology, seeking to leverage my skills in a reputable industry.
                 </span>
             </div>
             <div className='IntroBodyWrapper' >
                 <span style={{ color: 'orange', }} className={'Intro-Title'} >
                     Experience
                 </span><br />
-                <span style={{ color: Colors.newVar.TXTColor, marginTop: 15 }} className={'Intro-Text'}>
+                <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'}>
                     <dl>
                         <dt>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }} >
-                                <span>Mobiloitte | React Developer</span>
+                                <span style={{width:'50%'}} >Mobiloitte | React Developer</span>
                                 <span className='ListHeaderRight' >Pune, India | April 2022 – Present</span>
                             </div>
                         </dt><br />
@@ -76,7 +72,7 @@ export default function Introduction(props) {
                         </dd><br />
                         <dt>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <span>GRROOM | Machine Learning Intern</span>
+                                <span style={{width:'50%'}} >GRROOM | Machine Learning Intern</span>
                                 <span className='ListHeaderRight' >Pune, India | May 2021 – June 2021</span>
                             </div>
                         </dt><br />
@@ -191,7 +187,7 @@ export default function Introduction(props) {
                         </span>
                     </li>
                 </ul>
-                <div className='CarouselWrapper' >
+                <div className='CarouselWrapper' style={{display:'flex', alignItems:'center', flexDirection:'column'}} >
                     <video loop autoPlay muted controls className="carouselVideo" >
                         <source src={Images.CalorieTrackerShowcaseVideo} type="video/mp4" />
                     </video>
@@ -201,7 +197,7 @@ export default function Introduction(props) {
                 <span style={{ color: 'orange', }} className={'Intro-Title'} >
                     Certifications
                 </span><br />
-                <ul style={{ color: Colors.newVar.TXTColor, margin:0 }} className={'Intro-Text'} >
+                <ul style={{ color: Colors.newVar.TXTColor, margin: 0 }} className={'Intro-Text'} >
                     <li>
                         Machine Learning Engineer and AI Analyst (Org. Symbiosis Skills and Professional University, Pune)
                     </li>
@@ -221,6 +217,7 @@ export default function Introduction(props) {
                 </ul>
 
             </div>
+            <BottomBar />
         </div>
     )
 }
