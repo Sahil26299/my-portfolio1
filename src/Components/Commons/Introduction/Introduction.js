@@ -187,7 +187,7 @@ export default function Introduction(props) {
                         </span>
                     </li>
                 </ul>
-                <div className='CarouselWrapper' style={{display:'flex', alignItems:'center', flexDirection:'column'}} >
+                <div className='CarouselWrapper' style={{display:'flex', alignItems:'center', flexDirection:'column', marginTop:10}} >
                     <video loop autoPlay muted controls className="carouselVideo" >
                         <source src={Images.CalorieTrackerShowcaseVideo} type="video/mp4" />
                     </video>

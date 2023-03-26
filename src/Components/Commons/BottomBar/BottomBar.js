@@ -21,24 +21,24 @@ export default function BottomBar() {
       },[window.innerWidth])
     return (
         <div className='BottomBarWrapper' >
-            <span style={{ fontSize: ScreenWidth<350 ? 12 : ScreenWidth<850 ? 14 : ScreenWidth<1000 ? 14 : 16, color: '#fff', }} >
+            <span className='Text1' >
                 Designed and Developed by Sahil Lokhande
             </span>
-            <span style={{ fontSize: ScreenWidth<350 ? 12 : ScreenWidth<850 ? 14 : ScreenWidth<1000 ? 14 : 16, color: '#fff', marginTop: ScreenWidth<850 && 10 }} >
+            <span className='Text2' >
                 Copyright &copy; 2023 Sahil Lokhande
             </span>
-            <div style={{ flexDirection: 'row', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', marginTop: ScreenWidth<850 && 15}} >
+            <div className='IconsContainer' >
                 <a href="" className={'socialIconsCopy'}>
-                    <Call className='CallIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <Call className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={'socialIconsCopy'}>
-                    <Mail className='MailIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <Mail className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'socialIconsCopy'}>
-                    <LinkedIn className='MailIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <LinkedIn className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
                 <a href="https://github.com/Sahil26299" target={'_blank'} className={'socialIconsCopy'}>
-                    <GitHub className='MailIcon' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <GitHub className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
                 </a>
             </div>
         </div>
