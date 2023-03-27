@@ -138,7 +138,7 @@ const LandingScreen = () => {
 
   const ScrollToServices = () => {
     setTabSelected('Services');
-    const element = document.getElementById('Services_ID');
+    const element = document.getElementById('');
     element.scrollIntoView({ behavior: 'smooth' })
   }
 

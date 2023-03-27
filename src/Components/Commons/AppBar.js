@@ -40,28 +40,23 @@ function ResponsiveAppBar(props) {
     setSelectedTab(location?.pathname)
   }, [location?.pathname])
   
-  const [windowSize, setWindowSize] = React.useState([
-    window.innerWidth,
-    window.innerHeight,
-  ]);
-
-  React.useEffect(() => {
-    const handleWindowResize = () => {
-    //   setWindowSize([window.innerWidth, window.innerHeight]);
-    //   console.log(window.innerWidth,'window.innerWidth')
-    };
-    // console.log(window.innerWidth)
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
+  const [screenDimensions, setScreenDimensions] = React.useState({
+    width: window.innerWidth,
+    height: window.innerHeight
   });
 
-  const ScreenWidth = React.useMemo(()=>{
-    return window.innerWidth
-  },[window.innerWidth])
+  React.useEffect(() => {
+    function handleResize() {
+      setScreenDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -150,7 +145,7 @@ function ResponsiveAppBar(props) {
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
                 fontWeight: 700,
-                letterSpacing: ScreenWidth<450 ? '.2rem' : '.3rem',
+                letterSpacing: screenDimensions.width<450 ? '.2rem' : '.3rem',
                 color: Colors.newVar.TXTColor,
                 textDecoration: 'none',
               }}
@@ -175,15 +170,15 @@ function ResponsiveAppBar(props) {
             <Box sx={{ flexGrow: 0 }}>
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
                 <Tooltip title={Colors.isDarkMode ? "Dark Theme" : "Light Theme"} >
-                  <IconButton onClick={HandleSwitchTheme} sx={{ p: 0, mx: ScreenWidth<450 ? 2 : 3 }}>
+                  <IconButton onClick={HandleSwitchTheme} sx={{ p: 0, mx: screenDimensions.width<450 ? 2 : 3 }}>
                     {Colors.isDarkMode ? 
-                    <DarkMode color='dark' fontSize={ScreenWidth<450 ? 'medium' : 'large'} htmlColor='orange' /> :
-                    <LightMode color='light' fontSize={ScreenWidth<450 ? 'medium' : 'large'} htmlColor='orange' />}
+                    <DarkMode color='dark' fontSize={screenDimensions.width<450 ? 'medium' : 'large'} htmlColor='orange' /> :
+                    <LightMode color='light' fontSize={screenDimensions.width<450 ? 'medium' : 'large'} htmlColor='orange' />}
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Hello! 😄">
                   <IconButton component={Link} to={'/profile'} onClick={null} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src={Images.ProfilePicture} style={{height: ScreenWidth<450 && 22, width: ScreenWidth<450 && 22}} />
+                    <Avatar alt="Remy Sharp" src={Images.ProfilePicture} className={'ProfilePictureOnAppBar'} style={{height: screenDimensions.width<450 && 22, width: screenDimensions.width<450 && 22}} />
                   </IconButton>
                 </Tooltip>
               </div>

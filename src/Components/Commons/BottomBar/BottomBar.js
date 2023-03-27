@@ -5,20 +5,23 @@ import './BottomBar.css'
 
 export default function BottomBar() {
     const Colors = useContext(ColorSchema);
-    React.useEffect(() => {
-        const handleWindowResize = () => {
-        };
-    
-        window.addEventListener('resize', handleWindowResize);
-    
-        return () => {
-          window.removeEventListener('resize', handleWindowResize);
-        };
-      });
+    const [screenDimensions, setScreenDimensions] = React.useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
 
-      const ScreenWidth = React.useMemo(()=>{
-        return window.innerWidth
-      },[window.innerWidth])
+    React.useEffect(() => {
+        function handleResize() {
+            setScreenDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     return (
         <div className='BottomBarWrapper' >
             <span className='Text1' >
@@ -29,16 +32,16 @@ export default function BottomBar() {
             </span>
             <div className='IconsContainer' >
                 <a href="" className={'socialIconsCopy'}>
-                    <Call className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <Call className='SocialIcons' sx={{ fontSize: screenDimensions.width < 850 ? 18 : screenDimensions.width < 1000 ? 20 : 25 }} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={'socialIconsCopy'}>
-                    <Mail className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <Mail className='SocialIcons' sx={{ fontSize: screenDimensions.width < 850 ? 18 : screenDimensions.width < 1000 ? 20 : 25 }} />
                 </a>
                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'socialIconsCopy'}>
-                    <LinkedIn className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <LinkedIn className='SocialIcons' sx={{ fontSize: screenDimensions.width < 850 ? 18 : screenDimensions.width < 1000 ? 20 : 25 }} />
                 </a>
                 <a href="https://github.com/Sahil26299" target={'_blank'} className={'socialIconsCopy'}>
-                    <GitHub className='SocialIcons' sx={{fontSize: ScreenWidth<850 ?18 : ScreenWidth<1000 ? 20 : 25}} />
+                    <GitHub className='SocialIcons' sx={{ fontSize: screenDimensions.width < 850 ? 18 : screenDimensions.width < 1000 ? 20 : 25 }} />
                 </a>
             </div>
         </div>

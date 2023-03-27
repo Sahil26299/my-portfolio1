@@ -38,20 +38,23 @@ export default function Home(props) {
         delaySpeed: 2000
     })
 
-    useEffect(() => {
-        const handleWindowResize = () => {
-        };
-
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
+    const [screenDimensions, setScreenDimensions] = React.useState({
+        width: window.innerWidth,
+        height: window.innerHeight
     });
 
-    const ScreenWidth = React.useMemo(() => {
-        return window.innerWidth
-    }, [window.innerWidth])
+    React.useEffect(() => {
+        function handleResize() {
+            setScreenDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const OpenFile = () => {
         window.open(resumePDF)
@@ -64,18 +67,18 @@ export default function Home(props) {
                     <img src={Images.ProfilePicture} className='ProfilePict' />
                 </div>
             </div>
-            <div style={{ flexDirection: 'row', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', marginRight: ScreenWidth < 450 ? '2%' : '5%', marginTop: ScreenWidth < 450 ? '2%' : '1%' }} >
+            <div style={{ flexDirection: 'row', alignItems: 'center', display: 'flex', justifyContent: 'flex-end', marginRight: screenDimensions.width < 450 ? '2%' : '5%', marginTop: screenDimensions.width < 450 ? '2%' : '1%' }} >
                 <a href="" className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <Call className='CallIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
+                    <Call className='CallIcon' style={{ fontSize: screenDimensions.width < 450 ? 18 : screenDimensions.width < 650 ? 25 : 30 }} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <Mail className='MailIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
+                    <Mail className='MailIcon' style={{ fontSize: screenDimensions.width < 450 ? 18 : screenDimensions.width < 650 ? 25 : 30 }} />
                 </a>
                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <LinkedIn className='MailIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
+                    <LinkedIn className='MailIcon' style={{ fontSize: screenDimensions.width < 450 ? 18 : screenDimensions.width < 650 ? 25 : 30 }} />
                 </a>
                 <a href="https://github.com/Sahil26299" target={'_blank'} className={Colors.isDarkMode ? 'socialIcons' : 'SocialIconsDark'}>
-                    <GitHub className='MailIcon' style={{ fontSize: ScreenWidth < 450 ? 18 : ScreenWidth < 650 ? 25 : 30 }} />
+                    <GitHub className='MailIcon' style={{ fontSize: screenDimensions.width < 450 ? 18 : screenDimensions.width < 650 ? 25 : 30 }} />
                 </a>
             </div>
             <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', marginTop: '3%', marginLeft: '5%' }}>
@@ -92,9 +95,9 @@ export default function Home(props) {
 
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
-                        <Button BtnStyle={{ height: ScreenWidth > 650 ? 50 : 45, width: ScreenWidth > 650 ? 140 : 120, marginTop: 25, marginRight: 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: ScreenWidth > 650 ? 16 : 14 }} onClick={props.ContactMeClicked} />
+                        <Button BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width > 650 ? 140 : 120, marginTop: 25, marginRight: 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} onClick={props.ContactMeClicked} />
                         {/* <a href={resumePDF} download={'SahilLokhande_CV.pdf'} className={'ResumeDownloadLink'} > */}
-                        <Button onClick={()=>OpenFile()} BtnStyle={{ height: ScreenWidth > 650 ? 50 : 45, width: ScreenWidth > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: ScreenWidth > 650 ? 16 : 14 }} />
+                        <Button onClick={() => OpenFile()} BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} />
                         {/* </a> */}
                     </div>
                 </div>
