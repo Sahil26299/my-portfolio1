@@ -240,7 +240,7 @@
 .typewriter {
     display: inline-block;
     overflow: hidden;
-    color: orange;
+    color: #ff8c00;
     font-size: 26px;
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     white-space: nowrap;

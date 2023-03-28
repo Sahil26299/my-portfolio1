@@ -87,17 +87,17 @@ export default function Home(props) {
                         <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>
                     </div>
                     <div className="heading1" >
-                        <span style={{ color: Colors.newVar.TXTColor, marginTop: 5 }} >I am<span style={{ color: 'orange' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
+                        <span style={{ color: Colors.newVar.TXTColor, marginTop: 5 }} >I am<span style={{ color: '#ff8c00' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
                     </div>
                     <div style={{ display: 'inline-block' }} >
 
                         <p class="typewriter">{text}<span className='Cursor' style={{ color: 'orange' }} >|</span></p>
 
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }} >
-                        <Button BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width > 650 ? 140 : 120, marginTop: 25, marginRight: 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} onClick={props.ContactMeClicked} />
+                    <div style={{ display: 'flex', flexDirection: screenDimensions.width<300 ? 'column' : 'row', alignItems: 'center' }} >
+                        <Button BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width<300 ? 150 :screenDimensions.width > 650 ? 140 : 120, marginTop: 25, marginRight: screenDimensions.width>300 && 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} onClick={props.ContactMeClicked} />
                         {/* <a href={resumePDF} download={'SahilLokhande_CV.pdf'} className={'ResumeDownloadLink'} > */}
-                        <Button onClick={() => OpenFile()} BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} />
+                        <Button onClick={() => OpenFile()} BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width<300 ? 150 :screenDimensions.width > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} />
                         {/* </a> */}
                     </div>
                 </div>
@@ -107,7 +107,7 @@ export default function Home(props) {
             </div>
 
             <Grid className='CardContainer' container justifyContent={'center'} spacing={10} marginTop={5} marginBottom={10} >
-                <Grid item lg={4} md={6} sm={12} >
+                <Grid alignContent={'center'} item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper1'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap | Material UI'} CardBtnContent={'Know More'} />
                 </Grid>
                 <Grid item lg={4} md={6} sm={12} >

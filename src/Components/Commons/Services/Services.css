@@ -7,11 +7,12 @@
 }
 .serviceBody{
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
 }
 .ServicesImageClass{
-    height: 30%;
-    width: 30%;
+    height: 350px;
+    width: 350px;
+    object-fit: contain;
     
 }
 .ServiceDetailsWrapper{
@@ -22,5 +23,36 @@
 }
 .ServiceDetails{
     width: 40%;
-    margin: 5% 0px;
+    margin: 8% 0px;
 }
+.ServicesCardsContainer{
+    padding:0px 5vw;
+}
+@media only screen and (max-width:1000px){
+    .serviceBody{
+        /* font-family: 'Poppins', sans-serif; */
+        font-size: 14px;
+    }
+    .ServicesImageClass{
+        height: 300px;
+        width: 300px;
+    }
+}
+@media only screen and (max-width:650px){
+    .ServiceDetailsWrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content:center
+    }
+    .serviceBody{
+        text-align: center;
+    }
+    .ServicesImageClass{
+        display: none;
+    }
+    .ServiceDetails{
+        width: 80%;
+        margin: 10% 0px 0px 0px;
+    }
+}
+
