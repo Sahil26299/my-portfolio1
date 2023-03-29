@@ -132,35 +132,36 @@ export default function ContactDetails() {
     return (
         <div id='Contact_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
             <Box className='ContactWrapper'  >
-                <TabHeader Children={'Contact Details'} Animation={'ContactHeader'} />
-                <Grid container spacing={4}>
-                    <Grid item lg={6} sm={12}>
-                        <div className='CommonClass' >
-                            <a href="" className={'CallMeIcon'}>
-                                <Call className='CallIcon' />
-                            </a>
-                            <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'CallMeText'} >+91 915098814</span>
-                        </div>
-                        <div className='CommonClass' >
-                            <a href="mailto:sahillokhande94@gmail.com" className={'CallMeIcon'}>
-                                <Mail className='MailIcon' />
-                            </a>
-                            <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande94@gmail.com</span>
-                        </div>
-                        <div className='CommonClass' >
-                            <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'CallMeIcon'}>
-                                <LinkedIn className='MailIcon' />
-                            </a>
-                            <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande26</span>
-                        </div>
-                        <div className='CommonClass' >
-                            <a href="https://github.com/Sahil26299" target={'_blank'} className={'CallMeIcon'}>
-                                <GitHub className='MailIcon' />
-                            </a>
-                            <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >Github Link</span>
+                <Grid className='ContactDetailsAndForm' container spacing={4}>
+                    <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={6} sm={12}>
+                        <div>
+                            <div className='CommonClass' >
+                                <a href="" className={'CallMeIcon'}>
+                                    <Call className='CallIcon' />
+                                </a>
+                                <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'CallMeText'} >+91 915098814</span>
+                            </div>
+                            <div className='CommonClass' >
+                                <a href="mailto:sahillokhande94@gmail.com" className={'CallMeIcon'}>
+                                    <Mail className='MailIcon' />
+                                </a>
+                                <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande94@gmail.com</span>
+                            </div>
+                            <div className='CommonClass' >
+                                <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'CallMeIcon'}>
+                                    <LinkedIn className='MailIcon' />
+                                </a>
+                                <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande26</span>
+                            </div>
+                            <div className='CommonClass' >
+                                <a href="https://github.com/Sahil26299" target={'_blank'} className={'CallMeIcon'}>
+                                    <GitHub className='MailIcon' />
+                                </a>
+                                <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >Github Link</span>
+                            </div>
                         </div>
                     </Grid>
-                    <Grid item lg={6} sm={12} >
+                    <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={6} sm={12} >
                         <div style={{ marginTop: '5%', paddingBottom: '5%', marginLeft: '10%' }} >
                             <form action="" ref={form} onSubmit={OnSendClick}>
                                 <label htmlFor="name" id='emailLabel' style={{ color: Colors.newVar.TXTColor }} >Write a message:</label>

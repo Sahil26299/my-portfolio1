@@ -107,13 +107,13 @@ export default function Home(props) {
             </div>
 
             <Grid className='CardContainer' container justifyContent={'center'} spacing={10} marginTop={5} marginBottom={10} >
-                <Grid alignContent={'center'} item lg={4} md={6} sm={12} >
+                <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper1'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | Bootstrap | Material UI'} CardBtnContent={'Know More'} />
                 </Grid>
-                <Grid item lg={4} md={6} sm={12} >
+                <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper2'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.AppDeveloperTheme} CardTitle={'React {}'} CardContent={'React Js. | React Native | Redux '} CardBtnContent={'Know More'} />
                 </Grid>
-                <Grid item lg={4} md={6} sm={12} >
+                <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={4} md={6} sm={12} >
                     <Cards classID={'CardWrapper3'} ReadMorePressed={() => navigate('/services')} isDemo={true} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} CardBtnContent={'Know More'} />
                 </Grid>
             </Grid>

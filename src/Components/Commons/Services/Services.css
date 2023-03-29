@@ -28,6 +28,15 @@
 .ServicesCardsContainer{
     padding:0px 5vw;
 }
+.ReviewSection{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ReviewSection{
+    font-size: 24px;
+}
 @media only screen and (max-width:1000px){
     .serviceBody{
         /* font-family: 'Poppins', sans-serif; */

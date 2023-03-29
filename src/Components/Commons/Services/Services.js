@@ -24,19 +24,22 @@ export default function Services() {
                 </div>
                 <img src={Images.ServicesImage} className={'ServicesImageClass'} />
             </div>
-            <Box sx={{ alignItems: 'center' }} className={'ServicesWrapper'} >
-                <Grid className='ServicesCardsContainer' container spacing={10} marginTop={2} justifyContent={'center'} alignItems={'center'} >
-                    <Grid item lg={4} md={6} sm={12} >
+            <Box sx={{ alignItems: 'center', marginTop:'3%' }} className={'ServicesWrapper'} >
+                <Grid className='ServicesCardsContainer' container spacing={10} justifyContent={'center'} >
+                    <Grid item display={'flex'} alignItems={'center'} flexDirection={'column'} lg={4} md={6} sm={12} >
                         <Cards isDemo={false} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | React Js. | Bootstrap | Material UI'} />
                     </Grid>
-                    <Grid item lg={4} md={6} sm={12} >
+                    <Grid item display={'flex'} alignItems={'center'} flexDirection={'column'} lg={4} md={6} sm={12} >
                         <Cards isDemo={false} ImagePath={Images.AppDeveloperTheme} CardTitle={'App Development {}'} CardContent={'React Native | Redux | Android | iOS '} />
                     </Grid>
-                    <Grid item lg={4} md={6} sm={12} >
+                    <Grid item display={'flex'} alignItems={'center'} flexDirection={'column'} lg={4} md={6} sm={12} >
                         <Cards isDemo={false} ImagePath={Images.PlatformTheme} CardTitle={'Platforms'} CardContent={'VSCode | Git/GitHub | Android Studios | XCode '} />
                     </Grid>
                 </Grid>
             </Box>
+            {/* <div className='ReviewSection' >
+                <p style={{color:Colors.newVar.TXTColor}} >Client Reviews<sup>error:(</sup></p>
+            </div> */}
             <BottomBar />
         </div>
     )
