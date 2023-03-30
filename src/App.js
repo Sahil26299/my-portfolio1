@@ -9,7 +9,7 @@ import { ColorSchema } from './Utils/Context/ColorThemes';
 export default function App() {
   const Colors = React.useContext(ColorSchema);
   return (
-    <div style={{backgroundColor:Colors.newVar.BGColor}} >
+    <div style={{backgroundColor:Colors.newVar.BGColor, height:'100%'}} >
       <ProSidebarProvider>
         <BrowserRouter>
           <ResponsiveAppBar />

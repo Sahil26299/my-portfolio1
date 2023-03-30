@@ -20,6 +20,24 @@ export default function ContactDetails() {
     const [EmailError, setEmailError] = useState(null);
     const [showLoader, setshowLoader] = useState(false);
 
+    const [screenDimensions, setScreenDimensions] = React.useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+
+    React.useEffect(() => {
+        function handleResize() {
+            setScreenDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const ValidateMessage = (msg) => {
         if (msg) {
             setmessageError(null);
@@ -99,11 +117,11 @@ export default function ContactDetails() {
 
     const OnSendClick = (e) => {
         e.preventDefault();
-        if(ValidateEmail(Email) && ValidateName(Name) && ValidateMessage(message)){
+        if (ValidateEmail(Email) && ValidateName(Name) && ValidateMessage(message)) {
             sendEmail(e)
         }
-        else{
-            ValidateName(Name) 
+        else {
+            ValidateName(Name)
             ValidateMessage(message)
         }
     }
@@ -132,37 +150,37 @@ export default function ContactDetails() {
     return (
         <div id='Contact_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
             <Box className='ContactWrapper'  >
-                <Grid className='ContactDetailsAndForm' container spacing={4}>
-                    <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={6} sm={12}>
-                        <div>
+                <Grid className='ContactDetailsAndForm' container spacing={2} alignItems={'center'} direction={ screenDimensions.width<600 ? 'column' : 'row'} >
+                    <Grid display={'flex'} sx={{width:'45%'}} alignItems={'center'} flexDirection={'column'} item lg={6} md={6} sm={6} xs={12}>
+                        <div className='ContactDetails' >
                             <div className='CommonClass' >
                                 <a href="" className={'CallMeIcon'}>
-                                    <Call className='CallIcon' />
+                                    <Call className='CallIcon' style={{fontSize:(screenDimensions.width<1000&&screenDimensions.width>600) && 20}} />
                                 </a>
-                                <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'CallMeText'} >+91 915098814</span>
+                                <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >+91 915098814</span>
                             </div>
                             <div className='CommonClass' >
                                 <a href="mailto:sahillokhande94@gmail.com" className={'CallMeIcon'}>
-                                    <Mail className='MailIcon' />
+                                    <Mail className='MailIcon' style={{fontSize:(screenDimensions.width<1000&&screenDimensions.width>600) && 20}} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande94@gmail.com</span>
                             </div>
                             <div className='CommonClass' >
                                 <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'CallMeIcon'}>
-                                    <LinkedIn className='MailIcon' />
+                                    <LinkedIn className='MailIcon' style={{fontSize:(screenDimensions.width<1000&&screenDimensions.width>600) && 20}} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande26</span>
                             </div>
                             <div className='CommonClass' >
                                 <a href="https://github.com/Sahil26299" target={'_blank'} className={'CallMeIcon'}>
-                                    <GitHub className='MailIcon' />
+                                    <GitHub className='MailIcon' style={{fontSize:(screenDimensions.width<1000&&screenDimensions.width>600) && 20}} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >Github Link</span>
                             </div>
                         </div>
                     </Grid>
-                    <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item lg={6} sm={12} >
-                        <div style={{ marginTop: '5%', paddingBottom: '5%', marginLeft: '10%' }} >
+                    <Grid display={'flex'} sx={{width:'45%'}} alignItems={'center'} flexDirection={'column'} item lg={6} md={6} sm={6} xs={12} >
+                        <div style={{ marginTop:screenDimensions.width<600 ? '20%' : '5%', paddingBottom: '5%', marginLeft: '10%', marginBottom:screenDimensions.width<600 && '20%' }} >
                             <form action="" ref={form} onSubmit={OnSendClick}>
                                 <label htmlFor="name" id='emailLabel' style={{ color: Colors.newVar.TXTColor }} >Write a message:</label>
                                 <div id={'emailInputdiv'} style={{ borderBottomColor: NameError != null ? 'red' : 'orange' }}>
@@ -170,14 +188,14 @@ export default function ContactDetails() {
                                         ValidateName(text.target.value)
                                         setName(text.target.value)
                                     }} />
-                                    <AccountCircle style={{ color: NameError != null ? 'red' : Colors.newVar.TXTColor, fontSize: 30 }} />
+                                    <AccountCircle style={{ color: NameError != null ? 'red' : Colors.newVar.TXTColor, fontSize:screenDimensions.width<1000 ? 25 : 30 }} />
                                 </div>
                                 <div id={'messageInputdiv'} style={{ borderBottomColor: messageError != null ? 'red' : 'orange' }} >
-                                    <textarea id='message' name='message' placeholder='Write a message...' maxLength={500} style={{ color: Colors.newVar.TXTColor }} rows={5} cols={6} onChange={(text) => {
+                                    <textarea id='message' name='message' placeholder='Write a message...' maxLength={500} style={{ color: Colors.newVar.TXTColor }} rows={screenDimensions.width<1000 ? 3 : 5} cols={6} onChange={(text) => {
                                         ValidateMessage(text.target.value);
                                         setmessage(text.target.value)
                                     }} />
-                                    <Message style={{ color: messageError != null ? 'red' : Colors.newVar.TXTColor, fontSize: 30 }} />
+                                    <Message style={{ color: messageError != null ? 'red' : Colors.newVar.TXTColor, fontSize: screenDimensions.width<1000 ? 25 : 30 }} />
                                 </div>
                                 <div id={'emailInputdiv'} style={{ borderBottomColor: EmailError != null ? 'red' : 'orange' }}>
                                     <input type={'email'} id={'email'} name={'reply_to'} style={{ color: Colors.newVar.TXTColor }} maxLength={256} placeholder={'Your email'} onChange={(text) => {
@@ -188,21 +206,21 @@ export default function ContactDetails() {
                                     }} />
                                     {EmailError != null ?
                                         <Error style={{ color: 'red', fontSize: 30 }} className={'EmailErrorIcon animate__animated animate__shakeX animate__fast'} /> :
-                                        <Mail style={{ color: Colors.newVar.TXTColor, fontSize: 30 }} />}
+                                        <Mail style={{ color: Colors.newVar.TXTColor, fontSize: screenDimensions.width<1000 ? 25 : 30 }} />}
                                 </div>
                                 {showLoader ?
                                     <Comment
                                         visible={true}
-                                        height="70"
-                                        width="70"
+                                        height={screenDimensions.width<1000 ? "50" : "70"}
+                                        width={screenDimensions.width<1000 ? "50" : "70"}
                                         ariaLabel="comment-loading"
                                         wrapperStyle={{}}
                                         wrapperClass="comment-wrapper"
                                         color="#fff"
                                         backgroundColor="orange"
                                     /> :
-                                    <button type="submit" style={{ color: Colors.newVar.TXTColor, backgroundColor: 'orange', borderColor: 'transparent', padding: 10, borderRadius: 5, marginTop: '3%' }} >
-                                        <SendRounded id={'sendIcon'} />
+                                    <button type="submit" style={{ color: Colors.newVar.TXTColor, backgroundColor: 'orange', borderColor: 'transparent', padding: 7, borderRadius: 5, marginTop: '3%', display:'flex', alignItems:'center', justifyContent:'center' }} >
+                                        <SendRounded id={'sendIcon'} style={{fontSize:screenDimensions.width<1000 ? 25 : 30}} />
                                     </button>}
                             </form>
                         </div>
