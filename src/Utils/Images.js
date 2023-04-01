@@ -49,8 +49,6 @@ export const Images = {
     MPulseImage9 : require('../Assets/Images/Mpulse/Mpulse9.jpg'),
     MPulseImage11 : require('../Assets/Images/Mpulse/Mpulse11.jpg'),
     MPulseImage12 : require('../Assets/Images/Mpulse/Mpulse12.jpg'),
-    MPulseImage13 : require('../Assets/Images/Mpulse/Mpulse13.mp4'),
-    MPulseImage14 : require('../Assets/Images/Mpulse/Mpulse14.mp4'),
     DeveloperCoverPhoto : require('../Assets/Images/developer_background.jpg'),
     PortfolioCoverPhoto : require('../Assets/Images/portfolio_cover_photo.jpg'),
     IntroductionCover : require('../Assets/Images/IntroductionCover.png'),

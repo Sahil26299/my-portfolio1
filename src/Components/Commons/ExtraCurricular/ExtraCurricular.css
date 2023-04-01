@@ -7,8 +7,8 @@
     object-fit: cover;
 }
 .ExtraCurrCarouselVideo{
-    height:220px;
-    width: 20vw;
+    height:200;
+    width: 250;
     object-fit: cover;
     background-color: #fff;
 }
@@ -22,4 +22,10 @@
 }
 .Body{
     font-family: 'Poppins', sans-serif;
+}
+.ImageCLass{
+    transition: transform 0.5s linear;
+}
+.ImageCLass:hover{
+    /* transform: ; */
 }

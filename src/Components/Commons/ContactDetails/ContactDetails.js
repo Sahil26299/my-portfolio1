@@ -10,7 +10,6 @@ import { Images } from '../../../Utils/Images';
 import { ToastContainer, toast } from 'react-toastify';
 import { Comment } from 'react-loader-spinner'
 import BottomBar from '../BottomBar/BottomBar';
-import sendEmail from '../../../Utils/NodeMailer/SendEmail';
 
 export default function ContactDetails() {
     const Colors = useContext(ColorSchema);
@@ -122,7 +121,7 @@ export default function ContactDetails() {
         // Browser by default does this while form submission to submit the form data. 
         e.preventDefault();
         if (ValidateEmail(Email) && ValidateName(Name) && ValidateMessage(message)) {
-            sendEmail(e)
+            sendEmail()
         }
         else {
             ValidateName(Name)
@@ -134,37 +133,24 @@ export default function ContactDetails() {
     const sendEmail = () => {
         setshowLoader(true)
         console.log(form.current, 'form.current');
-        sendEmail(Name, Email, message).then((result) => {
-            setshowLoader(false)
-                setEmail('')
-                setName('')
-                setmessage('')
-                notifySuccess('Email sent successfully!');
-            
-            // else {
-            //     notifyWarn(result.text)
-            // }
-        }).catch((error) => {
-            console.log(error)
-        })
-        // emailjs.sendForm('service_4urekv8', 'template_ddfster', form.current, '5-sdyRHTAl5GyQuEb')
-        //     .then((result) => {
-        //         setshowLoader(false)
-        //         if (result.status == 200) {
-        //             setEmail('')
-        //             setName('')
-        //             setmessage('')
+        emailjs.sendForm('service_4urekv8', 'template_ddfster', form.current, '5-sdyRHTAl5GyQuEb')
+            .then((result) => {
+                setshowLoader(false)
+                if (result.status == 200) {
+                    setEmail('')
+                    setName('')
+                    setmessage('')
 
-        //             notifySuccess('Email sent successfully!');
-        //         }
-        //         else {
-        //             notifyWarn(result.text)
-        //         }
-        //     }, (error) => {
-        //         setshowLoader(false)
-        //         console.log(error.text, 'email not send');
-        //         notifyError(error.text)
-        //     });
+                    notifySuccess('Email sent successfully!');
+                }
+                else {
+                    notifyWarn(result.text)
+                }
+            }, (error) => {
+                setshowLoader(false)
+                console.log(error.text, 'email not send');
+                notifyError(error.text)
+            });
     };
 
     return (
