@@ -12,7 +12,7 @@ import { Call, Mail, LinkedIn, GitHub } from '@mui/icons-material';
 import BottomBar from '../BottomBar/BottomBar'
 import resumePDF from '../../../Assets/DownloadFiles/SahilLokhande_CV.pdf';
 import { Link, useNavigate } from 'react-router-dom'
-const ImagesArray = [Images.TaralShowcase1,
+const ImagesArray = [
 Images.TaralShowcase2,
 Images.TaralShowcase3,
 Images.TaralShowcase4,

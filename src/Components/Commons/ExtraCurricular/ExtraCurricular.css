@@ -13,19 +13,72 @@
     background-color: #fff;
 }
 .ActivityWrapper{
-    width: 70vw;
-    margin:15vh 0px;
+    width: 85vw;
+    margin:5% 0px;
 }
 .Title{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5vw; 
+    font-size: 28px;
 }
 .Body{
+    font-size: 18px;
     font-family: 'Poppins', sans-serif;
 }
 .ImageCLass{
-    transition: transform 0.5s linear;
+    transition: transform 0.5s linear, opacity 0.5s linear;
 }
-.ImageCLass:hover{
-    /* transform: ; */
+.ImageCLass:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+.ExtraCurricularHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    align-self: center;
+    margin-top: 5%;
+}
+.HeaderImageExtraas{
+    height: 300px;
+    width: 400px;
+    object-fit: contain;
+}
+.HeaderTextExtras{
+    font-size: 18px;
+    width: 50%;
+}
+@media only screen and (max-width:1000px){
+    .HeaderTextExtras{
+        font-size: 14px;
+    }
+    .HeaderImageExtraas{
+        height: 200px;
+        width: 300px;
+        object-fit: contain;
+    }
+    .Title{
+        font-size: 26px;
+    }
+    .Body{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width:650px){
+    .Title{
+        font-size: 20px;
+    }
+    .ExtraCurricularHeader{
+        flex-direction: column-reverse;
+    }
+    .HeaderTextExtras{
+        font-size: 13px;
+        text-align: center;
+        width: 90%;
+        line-height: 20px;
+    }
+    .Body{
+        font-size: 13px;
+    }
 }

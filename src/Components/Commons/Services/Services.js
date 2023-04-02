@@ -18,13 +18,13 @@ export default function Services() {
         <div id='Services_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
             <div className='ServiceDetailsWrapper' >
                 <div className='ServiceDetails' >
-                    <p style={{ color: Colors.newVar.TXTColor, marginTop: '5%' }} className={'serviceBody'} >
-                        {servicesBody[1]}
+                    <p style={{ color: Colors.newVar.TXTColor, }} className={'serviceBody'} >
+                        I specialize in providing <span style={{color:'orange'}} >top-quality mobile app development services</span> using <span style={{color:'orange'}} >React Native</span> for both Android and iOS platforms. With my expertise and experience, I can help you bring your vision to life by delivering intuitive, user-friendly, and visually appealing apps that will exceed your expectations.
                     </p>
                 </div>
                 <img src={Images.ServicesImage} className={'ServicesImageClass'} />
             </div>
-            <Box sx={{ alignItems: 'center', marginTop:'3%' }} className={'ServicesWrapper'} >
+            <Box sx={{ alignItems: 'center', marginTop: '3%' }} className={'ServicesWrapper'} >
                 <Grid className='ServicesCardsContainer' container spacing={10} justifyContent={'center'} >
                     <Grid item display={'flex'} alignItems={'center'} flexDirection={'column'} lg={4} md={6} sm={12} >
                         <Cards isDemo={false} ImagePath={Images.DeveloperImageHome} CardTitle={'Web Development </>'} CardContent={'HTML | CSS | Javascript | React Js. | Bootstrap | Material UI'} />

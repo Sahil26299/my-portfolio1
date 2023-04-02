@@ -6,7 +6,7 @@ export const Images = {
     PlatformTheme : require('../Assets/Images/Platforms.png'),
     AppDeveloperTheme : require('../Assets/Images/AppDeveloperImage.png'),
     SmileyEmojiGoggles : require('../Assets/Images/SmileyEmojiGoggles.png'),
-    TaralShowcase1 : require('../Assets/Images/TaralShowcase/Taral-1.jpg'),
+    // TaralShowcase1 : require('../Assets/Images/TaralShowcase/Taral-1.jpg'),
     TaralShowcase2 : require('../Assets/Images/TaralShowcase/Taral-2.jpg'),
     TaralShowcase3 : require('../Assets/Images/TaralShowcase/Taral-3.jpg'),
     TaralShowcase4 : require('../Assets/Images/TaralShowcase/Taral-4.jpg'),
@@ -52,5 +52,6 @@ export const Images = {
     DeveloperCoverPhoto : require('../Assets/Images/developer_background.jpg'),
     PortfolioCoverPhoto : require('../Assets/Images/portfolio_cover_photo.jpg'),
     IntroductionCover : require('../Assets/Images/IntroductionCover.png'),
-    ServicesImage : require('../Assets/Images/ServicesImage.png')
+    ServicesImage : require('../Assets/Images/ServicesImage.png'),
+    ExtraCurricular:require('../Assets/Images/ExtraCurricular.png')
 }

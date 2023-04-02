@@ -132,11 +132,7 @@
 }
 
 @media only screen and (max-width:1000px){
-    /* .carouselVideo {
-        height: 300px;
-        width: 570px;
-        object-fit: cover;
-    } */
+  
 }
 
 @media only screen and (max-width:650px) {
@@ -186,9 +182,11 @@
     .Intro-Title {
         font-size: 20px;
     }
-
+    .Intro-TextTop {
+        font-size: 13px;
+    }
     .Intro-Text {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .ProgressTextStyle {
