@@ -23,10 +23,10 @@ export default function ExtraCurricular() {
         </ul>
 
 
-        <Grid className='PhotosContainer' justifyContent={'center'} container spacing={3} >
+        <Grid className='PhotosContainer' justifyContent={'center'} container spacing={2} >
           {ImagesArr.map((item) => {
             return (
-              <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item md={4} lg={4} sm={6} xs={12} >
+              <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item md={4} lg={3} sm={6} xs={12} >
                 <div style={{ height: 220, width: 275, overflow: 'hidden', position: 'relative' }} >
                   <img className='ImageCLass' src={item?.ImagePath} alt="" style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
                 </div>

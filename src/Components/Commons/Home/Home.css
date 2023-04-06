@@ -11,6 +11,22 @@
     /* width: 50vw; */
 }
 
+.MyDescription{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 1s, opacity 1s;
+}
+.SocialLinks{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 1s, opacity 1s;
+}
+.FadeXAnimation {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+
 .heading1 {
     display: flex;
     flex-direction: row;
@@ -62,7 +78,8 @@
     font-size: 14px;
     transition: transform 0.2s linear;
 }
-.OrangeButtonNonGradient{
+
+.OrangeButtonNonGradient {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -75,11 +92,12 @@
     transition: transform 0.2s linear;
 }
 
-.OrangeButton:hover, .OrangeButtonNonGradient:hover {
+.OrangeButton:hover,
+.OrangeButtonNonGradient:hover {
     transform: scale(1.05);
 }
 
-.SmileyImage {
+/* .SmileyImage {
     height: 75px;
     width: 10vw;
     object-fit: contain;
@@ -88,7 +106,7 @@
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-}
+} */
 
 .HomeCarouselImage {
     height: 400px;
@@ -104,7 +122,7 @@
     align-self: center;
 }
 
-@keyframes smiley {
+/* @keyframes smiley {
     from {
         transform: rotate(-15deg);
     }
@@ -112,7 +130,7 @@
     to {
         transform: rotate(15deg);
     }
-}
+} */
 
 .card-Title {
     font-weight: 700;
@@ -152,15 +170,19 @@
     --animate-duration: 1.5s;
 }
 
-.CardWrapper1 {
-    transform: translate(0px, -5px);
-    animation-name: cardFloating;
-    animation-duration: 2s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+.CardWrapper {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 1s, opacity 1s;
+
 }
 
-@keyframes cardFloating {
+.FadeYAnimation {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* @keyframes cardFloating {
     from {
         transform: translate(0px, -5px);
     }
@@ -204,9 +226,8 @@
     to {
         transform: translate(0px, -8px);
     }
-}
+}  */
 
-/* borderRadius:25, borderWidth:0, */
 .CoverPhoto {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)), url('../../../Assets/Images/portfolio_cover_photo.jpg');
     height: 50vh;
@@ -234,13 +255,14 @@
     border: 3px solid white;
     position: absolute;
     left: 5%;
-    bottom: -75px
+    bottom: -75px;
+  
 }
 
 .typewriter {
     display: inline-block;
     overflow: hidden;
-    color: #ff8c00;
+    /* color: #ff8c00; */
     font-size: 26px;
     /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
     white-space: nowrap;
@@ -285,7 +307,8 @@
     color: #000;
     transition: background-color 0.25s ease-in-out;
 }
-.SocialIconsDark{
+
+.SocialIconsDark {
     font-size: 30px;
     margin-right: 1em;
     background-color: orange;
@@ -304,10 +327,17 @@
     background-color: rgba(255, 166, 0, 0);
     border: 2px solid orange;
 }
-.SocialIconsDark:hover{
+
+.SocialIconsDark:hover {
     color: #000;
     background-color: rgba(255, 166, 0, 0);
     border: 2px solid orange;
+}
+
+.CardImageStyle {
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
 }
 
 @media only screen and (max-width:650px) {
@@ -316,16 +346,19 @@
         width: 40px;
         margin-right: 0.5em;
     }
-    .SocialIconsDark{
+
+    .SocialIconsDark {
         height: 40px;
         width: 40px;
         margin-right: 0.5em;
     }
-    .CoverPhoto{
+
+    .CoverPhoto {
         height: 30vh;
         width: 100%;
         background-size: cover;
     }
+
     .ProfilePict {
         height: 100px;
         width: 100px;
@@ -336,27 +369,31 @@
         left: 5%;
         bottom: -50px
     }
+
     .heading1 {
         font-size: 20px;
         /* line-height: 22px; */
     }
-    
+
     .heading1 p {
         font-size: 24px;
     }
+
     .typewriter {
         font-size: 20px;
         min-height: 0.5em;
     }
-    .headingProject{
+
+    .headingProject {
         font-size: 24px;
     }
 }
 
-@media only screen and (max-width:450px){
-    .CoverPhoto{
+@media only screen and (max-width:450px) {
+    .CoverPhoto {
         height: 20vh;
     }
+
     .ProfilePict {
         height: 75px;
         width: 75px;
@@ -364,35 +401,42 @@
         left: 5%;
         bottom: -37.5px
     }
+
     .socialIcons {
         height: 28px;
         width: 28px;
         margin-right: 0.3em;
     }
-    .SocialIconsDark{
+
+    .SocialIconsDark {
         height: 28px;
         width: 28px;
         margin-right: 0.3em;
     }
+
     .heading1 {
         font-size: 16px;
         /* line-height: 16px; */
     }
-    
+
     .heading1 p {
         font-size: 20px;
     }
+
     .typewriter {
         font-size: 16px;
         /* min-height: 0em; */
     }
-    .headingProject{
+
+    .headingProject {
         font-size: 20px;
     }
-    .CardImageStyle{
+
+    .CardImageStyle {
         height: 120px;
     }
-    .card-Title{
+
+    .card-Title {
         font-size: 18px !important;
     }
 }

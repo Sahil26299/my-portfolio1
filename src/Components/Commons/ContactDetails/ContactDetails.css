@@ -1,5 +1,6 @@
 .ContactWrapper {
     width: 100%;
+    height: 95vh;
 }
 
 .CallMeIcon {
@@ -154,6 +155,10 @@
     .MailMeText{
         display: none;
 
+    }
+    .SmileyEndImage{
+        height: 60px;
+        width: 60px;
     }
     .CallMeIcon {
         height: 40px;

@@ -1,11 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useMemo } from 'react';
 import './Introduction.css';
 import { ColorSchema } from '../../../Utils/Context/ColorThemes';
 import { Images } from '../../../Utils/Images';
 import LinearBufferProgress from '../LinearBufferProgress';
 import BottomBar from '../BottomBar/BottomBar';
+import Search from '@mui/icons-material/Search';
+import LazyLoad from 'react-lazy-load';
+
+const MySkills = [{ name: 'Javascript', Proficiency: 80, Buffer: 90, Type: 'Language' },
+{ name: 'C', Proficiency: 65, Buffer: 80, Type: 'Language' },
+{ name: 'Python', Proficiency: 70, Buffer: 90, Type: 'Language' },
+{ name: 'HTML', Proficiency: 80, Buffer: 90, Type: 'FrontEnd' },
+{ name: 'CSS & Bootstrao', Proficiency: 80, Buffer: 85, Type: 'FrontEnd' },
+{ name: 'React Js.', Proficiency: 70, Buffer: 80, Type: 'FrontEnd' },
+{ name: 'React Native', Proficiency: 80, Buffer: 90, Type: 'FrontEnd' },
+{ name: 'Redux', Proficiency: 30, Buffer: 40, Type: 'FrontEnd' },
+{ name: 'Git/Github', Proficiency: 60, Buffer: 80, Type: 'Platform' },
+{ name: 'VS Code', Proficiency: 80, Buffer: 90, Type: 'Platform' },
+{ name: 'Android Studios', Proficiency: 40, Buffer: 50, Type: 'Platform' },
+{ name: 'XCode', Proficiency: 30, Buffer: 45, Type: 'Platform' },
+{ name: 'MySQL', Proficiency: 40, Buffer: 50, Type: 'Database' }]
 
 export default function Introduction(props) {
+    // const [SearchedText, setSearchedText] = useState("");
+    // const [SearchedFieldFocused, setSearchedFieldFocused] = useState(false)
 
     const Colors = useContext(ColorSchema);
     const SkillProgressIndicator = (skill, prog, buff) => {
@@ -16,18 +34,58 @@ export default function Introduction(props) {
         )
     }
 
+    const [screenDimensions, setScreenDimensions] = React.useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+
+    React.useEffect(() => {
+        function handleResize() {
+            setScreenDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const FilteredArray = useMemo(() => {
+    //     if (SearchedText != "") {
+    //         return MySkills.filter((item, index) => {
+    //             return item.name?.toLowerCase()?.indexOf(SearchedText.toLowerCase()) != -1;
+    //         })
+    //     }
+    //     else {
+            return MySkills;
+    //     }
+    }, [])
+
     return (
         <div className='wrapper-container' id='Introduction_ID' style={{ backgroundColor: Colors.newVar.BGColor, marginTop: '3%', display: 'flex', flexDirection: 'column' }} >
+
+            {/* <div className="searchBarContainer" >
+                <span style={{ color: Colors.newVar.TXTColor }} className='SearchDescription' >You are looking for ?</span>
+                <div className='SearchBarWrapper' style={{ borderColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} >
+                    <input placeholder='Search (Skills, etc)' onFocus={() => setSearchedFieldFocused(true)} onBlur={() => setSearchedFieldFocused(false)} type={'text'} maxLength={60} name='Search' className='SearchBar' style={{ color: Colors.newVar.TXTColor }} />
+                    <Search style={{ fontSize: 24, color: Colors.newVar.TXTColor }} />
+                </div>
+            </div> */}
+
             <div className="basic-intro-wrapper" >
                 <div className="basic-intro-text">
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Full Name : Sahil Dattatray Lokhande</span><br />
-                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : React Developer at Mobiloitte</span><br />
+                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : <span style={{ color: 'orange' }} >React Developer at Mobiloitte</span></span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Loaction : Pune, Maharashtra, India</span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Status : Looking forward for good career opportunities...</span><br />
                 </div>
                 {/* <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div>*/}
                 <div>
+                <LazyLoad height={ screenDimensions.width<450 ? 200 : screenDimensions.width<650 ? 250 : screenDimensions.width<1000 ? 300 : 400} offset={100} >
                     <img src={Images.IntroductionCover} className='ProfileMyImage' />
+                </LazyLoad>
                 </div>
             </div>
             <div className='IntroBodyWrapper' >
@@ -47,7 +105,7 @@ export default function Introduction(props) {
                     <dl>
                         <dt>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }} >
-                                <span style={{width:'50%'}} >Mobiloitte | React Developer</span>
+                                <span style={{ width: '50%' }} >Mobiloitte | React Developer</span>
                                 <span className='ListHeaderRight' >Pune, India | April 2022 – Present</span>
                             </div>
                         </dt><br />
@@ -72,7 +130,7 @@ export default function Introduction(props) {
                         </dd><br />
                         <dt>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                                <span style={{width:'50%'}} >GRROOM | Machine Learning Intern</span>
+                                <span style={{ width: '50%' }} >GRROOM | Machine Learning Intern</span>
                                 <span className='ListHeaderRight' >Pune, India | May 2021 – June 2021</span>
                             </div>
                         </dt><br />
@@ -95,48 +153,78 @@ export default function Introduction(props) {
                 </span><br />
                 <div style={{ marginTop: 25 }} >
                     <div>
-                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation1'} >
-                            <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Programming Languages</dt> <br />
-                            <dd >
-                                {SkillProgressIndicator('Javascript', 80, 90)} <br />
-                                {SkillProgressIndicator('C', 65, 80)} <br />
-                                {SkillProgressIndicator('Python', 70, 90)}
-                            </dd>
-                        </dl>
+                        {FilteredArray?.slice(0,3)?.length > 0 &&
+                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation1'} >
+                                <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Programming Languages</dt> <br />
+                                <dd >
+                                    {FilteredArray.map((item) => {
+                                        if (item.Type == 'Language')
+                                            return (
+                                                <div>
+                                                    {SkillProgressIndicator(item.name, item.Proficiency, item.Buffer)}
+                                                    <br />
+                                                </div>
+
+                                            )
+                                    })}
+                                </dd>
+                            </dl>}
                     </div>
 
                     <div style={{ marginTop: 50 }} >
-                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation2'} >
-                            <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Front-End Technologies</dt> <br />
-                            <dd >
-                                {SkillProgressIndicator('HTML5', 80, 90)} <br />
-                                {SkillProgressIndicator('CSS & Bootstrap', 80, 85)} <br />
-                                {SkillProgressIndicator('React Js.', 70, 80)} <br />
-                                {SkillProgressIndicator('React Native', 80, 90)} <br />
-                                {SkillProgressIndicator('Redux', 30, 40)}
-                            </dd>
-                        </dl>
+                        {FilteredArray?.length > 0 &&
+                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation2'} >
+                                <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Front-End Technologies</dt> <br />
+                                <dd >
+                                    {FilteredArray.map((item) => {
+                                        if (item.Type == 'FrontEnd')
+                                            return (
+                                                <div>
+                                                    {SkillProgressIndicator(item.name, item.Proficiency, item.Buffer)}
+                                                    <br />
+                                                </div>
+                                            )
+                                    })}
+                                </dd>
+                            </dl>}
                     </div>
 
                     <div style={{ marginTop: 50 }} >
-                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation3'} >
-                            <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Tools/ Platforms</dt> <br />
-                            <dd >
-                                {SkillProgressIndicator('Git/Github', 60, 80)} <br />
-                                {SkillProgressIndicator('VSCode', 80, 90)} <br />
-                                {SkillProgressIndicator('XCode', 30, 45)} <br />
-                                {SkillProgressIndicator('Android Studios', 40, 50)}
-                            </dd>
-                        </dl>
+                        {FilteredArray?.length > 0 &&
+                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation3'} >
+                                <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Tools/ Platforms</dt> <br />
+                                <dd >
+                                    {FilteredArray.map((item) => {
+                                        if (item.Type == 'Platform')
+                                            return (
+                                                <div>
+                                                    {SkillProgressIndicator(item.name, item.Proficiency, item.Buffer)}
+                                                    <br />
+                                                </div>
+
+                                            )
+                                    })}
+                                </dd>
+                            </dl>}
                     </div>
 
                     <div style={{ marginTop: 50 }} >
-                        <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation4'} >
-                            <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Database</dt> <br />
-                            <dd >
-                                {SkillProgressIndicator('MySQL', 40, 50)}
-                            </dd>
-                        </dl>
+                        {FilteredArray?.length > 0 &&
+                            <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation4'} >
+                                <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Database</dt> <br />
+                                <dd >
+                                    {FilteredArray.map((item) => {
+                                        if (item.Type == 'Database')
+                                            return (
+                                                <div>
+                                                    {SkillProgressIndicator(item.name, item.Proficiency, item.Buffer)}
+                                                    <br />
+                                                </div>
+
+                                            )
+                                    })}
+                                </dd>
+                            </dl>}
                     </div>
                 </div>
             </div>
@@ -187,7 +275,7 @@ export default function Introduction(props) {
                         </span>
                     </li>
                 </ul>
-                <div className='CarouselWrapper' style={{display:'flex', alignItems:'center', flexDirection:'column', marginTop:10}} >
+                <div className='CarouselWrapper' style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', marginTop: 10 }} >
                     <video loop autoPlay muted controls className="carouselVideo" >
                         <source src={Images.CalorieTrackerShowcaseVideo} type="video/mp4" />
                     </video>

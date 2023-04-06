@@ -1,27 +1,30 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 export default function Cards(props) {
     useEffect(() => {
         const handleWindowResize = () => {
         };
-    
-        window.addEventListener('resize', handleWindowResize);
-    
-        return () => {
-          window.removeEventListener('resize', handleWindowResize);
-        };
-      });
 
-      const ScreenWidth = React.useMemo(()=>{
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    });
+
+    const ScreenWidth = React.useMemo(() => {
         return window.innerWidth
-      },[window.innerWidth])
+    }, [window.innerWidth])
     return (
         <div className={`${props.classID}`} >
-            <Card style={{ width: ScreenWidth<450 ? '16rem' : '18rem', minHeight:ScreenWidth<450 ? '15rem' : '18rem'}}>
-                <Card.Img variant="top" src={props.ImagePath} className='CardImageStyle' />
+            <Card style={{ width: ScreenWidth < 450 ? '16rem' : '18rem', minHeight: ScreenWidth < 450 ? '15rem' : '18rem' }}>
+                <LazyLoad height={125} offset={100} >
+                    <Card.Img variant="top" src={props.ImagePath} className='CardImageStyle' />
+
+                </LazyLoad>
                 <Card.Body>
                     <Card.Title className='card-Title' >{props.CardTitle}</Card.Title>
                     <Card.Text className='card-Content'>
