@@ -11,11 +11,16 @@
     transition: opacity 1s, transform 1s;
 }
 
+.SkillSet{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
 .FadeYAnimationProfile{
     opacity: 1;
     transform: translateY(0px);
 }
-
 .basic-intro-text {
     display: flex;
     flex-direction: column;
@@ -249,6 +254,10 @@
     .SearchBar{
         font-size: 13px;
     } */
+    .IntroBodyWrapper {
+        padding: 5% 5%;
+        /* padding-top: 5%;  */
+    }
     .ProfileMyImage {
         height: 200px;
         width: 200px;

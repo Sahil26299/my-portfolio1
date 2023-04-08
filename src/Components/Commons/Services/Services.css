@@ -1,5 +1,5 @@
 #Services_ID{
-    
+    height: 100%;
 }
 .ServicesHeading{
     font-family: 'Poppins', sans-serif;
@@ -21,7 +21,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
 }
+.ServiceCard{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+.FadeYAnimationServices{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 .ServiceDetails{
     width: 40%;
     margin: 8% 0px;
@@ -41,7 +54,7 @@
 @media only screen and (max-width:1000px){
     .serviceBody{
         /* font-family: 'Poppins', sans-serif; */
-        font-size: 14px;
+        font-size: 16px;
     }
     .ServicesImageClass{
         height: 300px;
@@ -52,9 +65,12 @@
     .ServiceDetailsWrapper{
         flex-direction: column-reverse;
         align-items: center;
-        justify-content:center
+        justify-content:center;
+        opacity: 1;
+    transform: translateY(0px);
     }
     .serviceBody{
+        font-size: 14px;
         margin-top: 0px;
         text-align: center;
     }
@@ -64,6 +80,20 @@
     .ServiceDetails{
         width: 80%;
         margin: 0% 0px 15% 0px;
+        opacity: 0;
+        transform: translateX(25px);
+        transition: opacity 1s, transform 1s;
+    }
+    .ServicesImageClass{
+        height: 250px;
+        width: 250px;
+        opacity: 0;
+        transform: translateX(-25px);
+        transition: opacity 1s, transform 1s;
+    }
+    .FadeXAnimationServices{
+        opacity: 1;
+    transform: translateX(0px);
     }
 }
 

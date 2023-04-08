@@ -24,8 +24,16 @@ const MySkills = [{ name: 'Javascript', Proficiency: 80, Buffer: 90, Type: 'Lang
 export default function Introduction(props) {
     // const [SearchedText, setSearchedText] = useState("");
     // const [SearchedFieldFocused, setSearchedFieldFocused] = useState(false)
-    const [HeaderVisible, setHeaderVisible] = useState()
-    const HeaderRef = useRef()
+    const [HeaderVisible, setHeaderVisible] = useState();
+    const [SkillSet1Visible, setSkillSet1Visible] = useState()
+    const [SkillSet2Visible, setSkillSet2Visible] = useState()
+    const [SkillSet3Visible, setSkillSet3Visible] = useState()
+    const [SkillSet4Visible, setSkillSet4Visible] = useState()
+    const HeaderRef = useRef();
+    const SkillSet1Ref = useRef();
+    const SkillSet2Ref = useRef();
+    const SkillSet3Ref = useRef();
+    const SkillSet4Ref = useRef();
 
     const Colors = useContext(ColorSchema);
     const SkillProgressIndicator = (skill, prog, buff) => {
@@ -55,22 +63,41 @@ export default function Introduction(props) {
     }, []);
 
     React.useEffect(() => {
-        let HeaderObserver = new IntersectionObserver((entries)=>{
+        let HeaderObserver = new IntersectionObserver((entries) => {
             setHeaderVisible(entries[0].isIntersecting)
         });
         HeaderObserver.observe(HeaderRef.current)
+        let SkillSet1Observer = new IntersectionObserver((entries) => {
+            setSkillSet1Visible(entries[0].isIntersecting)
+        });
+        SkillSet1Observer.observe(SkillSet1Ref.current)
+
+        let SkillSet2Observer = new IntersectionObserver((entries) => {
+            setSkillSet2Visible(entries[0].isIntersecting)
+        });
+        SkillSet2Observer.observe(SkillSet2Ref.current)
+
+        let SkillSet3Observer = new IntersectionObserver((entries) => {
+            setSkillSet3Visible(entries[0].isIntersecting)
+        });
+        SkillSet3Observer.observe(SkillSet3Ref.current)
+
+        let SkillSet4Observer = new IntersectionObserver((entries) => {
+            setSkillSet4Visible(entries[0].isIntersecting)
+        });
+        SkillSet4Observer.observe(SkillSet4Ref.current)
     }, [])
-    
+
 
     const FilteredArray = useMemo(() => {
-    //     if (SearchedText != "") {
-    //         return MySkills.filter((item, index) => {
-    //             return item.name?.toLowerCase()?.indexOf(SearchedText.toLowerCase()) != -1;
-    //         })
-    //     }
-    //     else {
-            return MySkills;
-    //     }
+        //     if (SearchedText != "") {
+        //         return MySkills.filter((item, index) => {
+        //             return item.name?.toLowerCase()?.indexOf(SearchedText.toLowerCase()) != -1;
+        //         })
+        //     }
+        //     else {
+        return MySkills;
+        //     }
     }, [])
 
     return (
@@ -84,8 +111,8 @@ export default function Introduction(props) {
                 </div>
             </div> */}
 
-            <div ref={HeaderRef} className={`basic-intro-wrapper ${(HeaderVisible && screenDimensions.width>650) ? "FadeYAnimationProfile" : ""}`} >
-                <div className={`basic-intro-text ${(HeaderVisible && screenDimensions.width<650) ? "FadeXAnimationProfile" : ""}`}>
+            <div ref={HeaderRef} className={`basic-intro-wrapper ${(HeaderVisible && screenDimensions.width > 650) ? "FadeYAnimationProfile" : ""}`} >
+                <div className={`basic-intro-text ${(HeaderVisible && screenDimensions.width < 650) ? "FadeXAnimationProfile" : ""}`}>
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Full Name : Sahil Dattatray Lokhande</span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : <span style={{ color: 'orange' }} >React Developer at Mobiloitte</span></span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Loaction : Pune, Maharashtra, India</span><br />
@@ -93,9 +120,9 @@ export default function Introduction(props) {
                 </div>
                 {/* <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div>*/}
                 <div>
-                <LazyLoad className={`basic-intro-Image ${(HeaderVisible && screenDimensions.width<650) ? "FadeXAnimationProfile" : ""}`} height={ screenDimensions.width<450 ? 200 : screenDimensions.width<650 ? 250 : screenDimensions.width<1000 ? 300 : 400} offset={100} >
-                    <img src={Images.IntroductionCover} className='ProfileMyImage' />
-                </LazyLoad>
+                    <LazyLoad className={`basic-intro-Image ${(HeaderVisible && screenDimensions.width < 650) ? "FadeXAnimationProfile" : ""}`} height={screenDimensions.width < 450 ? 200 : screenDimensions.width < 650 ? 250 : screenDimensions.width < 1000 ? 300 : 400} offset={100} >
+                        <img src={Images.IntroductionCover} className='ProfileMyImage' />
+                    </LazyLoad>
                 </div>
             </div>
             <div className='IntroBodyWrapper' >
@@ -162,8 +189,8 @@ export default function Introduction(props) {
                     Technical Skills
                 </span><br />
                 <div style={{ marginTop: 25 }} >
-                    <div>
-                        {FilteredArray?.slice(0,3)?.length > 0 &&
+                    <div ref={SkillSet1Ref} className={`SkillSet ${SkillSet1Visible ? "FadeYAnimationProfile" : ""}`}>
+                        {FilteredArray?.slice(0, 3)?.length > 0 &&
                             <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation1'} >
                                 <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Programming Languages</dt> <br />
                                 <dd >
@@ -181,7 +208,7 @@ export default function Introduction(props) {
                             </dl>}
                     </div>
 
-                    <div style={{ marginTop: 50 }} >
+                    <div ref={SkillSet2Ref} className={`SkillSet ${SkillSet2Visible ? "FadeYAnimationProfile" : ""}`} style={{ marginTop: 50 }} >
                         {FilteredArray?.length > 0 &&
                             <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation2'} >
                                 <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Front-End Technologies</dt> <br />
@@ -199,7 +226,7 @@ export default function Introduction(props) {
                             </dl>}
                     </div>
 
-                    <div style={{ marginTop: 50 }} >
+                    <div ref={SkillSet3Ref} className={`SkillSet ${SkillSet3Visible ? "FadeYAnimationProfile" : ""}`} style={{ marginTop: 50 }} >
                         {FilteredArray?.length > 0 &&
                             <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation3'} >
                                 <dt className='TechnicalSkillDT' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Tools/ Platforms</dt> <br />
@@ -218,7 +245,7 @@ export default function Introduction(props) {
                             </dl>}
                     </div>
 
-                    <div style={{ marginTop: 50 }} >
+                    <div ref={SkillSet4Ref} className={`SkillSet ${SkillSet4Visible ? "FadeYAnimationProfile" : ""}`} style={{ marginTop: 50 }} >
                         {FilteredArray?.length > 0 &&
                             <dl style={{ color: Colors.newVar.TXTColor, border: Colors.isDarkMode ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(0, 0, 0, 0.2)', borderRadius: 10, padding: 25, position: 'relative' }} className={'Intro-Text fadeAnimation4'} >
                                 <dt className='TechnicalSkillDT1' style={{ backgroundColor: Colors.newVar.BGColor, padding: 5 }} >Database</dt> <br />
@@ -289,6 +316,7 @@ export default function Introduction(props) {
                     <video loop autoPlay muted controls className="carouselVideo" >
                         <source src={Images.CalorieTrackerShowcaseVideo} type="video/mp4" />
                     </video>
+
                 </div>
             </div>
             <div className="IntroBodyWrapper">
