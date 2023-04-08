@@ -5,7 +5,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    align-self: center
+    align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
+.FadeYAnimationProfile{
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 .basic-intro-text {
@@ -179,6 +187,24 @@
     .basic-intro-wrapper {
         flex-direction: column-reverse;
         justify-content: center;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .basic-intro-text{
+        opacity: 0;
+        transform: translateX(25px);
+        transition: opacity 1s, transform 1s;
+    }
+
+    .basic-intro-Image{
+        opacity: 0;
+        transform: translateX(-25px);
+        transition: opacity 1s, transform 1s;
+    }
+
+    .FadeXAnimationProfile{
+        opacity: 1;
+        transform: translateX(0px);
     }
 
     .ProfileMyImage {

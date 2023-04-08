@@ -1,4 +1,4 @@
-import React, { useContext, useState, useMemo } from 'react';
+import React, { useContext, useState, useMemo, useRef } from 'react';
 import './Introduction.css';
 import { ColorSchema } from '../../../Utils/Context/ColorThemes';
 import { Images } from '../../../Utils/Images';
@@ -24,6 +24,8 @@ const MySkills = [{ name: 'Javascript', Proficiency: 80, Buffer: 90, Type: 'Lang
 export default function Introduction(props) {
     // const [SearchedText, setSearchedText] = useState("");
     // const [SearchedFieldFocused, setSearchedFieldFocused] = useState(false)
+    const [HeaderVisible, setHeaderVisible] = useState()
+    const HeaderRef = useRef()
 
     const Colors = useContext(ColorSchema);
     const SkillProgressIndicator = (skill, prog, buff) => {
@@ -52,6 +54,14 @@ export default function Introduction(props) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    React.useEffect(() => {
+        let HeaderObserver = new IntersectionObserver((entries)=>{
+            setHeaderVisible(entries[0].isIntersecting)
+        });
+        HeaderObserver.observe(HeaderRef.current)
+    }, [])
+    
+
     const FilteredArray = useMemo(() => {
     //     if (SearchedText != "") {
     //         return MySkills.filter((item, index) => {
@@ -74,8 +84,8 @@ export default function Introduction(props) {
                 </div>
             </div> */}
 
-            <div className="basic-intro-wrapper" >
-                <div className="basic-intro-text">
+            <div ref={HeaderRef} className={`basic-intro-wrapper ${(HeaderVisible && screenDimensions.width>650) ? "FadeYAnimationProfile" : ""}`} >
+                <div className={`basic-intro-text ${(HeaderVisible && screenDimensions.width<650) ? "FadeXAnimationProfile" : ""}`}>
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Full Name : Sahil Dattatray Lokhande</span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : <span style={{ color: 'orange' }} >React Developer at Mobiloitte</span></span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Loaction : Pune, Maharashtra, India</span><br />
@@ -83,7 +93,7 @@ export default function Introduction(props) {
                 </div>
                 {/* <div className='verticalLine' style={{ backgroundColor: Colors.isDarkMode ? 'rgba(255,255,255,0.25)' : 'rgba(0,0,0,0.25)' }} ></div>*/}
                 <div>
-                <LazyLoad height={ screenDimensions.width<450 ? 200 : screenDimensions.width<650 ? 250 : screenDimensions.width<1000 ? 300 : 400} offset={100} >
+                <LazyLoad className={`basic-intro-Image ${(HeaderVisible && screenDimensions.width<650) ? "FadeXAnimationProfile" : ""}`} height={ screenDimensions.width<450 ? 200 : screenDimensions.width<650 ? 250 : screenDimensions.width<1000 ? 300 : 400} offset={100} >
                     <img src={Images.IntroductionCover} className='ProfileMyImage' />
                 </LazyLoad>
                 </div>

@@ -43,6 +43,7 @@ export default function Home(props) {
     const [isCard3Visible, setisCard3Visible] = useState();
     const [DescriptionVisible, setDescriptionVisible] = useState();
     const [SocialLinksVisible, setSocialLinksVisible] = useState();
+    const [ProfileImageVisible, setProfileImageVisible] = useState()
 
     const [text] = useTypewriter({
         words: ['Software Engineer', 'Front-End Developer', 'React Js.', 'React Native', 'Redux'],
@@ -76,6 +77,13 @@ export default function Home(props) {
         });
         DescriptionObserver.observe(MyDescriptionRef.current)
 
+        let ProfileImageObserver = new IntersectionObserver((entries)=>{
+            setTimeout(() => {
+                setProfileImageVisible(entries[0].isIntersecting)
+            }, 10);
+        });
+        ProfileImageObserver.observe(ProfileImageRef.current)
+
         let SocialLinksObserver = new IntersectionObserver((entries)=>{
             setSocialLinksVisible(entries[0].isIntersecting)
         });
@@ -107,9 +115,9 @@ export default function Home(props) {
     return (
         <div className='WrapperHome' id='Home_ID' style={{ backgroundColor: Colors.newVar.BGColor }} >
             <div className='CoverPhoto' >
-                <div >
+                <div ref={ProfileImageRef} >
                     <LazyLoad height={100} offset={100} >
-                        <img src={Images.ProfilePicture} className={`ProfilePict`} />
+                        <img src={Images.ProfilePicture} className={`ProfilePict ${ProfileImageVisible ? "fadeYIn" : ""}`} />
                     </LazyLoad>
                 </div>
             </div>

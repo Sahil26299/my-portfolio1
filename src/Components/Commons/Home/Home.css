@@ -255,8 +255,14 @@
     border: 3px solid white;
     position: absolute;
     left: 5%;
-    bottom: -75px;
+    bottom: -25px;
+    opacity: 0;
+    transition: bottom 1s, opacity 1s;
   
+}
+ .fadeYIn{
+    opacity: 1;
+    bottom: -75px;
 }
 
 .typewriter {
