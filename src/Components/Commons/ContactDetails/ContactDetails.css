@@ -100,7 +100,7 @@
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-}
+}  
 
 @keyframes smiley_end {
     from {
@@ -118,6 +118,22 @@
 .ContactDetails{
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.75s, transform 0.75s;
+}
+.ContactForm{
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
+    border-radius: 7px;
+    padding: 5% 5%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.75s, transform 0.75s;
+}
+.FadeYAnimationContact{
+    transform: translateY(0px);
+    opacity: 1;
 }
 
 @media only screen and (max-width:1000px) {
@@ -163,6 +179,9 @@
     .CallMeIcon {
         height: 40px;
         width: 40px;
+    }
+    .ContactForm{
+        padding: 15% 12%;
     }
 }
 @media only screen and (max-width:350px){

@@ -23,12 +23,12 @@
     justify-content: space-evenly;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.75s, transform 0.75s;
 }
 .ServiceCard{
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.75s, transform 0.75s;
 }
 .FadeYAnimationServices{
     opacity: 1;
@@ -82,14 +82,14 @@
         margin: 0% 0px 15% 0px;
         opacity: 0;
         transform: translateX(25px);
-        transition: opacity 1s, transform 1s;
+        transition: opacity 0.75s, transform 0.75s;
     }
     .ServicesImageClass{
         height: 250px;
         width: 250px;
         opacity: 0;
         transform: translateX(-25px);
-        transition: opacity 1s, transform 1s;
+        transition: opacity 0.75s, transform 0.75s;
     }
     .FadeXAnimationServices{
         opacity: 1;

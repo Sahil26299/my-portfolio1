@@ -11,8 +11,17 @@
     font-size: 14px !important;
     font-weight: 600;
 }
+.NavigationButtonsDark{
+    transition: color 0.25s ease;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600;
+}
 .NavigationButtons:hover{
-    color: orange;
+    color: #ff8c00;
+}
+.NavigationButtonsDark:hover{
+    color: #FFC300;
 }
 
 @media only screen and (max-width:450px){

@@ -154,12 +154,12 @@ function ResponsiveAppBar(props) {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {Object.keys(pages).map((page) => (
                 <Button
-                  className='NavigationButtons'
+                  className={Colors.isDarkMode ? 'NavigationButtonsDark' : 'NavigationButtons'}
                   key={page} 
                   component={Link}
                   to={pages[page]}
                   onClick={()=>handleCloseNavMenu(pages[page])}
-                  sx={{ color: SelectedTab==pages[page] ? 'orange' : Colors.newVar.TXTColor, display: 'block', mx: 1, height:'100%', borderColor:'red', borderWidth:1 }}
+                  sx={{ color: SelectedTab==pages[page] ? Colors.newVar.HighlightColor : Colors.newVar.TXTColor, display: 'block', mx: 1, height:'100%', borderColor:'red', borderWidth:1 }}
                 >
                   {page?.indexOf('_')>-1 ? page?.split('_').join(' ') : page}
                 </Button>
@@ -171,8 +171,8 @@ function ResponsiveAppBar(props) {
                 <Tooltip title={Colors.isDarkMode ? "Dark Theme" : "Light Theme"} >
                   <IconButton onClick={HandleSwitchTheme} sx={{ p: 0, mx: screenDimensions.width<450 ? 2 : 3 }}>
                     {Colors.isDarkMode ? 
-                    <DarkMode color='dark' fontSize={screenDimensions.width<450 ? 'medium' : 'large'} htmlColor='orange' /> :
-                    <LightMode color='light' fontSize={screenDimensions.width<450 ? 'medium' : 'large'} htmlColor='orange' />}
+                    <DarkMode color='dark' fontSize={screenDimensions.width<450 ? 'medium' : 'large'} htmlColor={Colors.newVar.HighlightColor} /> :
+                    <LightMode color='light' fontSize={screenDimensions.width<450 ? 'medium' : 'large'} htmlColor={Colors.newVar.HighlightColor} />}
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="Hello! 😄">

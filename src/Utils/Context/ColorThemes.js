@@ -4,14 +4,16 @@ export const ColorSchema = createContext();
 export default function ColorThemes(props) {
     const [isDarkMode, setisDarkMode] = useState(true);
     const darkMode = {
-        BGColor: '#282c34',
+        BGColor: '#1d1d1d',
         TXTColor: '#fff',
         TextInputColor: '#252631',
+        HighlightColor:'#FFC300'
     };
     const lightMode = {
-        BGColor: '#f5f5f5',
+        BGColor: '#fff',
         TXTColor: '#282c34',
         TextInputColor: '#DBDBDB',
+        HighlightColor:'#ff8c00'
     };
     const newVar = isDarkMode ? darkMode : lightMode;
     let data = {

@@ -80,7 +80,7 @@ export default function Home(props) {
         let ProfileImageObserver = new IntersectionObserver((entries)=>{
             setTimeout(() => {
                 setProfileImageVisible(entries[0].isIntersecting)
-            }, 10);
+            }, 15);
         });
         ProfileImageObserver.observe(ProfileImageRef.current)
 
@@ -142,18 +142,18 @@ export default function Home(props) {
                             <span style={{ color: Colors.newVar.TXTColor }} >{INTRODUCTION_LINE}</span>
                         </div>
                         <div className="heading1" >
-                            <span style={{ color: Colors.newVar.TXTColor, marginTop: 5 }} >I am<span style={{ color: Colors.isDarkMode ? 'orange' :'#ff8c00' }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
+                            <span style={{ color: Colors.newVar.TXTColor, marginTop: 5 }} >I am<span style={{ color: Colors.newVar.HighlightColor }} id={'FullNameHome'} >{FIRST_NAME} {LAST_NAME}</span></span>
                         </div>
                         <div style={{ display: 'inline-block' }} >
 
-                            <p className="typewriter" style={{color : Colors.isDarkMode ? 'orange' :'#ff8c00'}} >{text}<span className='Cursor' style={{ color: Colors.isDarkMode ? 'orange' :'#ff8c00' }} >|</span></p>
+                            <p className="typewriter" style={{color : Colors.newVar.HighlightColor}} >{text}<span className='Cursor' style={{ color: Colors.newVar.HighlightColor }} >|</span></p>
 
                         </div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: screenDimensions.width<300 ? 'column' : 'row', alignItems: 'center' }} >
-                        <Button BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width<300 ? 150 :screenDimensions.width > 650 ? 140 : 120, marginTop: 25, marginRight: screenDimensions.width>300 && 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} onClick={props.ContactMeClicked} />
+                        <Button BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width<300 ? 150 :screenDimensions.width > 650 ? 140 : 120, marginTop: 25, marginRight: screenDimensions.width>300 && 15, }} BtnContent={'Contact Me'} Path={'/contact'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14, textShadow:'0px 0px 5px rgba(0,0,0,0.25)' }} onClick={props.ContactMeClicked} />
                         {/* <a href={resumePDF} download={'SahilLokhande_CV.pdf'} className={'ResumeDownloadLink'} > */}
-                        <Button onClick={() => OpenFile()} BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width<300 ? 150 :screenDimensions.width > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14 }} />
+                        <Button onClick={() => OpenFile()} BtnStyle={{ height: screenDimensions.width > 650 ? 50 : 45, width: screenDimensions.width<300 ? 150 :screenDimensions.width > 650 ? 140 : 120, marginTop: 25 }} BtnContent={'Download CV'} BtnTxtStyle={{ fontSize: screenDimensions.width > 650 ? 16 : 14, textShadow:'0px 0px 5px rgba(0,0,0,0.25)' }} />
                         {/* </a> */}
                     </div>
                 </div>
@@ -174,7 +174,7 @@ export default function Home(props) {
                 </Grid>
             </Grid>
             <div className='HomeCarouselWrapper' >
-                <span className='headingProject' style={{ color: 'orange' }}>Project Snapshots</span>
+                <span className='headingProject' style={{ color: Colors.newVar.HighlightColor }}>Project Snapshots</span>
                 <ShowcaseCarousel
                     ImageStyleName={'HomeCarouselImage'}
                     CarouselWrapperStyle={'HomeCarouselWrapper'}

@@ -39,6 +39,13 @@
     width: 80%;
     align-self: center;
     margin-top: 5%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.75s, transform 0.75s;
+}
+.FadeYAnimationExtra{
+    opacity: 1;
+    transform: translateY(0px);
 }
 .HeaderImageExtraas{
     height: 400px;
@@ -71,12 +78,26 @@
     }
     .ExtraCurricularHeader{
         flex-direction: column-reverse;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .HeaderImageExtraas{
+        opacity: 0;
+        transform: translateX(-25px);
+        transition: opacity 0.75s, transform 0.75s;
     }
     .HeaderTextExtras{
         font-size: 13px;
         text-align: center;
         width: 90%;
         line-height: 20px;
+        opacity: 0;
+        transform: translateX(25px);
+        transition: opacity 0.75s, transform 0.75s;
+    }
+    .FadeXInExtra{
+        opacity: 1;
+        transform: translateX(0px);
     }
     .Body{
         font-size: 13px;

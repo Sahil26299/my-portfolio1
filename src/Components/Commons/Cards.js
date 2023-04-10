@@ -20,7 +20,7 @@ export default function Cards(props) {
     }, [window.innerWidth])
     return (
         <div className={`${props.classID}`} >
-            <Card style={{ width: ScreenWidth < 450 ? '16rem' : '18rem', minHeight: ScreenWidth < 450 ? '15rem' : '18rem' }}>
+            <Card style={{ width: ScreenWidth < 450 ? '16rem' : '18rem', minHeight: ScreenWidth < 450 ? '15rem' : '18rem', boxShadow:'0px 0px 15px rgba(0,0,0,0.1)', border:'none' }}>
                 <LazyLoad height={125} offset={100} >
                     <Card.Img variant="top" src={props.ImagePath} className='CardImageStyle' />
 

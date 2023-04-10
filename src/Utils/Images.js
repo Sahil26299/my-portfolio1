@@ -53,5 +53,6 @@ export const Images = {
     PortfolioCoverPhoto : require('../Assets/Images/portfolio_cover_photo.jpg'),
     IntroductionCover : require('../Assets/Images/IntroductionCover.png'),
     ServicesImage : require('../Assets/Images/ServicesImage.png'),
-    ExtraCurricular:require('../Assets/Images/ExtraCurricular.png')
+    ExtraCurricular:require('../Assets/Images/ExtraCurricular.png'),
+    BackgroundImage:require('../Assets/Images/BackgroundImage.jpg'),
 }

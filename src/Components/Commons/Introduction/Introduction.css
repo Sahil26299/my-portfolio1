@@ -8,13 +8,13 @@
     align-self: center;
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.75s, transform 0.75s;
 }
 
 .SkillSet{
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.75s, transform 0.75s;
 }
 
 .FadeYAnimationProfile{
@@ -198,13 +198,13 @@
     .basic-intro-text{
         opacity: 0;
         transform: translateX(25px);
-        transition: opacity 1s, transform 1s;
+        transition: opacity 0.75s, transform 0.75s;
     }
 
     .basic-intro-Image{
         opacity: 0;
         transform: translateX(-25px);
-        transition: opacity 1s, transform 1s;
+        transition: opacity 0.75s, transform 0.75s;
     }
 
     .FadeXAnimationProfile{

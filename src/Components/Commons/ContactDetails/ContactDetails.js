@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useRef, useState, useEffect } from 'react'
 import { ColorSchema } from '../../../Utils/Context/ColorThemes';
 import './ContactDetails.css'
 import TabHeader from '../TabHeader'
@@ -26,7 +26,12 @@ export default function ContactDetails() {
         height: window.innerHeight
     });
 
-    React.useEffect(() => {
+    const SocialIconsRef = useRef();
+    const [SocialIconsVisible, setSocialIconsVisible] = useState()
+    const ContactFormRef = useRef();
+    const [ContactFormVisible, setContactFormVisible] = useState()
+
+    useEffect(() => {
         function handleResize() {
             setScreenDimensions({
                 width: window.innerWidth,
@@ -38,6 +43,19 @@ export default function ContactDetails() {
 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    useEffect(() => {
+        let SocialIconsObserver = new IntersectionObserver((entries) => {
+            setSocialIconsVisible(entries[0].isIntersecting)
+        });
+        SocialIconsObserver.observe(SocialIconsRef.current)
+
+        let ContactFormObserver = new IntersectionObserver((entries) => {
+            setContactFormVisible(entries[0].isIntersecting)
+        });
+        ContactFormObserver.observe(ContactFormRef.current)
+    }, [])
+    
 
     const ValidateMessage = (msg) => {
         if (msg) {
@@ -158,7 +176,7 @@ export default function ContactDetails() {
             <Box className='ContactWrapper'  >
                 <Grid className='ContactDetailsAndForm' container spacing={2} alignItems={'center'} direction={screenDimensions.width < 600 ? 'column' : 'row'} >
                     <Grid display={'flex'} sx={{ width: '45%' }} alignItems={'center'} flexDirection={'column'} item lg={6} md={6} sm={6} xs={12}>
-                        <div className='ContactDetails' >
+                        <div ref={SocialIconsRef} className={`ContactDetails ${SocialIconsVisible ? "FadeYAnimationContact" : ""}`} >
                             <div className='CommonClass' >
                                 <a href="" className={'CallMeIcon'}>
                                     <Call className='CallIcon' style={{ fontSize: (screenDimensions.width < 1000 && screenDimensions.width > 600) && 20 }} />
@@ -186,25 +204,25 @@ export default function ContactDetails() {
                         </div>
                     </Grid>
                     <Grid display={'flex'} sx={{ width: '45%' }} alignItems={'center'} flexDirection={'column'} item lg={6} md={6} sm={6} xs={12} >
-                        <div style={{ marginTop: screenDimensions.width < 600 ? '20%' : '5%', paddingBottom: '5%', marginLeft: '10%', marginBottom: screenDimensions.width < 600 && '20%' }} >
+                        <div ref={ContactFormRef} className={`ContactForm ${ContactFormVisible ? "FadeYAnimationContact" : ""}`} style={{ marginTop: screenDimensions.width < 600 ? '20%' : '5%', paddingBottom: '5%', marginLeft: '10%', marginBottom: screenDimensions.width < 600 && '20%' }} >
                             <form action="" ref={form} onSubmit={OnSendClick}>
-                                <label htmlFor="name" id='emailLabel' style={{ color: Colors.newVar.TXTColor }} >Write a message:</label>
+                                <label htmlFor="name" id='emailLabel' style={{ color: '#1d1d1d' }} >Write a message:</label>
                                 <div id={'emailInputdiv'} style={{ borderBottomColor: NameError != null ? 'red' : 'orange' }}>
-                                    <input type={'text'} value={Name} id={'name'} name={'from_name'} style={{ color: Colors.newVar.TXTColor }} maxLength={60} placeholder={'Your name'} onChange={(text) => {
+                                    <input type={'text'} value={Name} id={'name'} name={'from_name'} style={{ color: '#1d1d1d' }} maxLength={60} placeholder={'Your name'} onChange={(text) => {
                                         ValidateName(text.target.value)
                                         setName(text.target.value)
                                     }} />
-                                    <AccountCircle style={{ color: NameError != null ? 'red' : Colors.newVar.TXTColor, fontSize: screenDimensions.width < 1000 ? 25 : 30 }} />
+                                    <AccountCircle style={{ color: NameError != null ? 'red' : '#1d1d1d', fontSize: screenDimensions.width < 1000 ? 25 : 30 }} />
                                 </div>
                                 <div id={'messageInputdiv'} style={{ borderBottomColor: messageError != null ? 'red' : 'orange' }} >
-                                    <textarea value={message} id='message' name='message' placeholder='Write a message...' maxLength={500} style={{ color: Colors.newVar.TXTColor }} rows={screenDimensions.width < 1000 ? 3 : 5} cols={6} onChange={(text) => {
+                                    <textarea value={message} id='message' name='message' placeholder='Write a message...' maxLength={500} style={{ color: '#1d1d1d', resize:'none' }} rows={screenDimensions.width < 1000 ? 3 : 5} cols={6} onChange={(text) => {
                                         ValidateMessage(text.target.value);
                                         setmessage(text.target.value)
                                     }} />
-                                    <Message style={{ color: messageError != null ? 'red' : Colors.newVar.TXTColor, fontSize: screenDimensions.width < 1000 ? 25 : 30 }} />
+                                    <Message style={{ color: messageError != null ? 'red' : '#1d1d1d', fontSize: screenDimensions.width < 1000 ? 25 : 30 }} />
                                 </div>
                                 <div id={'emailInputdiv'} style={{ borderBottomColor: EmailError != null ? 'red' : 'orange' }}>
-                                    <input type={'email'} value={Email} id={'email'} name={'reply_to'} style={{ color: Colors.newVar.TXTColor }} maxLength={256} placeholder={'Your email'} onChange={(text) => {
+                                    <input type={'email'} value={Email} id={'email'} name={'reply_to'} style={{ color: '#1d1d1d' }} maxLength={256} placeholder={'Your email'} onChange={(text) => {
                                         setEmail(text.target.value)
                                         // ValidateEmail(text.target.value)
                                     }} onBlur={() => {
@@ -212,7 +230,7 @@ export default function ContactDetails() {
                                     }} />
                                     {EmailError != null ?
                                         <Error style={{ color: 'red', fontSize: 30 }} className={'EmailErrorIcon animate__animated animate__shakeX animate__fast'} /> :
-                                        <Mail style={{ color: Colors.newVar.TXTColor, fontSize: screenDimensions.width < 1000 ? 25 : 30 }} />}
+                                        <Mail style={{ color: '#1d1d1d', fontSize: screenDimensions.width < 1000 ? 25 : 30 }} />}
                                 </div>
                                 {showLoader ?
                                     <Comment
