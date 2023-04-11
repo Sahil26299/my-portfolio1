@@ -47,17 +47,17 @@ export default function ExtraCurricular() {
   const showActivity = (Org, Descr, ImagesArr, carouselSpeed, Descr2) => {
     return (
       <div className='ActivityWrapper' id='Extra_ID' >
-        <span style={{ color: 'orange', }} className={'Title'} >{Org}</span><br />
+        <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700'}} className={'Title'} >{Org}</span><br />
         <ul style={{ color: '#fff' }} >
           <li> <span style={{ color: Colors.newVar.TXTColor, }} className={'Body'} >{Descr}</span></li><br />
           {Descr2 != undefined ? <li><span style={{ color: Colors.newVar.TXTColor, }} className={'Body'} >{Descr2}</span></li> : null}<br />
         </ul>
 
 
-        <Grid className='PhotosContainer' justifyContent={'center'} container spacing={2} >
+        <Grid className='PhotosContainer' justifyContent={'center'} container spacing={5} >
           {ImagesArr.map((item) => {
             return (
-              <Grid display={'flex'} alignItems={'center'} flexDirection={'column'} item md={4} lg={3} sm={6} xs={12} >
+              <Grid padding={0} display={'flex'} alignItems={'center'} flexDirection={'column'} item md={4} lg={4} sm={6} xs={12} >
                 <div style={{ height: 220, width: 275, overflow: 'hidden', position: 'relative' }} >
                   <LazyLoad height={220} offset={100}  >
                     <img className='ImageCLass' src={item?.ImagePath} alt="" style={{ height: '100%', width: '100%', objectFit: 'cover' }} />
@@ -76,7 +76,7 @@ export default function ExtraCurricular() {
         <p className={`HeaderTextExtras ${ExtraHeaderVisible ? "FadeXInExtra":""}`} style={{ color: Colors.newVar.TXTColor }} >
           I spent a significant amount of my free time participating in co-curricular activities and pursuing my interests such as
           college events, trekking, and traveling. Engaging in these activities has allowed me to explore my other passions, including
-          <span style={{ color: 'orange' }}> photography, photo editing, graphic designing,</span> and <span style={{ color: 'orange' }}>video editing</span>. Through these pursuits, I have developed new skills and
+          <span style={{ color: Colors.newVar.HighlightColor }}> photography, photo editing, graphic designing,</span> and <span style={{ color: Colors.newVar.HighlightColor }}>video editing</span>. Through these pursuits, I have developed new skills and
           expanded my creative abilities, which have been invaluable to my personal and professional growth.
         </p>
         <LazyLoad height={screenDimensions.width < 450 ? 200 : screenDimensions.width < 650 ? 250 : screenDimensions.width < 1000 ? 300 : 400} offset={100} >

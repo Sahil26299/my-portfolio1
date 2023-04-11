@@ -15,6 +15,24 @@
     color: #000;
     transition: background-color 0.25s ease-in-out;
 }
+.CallMeIconLight{
+    font-size: 20px;
+    background-color: orange;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    color: #000;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.CallMeIconLight:hover{
+    color: #000;
+    background-color: rgba(255, 166, 0, 0);
+    border: 2px solid orange;
+}
 
 .CallMeIcon:hover {
     color: #fff;

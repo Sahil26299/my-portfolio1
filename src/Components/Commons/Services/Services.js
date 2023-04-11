@@ -50,7 +50,7 @@ export default function Services() {
             <div ref={HeaderRef} className={`ServiceDetailsWrapper ${HeaderVisible ? "FadeYAnimationServices" : ""}`} >
                 <div className={`ServiceDetails ${HeaderVisible ? "FadeXAnimationServices" : ""}`} >
                     <p style={{ color: Colors.newVar.TXTColor, }} className={'serviceBody'} >
-                        I specialize in providing <span style={{color:'orange'}} >top-quality mobile app development services</span> using <span style={{color:'orange'}} >React Native</span> for both Android and iOS platforms. With my expertise and experience, I can help you bring your vision to life by delivering intuitive, user-friendly, and visually appealing apps that will exceed your expectations.
+                        I specialize in providing <span style={{color: Colors.newVar.HighlightColor}} >top-quality mobile app development services</span> using <span style={{color: Colors.newVar.HighlightColor}} >React Native</span> for both Android and iOS platforms. With my expertise and experience, I can help you bring your vision to life by delivering intuitive, user-friendly, and visually appealing apps that will exceed your expectations.
                     </p>
                 </div>
                 <img src={Images.ServicesImage} className={`ServicesImageClass ${HeaderVisible ? "FadeXAnimationServices" : ""}`} />

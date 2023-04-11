@@ -174,7 +174,7 @@ export default function Home(props) {
                 </Grid>
             </Grid>
             <div className='HomeCarouselWrapper' >
-                <span className='headingProject' style={{ color: Colors.newVar.HighlightColor }}>Project Snapshots</span>
+                <span className='headingProject' style={{ color: Colors.newVar.HighlightColor, fontWeight:'700' }}>Project Snapshots</span>
                 <ShowcaseCarousel
                     ImageStyleName={'HomeCarouselImage'}
                     CarouselWrapperStyle={'HomeCarouselWrapper'}

@@ -178,25 +178,25 @@ export default function ContactDetails() {
                     <Grid display={'flex'} sx={{ width: '45%' }} alignItems={'center'} flexDirection={'column'} item lg={6} md={6} sm={6} xs={12}>
                         <div ref={SocialIconsRef} className={`ContactDetails ${SocialIconsVisible ? "FadeYAnimationContact" : ""}`} >
                             <div className='CommonClass' >
-                                <a href="" className={'CallMeIcon'}>
+                                <a href="" className={ Colors.isDarkMode ? 'CallMeIcon' : "CallMeIconLight"}>
                                     <Call className='CallIcon' style={{ fontSize: (screenDimensions.width < 1000 && screenDimensions.width > 600) && 20 }} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >+91 915098814</span>
                             </div>
                             <div className='CommonClass' >
-                                <a href="mailto:sahillokhande94@gmail.com" className={'CallMeIcon'}>
+                                <a href="mailto:sahillokhande94@gmail.com" className={Colors.isDarkMode? 'CallMeIcon' : "CallMeIconLight"}>
                                     <Mail className='MailIcon' style={{ fontSize: (screenDimensions.width < 1000 && screenDimensions.width > 600) && 20 }} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande94@gmail.com</span>
                             </div>
                             <div className='CommonClass' >
-                                <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={'CallMeIcon'}>
+                                <a href="https://www.linkedin.com/in/sahillokhande26" target={'_blank'} className={ Colors.isDarkMode ? 'CallMeIcon' : "CallMeIconLight"}>
                                     <LinkedIn className='MailIcon' style={{ fontSize: (screenDimensions.width < 1000 && screenDimensions.width > 600) && 20 }} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >sahillokhande26</span>
                             </div>
                             <div className='CommonClass' >
-                                <a href="https://github.com/Sahil26299" target={'_blank'} className={'CallMeIcon'}>
+                                <a href="https://github.com/Sahil26299" target={'_blank'} className={ Colors.isDarkMode ? 'CallMeIcon' : "CallMeIconLight"}>
                                     <GitHub className='MailIcon' style={{ fontSize: (screenDimensions.width < 1000 && screenDimensions.width > 600) && 20 }} />
                                 </a>
                                 <span style={{ color: Colors.newVar.TXTColor, marginLeft: 20 }} className={'MailMeText'} >Github Link</span>
@@ -206,7 +206,7 @@ export default function ContactDetails() {
                     <Grid display={'flex'} sx={{ width: '45%' }} alignItems={'center'} flexDirection={'column'} item lg={6} md={6} sm={6} xs={12} >
                         <div ref={ContactFormRef} className={`ContactForm ${ContactFormVisible ? "FadeYAnimationContact" : ""}`} style={{ marginTop: screenDimensions.width < 600 ? '20%' : '5%', paddingBottom: '5%', marginLeft: '10%', marginBottom: screenDimensions.width < 600 && '20%' }} >
                             <form action="" ref={form} onSubmit={OnSendClick}>
-                                <label htmlFor="name" id='emailLabel' style={{ color: '#1d1d1d' }} >Write a message:</label>
+                                <label htmlFor="name" id='emailLabel' style={{ color: '#1d1d1d', fontWeight:'500' }} >Write a message:</label>
                                 <div id={'emailInputdiv'} style={{ borderBottomColor: NameError != null ? 'red' : 'orange' }}>
                                     <input type={'text'} value={Name} id={'name'} name={'from_name'} style={{ color: '#1d1d1d' }} maxLength={60} placeholder={'Your name'} onChange={(text) => {
                                         ValidateName(text.target.value)

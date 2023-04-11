@@ -114,7 +114,7 @@ export default function Introduction(props) {
             <div ref={HeaderRef} className={`basic-intro-wrapper ${(HeaderVisible && screenDimensions.width > 650) ? "FadeYAnimationProfile" : ""}`} >
                 <div className={`basic-intro-text ${(HeaderVisible && screenDimensions.width < 650) ? "FadeXAnimationProfile" : ""}`}>
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Full Name : Sahil Dattatray Lokhande</span><br />
-                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : <span style={{ color: 'orange' }} >React Developer at Mobiloitte</span></span><br />
+                    <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Current Role : <span style={{ color: Colors.newVar.HighlightColor }} >React Developer at Mobiloitte</span></span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Loaction : Pune, Maharashtra, India</span><br />
                     <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-TextTop'} >Status : Looking forward for good career opportunities...</span><br />
                 </div>
@@ -126,7 +126,7 @@ export default function Introduction(props) {
                 </div>
             </div>
             <div className='IntroBodyWrapper' >
-                <span style={{ color: 'orange', }} className={'Intro-Title'} >
+                <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700', }} className={'Intro-Title'} >
                     Headline
                 </span><br />
                 <span style={{ color: Colors.newVar.TXTColor, marginTop: 20 }} className={'Intro-Text'}>
@@ -135,7 +135,7 @@ export default function Introduction(props) {
                 </span>
             </div>
             <div className='IntroBodyWrapper' >
-                <span style={{ color: 'orange', }} className={'Intro-Title'} >
+                <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700', }} className={'Intro-Title'} >
                     Experience
                 </span><br />
                 <span style={{ color: Colors.newVar.TXTColor }} className={'Intro-Text'}>
@@ -185,7 +185,7 @@ export default function Introduction(props) {
                 </span>
             </div>
             <div className='IntroBodyWrapper' >
-                <span style={{ color: 'orange', }} className={'Intro-Title'} >
+                <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700', }} className={'Intro-Title'} >
                     Technical Skills
                 </span><br />
                 <div style={{ marginTop: 25 }} >
@@ -266,7 +266,7 @@ export default function Introduction(props) {
                 </div>
             </div>
             <div className="IntroBodyWrapper">
-                <span style={{ color: 'orange', }} className={'Intro-Title'} >
+                <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700', }} className={'Intro-Title'} >
                     Education
                 </span><br />
                 <ul style={{ color: Colors.newVar.TXTColor }}>
@@ -288,7 +288,7 @@ export default function Introduction(props) {
                 </ul>
             </div>
             <div className="IntroBodyWrapper">
-                <span style={{ color: 'orange', }} className={'Intro-Title'} >
+                <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700' }} className={'Intro-Title'} >
                     Personal / Acedemic Projects
                 </span><br />
                 <ul style={{ color: Colors.newVar.TXTColor }}>
@@ -320,7 +320,7 @@ export default function Introduction(props) {
                 </div>
             </div>
             <div className="IntroBodyWrapper">
-                <span style={{ color: 'orange', }} className={'Intro-Title'} >
+                <span style={{ color: Colors.newVar.HighlightColor, fontWeight:'700' }} className={'Intro-Title'} >
                     Certifications
                 </span><br />
                 <ul style={{ color: Colors.newVar.TXTColor, margin: 0 }} className={'Intro-Text'} >

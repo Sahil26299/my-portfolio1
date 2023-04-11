@@ -407,7 +407,7 @@
         position: absolute;
         left: 5%;
         opacity: 0;
-        bottom: -15px;
+        bottom: -20px;
         transition: opacity 0.75s, bottom 0.75s;
     }
     .fadeYIn{
