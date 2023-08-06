@@ -1,0 +1,11 @@
+.HorizontalCardCardWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    
+}
+.ProjectImageSample{
+    width: 100px * 1.7778;
+    height: 100px;
+    background-color: #fff;
+}

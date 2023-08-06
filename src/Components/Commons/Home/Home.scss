@@ -1,0 +1,486 @@
+.WrapperHome {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.IntroWrapper {
+  /* border: 1px solid rgba(255, 166, 0, 0.3); */
+  border-radius: 5px;
+  padding: 10px;
+  /* width: 50vw; */
+}
+
+.MyDescription {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: transform 0.75s, opacity 0.75s;
+}
+
+.SocialLinks {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: transform 0.75s, opacity 0.75s;
+}
+
+.heading1 {
+  display: flex;
+  flex-direction: row;
+  font-size: 26px;
+  /* line-height: 10px; */
+}
+
+.heading1 p {
+  font-size: 30px;
+}
+
+#FullNameHome {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+.heading2 {
+  font-size: 0.9rem;
+}
+
+.headingProject {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.AllCardsWrapper {
+  margin: 10% 0px;
+}
+
+.IntroWrapper span {
+  color: #fff;
+}
+
+.ContactMeBtn {
+  background-color: #ffc300;
+  border: none;
+  margin-top: 10px;
+}
+
+.OrangeButton {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 2px 10px 15px 3px rgba(255, 166, 0, 0.25);
+  background: linear-gradient(-10deg, orange 50%, #ffc300);
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  transition: transform 0.2s linear;
+}
+
+.OrangeButtonNonGradient {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 2px 10px 15px 3px #40404045;
+  background: linear-gradient(-10deg, #181818, #404040);
+  /* background-color: #000; */
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  transition: transform 0.2s linear;
+}
+
+.OrangeButton:hover,
+.OrangeButtonNonGradient:hover {
+  transform: scale(1.05);
+}
+
+/* .SmileyImage {
+    height: 75px;
+    width: 10vw;
+    object-fit: contain;
+    transform: rotate(-15deg);
+    animation-name: smiley;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+} */
+
+.HomeCarouselImage {
+  height: 400px;
+  width: 60vw;
+  object-fit: contain;
+}
+
+.HomeCarouselWrapper {
+  margin-top: 40px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+/* @keyframes smiley {
+    from {
+        transform: rotate(-15deg);
+    }
+
+    to {
+        transform: rotate(15deg);
+    }
+} */
+
+.card-Title {
+  font-weight: 700;
+  font-size: 20px !important;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+.card-Content {
+  font-weight: 400;
+  font-size: 14px;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+.d-flex {
+  justify-content: space-around;
+  align-self: flex-start;
+}
+
+.Card1Description {
+  width: 25rem;
+  text-align: end;
+}
+
+.Card2Description {
+  width: 25rem;
+  text-align: end;
+}
+
+.Card3Description {
+  width: 25rem;
+  text-align: end;
+}
+
+.ResumeDownloadLink {
+  text-decoration: none;
+}
+
+.animate__animated.animate__bounceIn {
+  --animate-duration: 1.5s;
+}
+
+.parallax-effect {
+  transform-style: preserve-3d;
+
+  .MainCard {
+    transform-style: preserve-3d;
+    .inner-element {
+      transition: transform 0.25s ease-in-out;
+    }
+    // for element to be translate 3D, transform-style of its parent element must be set to preserve-3d, ie. in this case parent is .MainCard
+    .inner-element-hovered {
+      transform: translateZ(30px);
+    }
+  }
+}
+
+.CardWrapper {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.5s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.FadeYAnimation {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* @keyframes cardFloating {
+    from {
+        transform: translate(0px, -5px);
+    }
+
+    to {
+        transform: translate(0px, 5px);
+    }
+}
+
+.CardWrapper3 {
+    transform: translate(0px, -3px);
+    animation-name: card3Floating;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes card3Floating {
+    from {
+        transform: translate(0px, -3px);
+    }
+
+    to {
+        transform: translate(0px, 8px);
+    }
+}
+
+.CardWrapper2 {
+    transform: translate(0px, 8px);
+    animation-name: card2Floating;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes card2Floating {
+    from {
+        transform: translate(0px, 8px);
+    }
+
+    to {
+        transform: translate(0px, -8px);
+    }
+}  */
+
+.CoverPhoto {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("../../../Assets/Images/BackgroundImage.jpg");
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding-left: 3%;
+  padding-bottom: 3%;
+  position: relative;
+}
+
+.CardContainer {
+  padding: 3vh 2vw;
+}
+
+.ProfilePictBackground {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  position: absolute;
+  opacity: 0;
+  border: 3px solid white;
+  left: 5%;
+  bottom: -25px;
+  transition: bottom 0.75s, opacity 0.75s;
+  .ProfilePict {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+}
+.ProfilePictBackground.loadedProfileImage {
+  .ProfilePict {
+    opacity: 1;
+  }
+}
+
+.fadeYIn {
+  opacity: 1;
+  bottom: -75px;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 26px;
+  white-space: nowrap;
+  min-height: 1.5em;
+  vertical-align: bottom;
+  margin-top: 3px;
+}
+
+.Cursor {
+  height: 1.5em;
+  font-size: 1em;
+  font-weight: 300;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.socialIcons {
+  font-size: 30px;
+  margin-right: 1em;
+  background-color: orange;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  color: #000;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.SocialIconsDark {
+  font-size: 30px;
+  margin-right: 1em;
+  background-color: orange;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  color: #000;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.socialIcons:hover {
+  color: #fff;
+  background-color: rgba(255, 166, 0, 0);
+  border: 2px solid orange;
+}
+
+.SocialIconsDark:hover {
+  color: #000;
+  background-color: rgba(255, 166, 0, 0);
+  border: 2px solid orange;
+}
+
+.CardImageStyle {
+  height: 150px;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 650px) {
+  .socialIcons {
+    height: 40px;
+    width: 40px;
+    margin-right: 0.5em;
+  }
+
+  .SocialIconsDark {
+    height: 40px;
+    width: 40px;
+    margin-right: 0.5em;
+  }
+
+  .CoverPhoto {
+    height: 30vh;
+    width: 100%;
+    background-size: cover;
+  }
+
+  .ProfilePictBackground {
+    height: 100px;
+    width: 100px;
+    border: 2px solid white;
+    position: absolute;
+    left: 5%;
+    opacity: 0;
+    bottom: -10px;
+  }
+
+  .fadeYIn {
+    opacity: 1;
+    bottom: -50px;
+  }
+
+  .heading1 {
+    font-size: 20px;
+    /* line-height: 22px; */
+  }
+
+  .heading1 p {
+    font-size: 24px;
+  }
+
+  .typewriter {
+    font-size: 20px;
+    min-height: 0.5em;
+  }
+
+  .headingProject {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .CoverPhoto {
+    height: 20vh;
+  }
+
+  .ProfilePictBackground {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    left: 5%;
+    opacity: 0;
+    bottom: -20px;
+  }
+
+  .fadeYIn {
+    opacity: 1;
+    bottom: -37.5px;
+  }
+
+  .socialIcons {
+    height: 28px;
+    width: 28px;
+    margin-right: 0.3em;
+  }
+
+  .SocialIconsDark {
+    height: 28px;
+    width: 28px;
+    margin-right: 0.3em;
+  }
+
+  .heading1 {
+    font-size: 16px;
+    /* line-height: 16px; */
+  }
+
+  .heading1 p {
+    font-size: 20px;
+  }
+
+  .typewriter {
+    font-size: 16px;
+    /* min-height: 0em; */
+  }
+
+  .headingProject {
+    font-size: 20px;
+  }
+
+  .CardImageStyle {
+    height: 120px;
+  }
+
+  .card-Title {
+    font-size: 18px !important;
+  }
+}

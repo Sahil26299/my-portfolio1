@@ -31,7 +31,7 @@ export default function BottomBar() {
                 Copyright &copy; 2023 Sahil Lokhande
             </span>
             <div className='IconsContainer' >
-                <a href="" className={'socialIconsCopy'}>
+                <a href={`tel:9175098814`} className={'socialIconsCopy'}>
                     <Call className='SocialIcons' sx={{ fontSize: screenDimensions.width < 850 ? 18 : screenDimensions.width < 1000 ? 20 : 25 }} />
                 </a>
                 <a href="mailto:sahillokhande94@gmail.com" className={'socialIconsCopy'}>

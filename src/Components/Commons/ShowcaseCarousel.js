@@ -18,22 +18,22 @@ function ShowcaseCarousel(props) {
 
     const settings = {
         dots: false,
-        arrows:false,
+        arrows: false,
         infinite: true,
         speed: props.Speed ? props.Speed : 30000,
-        slidesToShow: props.SlidesToShow ? props.SlidesToShow :  4,
+        slidesToShow: props.SlidesToShow ? props.SlidesToShow : 4,
         slidesToScroll: props.ImageArray.length,
         autoplay: true,
         autoplaySpeed: 0,
         pauseOnHover: true,
         initialSlide: 0,
         cssEase: "linear",
-        
+
         responsive: [
             {
                 breakpoint: 1400,
                 settings: {
-                    slidesToShow: props.SlidesToShow ? props.SlidesToShow-2 : 3,
+                    slidesToShow: props.SlidesToShow ? props.SlidesToShow - 2 : 3,
                     slidesToScroll: props.ImageArray.length,
                     infinite: true,
                     speed: props.Speed ? props.Speed : 10000,
@@ -42,7 +42,7 @@ function ShowcaseCarousel(props) {
             {
                 breakpoint: 1000,
                 settings: {
-                    slidesToShow:props.SlidesToShow ? props.SlidesToShow-3 : 2,
+                    slidesToShow: props.SlidesToShow ? props.SlidesToShow - 3 : 2,
                     slidesToScroll: props.ImageArray.length,
                     initialSlide: 0,
                     speed: props.Speed ? props.Speed : 5000,
@@ -51,7 +51,7 @@ function ShowcaseCarousel(props) {
             {
                 breakpoint: 700,
                 settings: {
-                    slidesToShow: props.SlidesToShow ? props.SlidesToShow-4 : 1,
+                    slidesToShow: props.SlidesToShow ? props.SlidesToShow - 4 : 1,
                     slidesToScroll: props.ImageArray.length,
                     speed: props.Speed ? props.Speed : 5000,
                 }
@@ -72,11 +72,7 @@ function ShowcaseCarousel(props) {
                 {props.ImageArray && props.ImageArray.map((item) => {
                     return (
                         <div>
-                            {item.includes('.mp4') ?
-                                <video loop autoPlay muted className={props.VideoStyleName} >
-                                    <source src={item} type="video/mp4" />
-                                </video> :
-                                <img className={props.ImageStyleName} src={item} />}
+                            <img className={props.ImageStyleName} src={item} />
                         </div>
                     )
                 })}

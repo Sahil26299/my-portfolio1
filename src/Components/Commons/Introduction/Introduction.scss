@@ -1,0 +1,311 @@
+.basic-intro-wrapper {
+    width: 85vw;
+    padding: 1% 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.75s, transform 0.75s;
+}
+
+.SkillSet{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.75s, transform 0.75s;
+}
+
+.FadeYAnimationProfile{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.basic-intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.verticalLine {
+    /* background-color: rgba(255,255,255,0.25); */
+    width: 0.25px;
+    height: 12vw;
+}
+
+.IntroBodyWrapper {
+    padding: 3% 5%;
+    /* padding-top: 5%;  */
+}
+
+.Intro-TextTop {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.Intro-Text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.Intro-Title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+}
+
+.ListHeaderRight {
+    font-weight: 300;
+    text-align: right;
+    width: 30%;
+}
+
+.basic-intro-Image{
+    height: 400px;
+    width: 400px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .ProfileMyImage {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+    }
+}
+.basic-intro-Image.loadedIntroductionCoverImage{
+    background-image: none !important;
+    .ProfileMyImage{
+        opacity: 1;
+    }
+}
+
+.CertificateHyperLink {
+    text-decoration: underline;
+}
+
+.ProgressWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+}
+
+.progressTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    width: 20%;
+}
+
+.SkillProgressContainer {
+    padding: 0px 3vw;
+    /* background-color: red; */
+}
+
+.LinearBufferProgress {
+    width: 50%;
+}
+
+.ProgressTextStyle {
+    font-family: 'Poppins', sans-serif;
+    width: 20%;
+    font-size: 16px;
+}
+
+.TechnicalSkillDD {
+    border: 1px solid white;
+}
+
+.TechnicalSkillDT {
+    font-size: 18px;
+    position: absolute;
+    top: -20px;
+    left: 50px;
+}
+
+.TechnicalSkillDT1 {
+    font-size: 18px;
+    position: absolute;
+    top: -20px;
+    right: 50px;
+}
+
+.carouselVideo {
+    /* height: 500px; */
+    width: 85%;
+    object-fit: contain;
+}
+
+.CoverImage {
+    width: 70vw;
+    height: 40vh;
+    object-fit: cover;
+}
+/* .searchBarContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 3% 0px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    right: 0px
+}
+.SearchDescription{
+    font-size: 24px;
+}
+.SearchBarWrapper{
+    width: 300px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 25px;
+    padding: 0px 15px;
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.SearchBar{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    height: 100%;
+    vertical-align: middle;
+    width: 85%;
+} */
+
+@media only screen and (max-width:1000px) {
+    .basic-intro-Image {
+        height: 300px;
+        width: 300px;
+    }
+
+    .Intro-TextTop {
+        font-size: 16px;
+    }
+
+    .Intro-Title {
+        font-size: 26px;
+    }
+
+}
+
+@media only screen and (max-width:650px) {
+    /* .SearchDescription{
+        font-size: 20px;
+    }
+    .SearchBarWrapper{
+        width: 200px;
+        height: 40px;
+    }
+    .SearchBar{
+        font-size: 14px;
+    } */
+    .basic-intro-wrapper {
+        flex-direction: column-reverse;
+        justify-content: center;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .basic-intro-text{
+        opacity: 0;
+        transform: translateX(25px);
+        transition: opacity 0.75s, transform 0.75s;
+    }
+
+    // .basic-intro-Image{
+    //     opacity: 0;
+    //     transform: translateX(-25px);
+    //     transition: opacity 0.75s, transform 0.75s;
+    // }
+
+    .FadeXAnimationProfile{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    .basic-intro-Image {
+        height: 250px;
+        width: 250px;
+        background-size: contain;
+    }
+
+    .Intro-TextTop {
+        font-size: 14px;
+    }
+
+    .Intro-Title {
+        font-size: 24px;
+    }
+
+    .Intro-Text {
+        font-size: 14px;
+    }
+
+    .progressTitle {
+        font-size: 16px;
+    }
+
+    .ProgressTextStyle {
+        font-size: 14px;
+    }
+    /* .carouselVideo {
+        height: 225px;
+        width: 480px;
+    } */
+}
+
+@media only screen and (max-width:450px) {
+    /* .searchBarContainer{
+        flex-direction: column;
+    }
+    .SearchDescription{
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .SearchBar{
+        font-size: 13px;
+    } */
+    .IntroBodyWrapper {
+        padding: 5% 5%;
+        /* padding-top: 5%;  */
+    }
+    .basic-intro-Image {
+        height: 200px;
+        width: 200px;
+        background-size: contain;
+    }
+
+    .Intro-Title {
+        font-size: 20px;
+    }
+    .Intro-TextTop {
+        font-size: 13px;
+    }
+    .Intro-Text {
+        font-size: 13px;
+    }
+
+    .ProgressTextStyle {
+        display: none;
+    }
+
+    .TechnicalSkillDT {
+        font-size: 16px;
+        top: -18px;
+        left: 25px;
+    }
+    .TechnicalSkillDT1 {
+        font-size: 16px;
+        top: -18px;
+        right: 25px;
+    }
+    /* .carouselVideo {
+        height: 175px;
+        width: 300px;
+    } */
+}

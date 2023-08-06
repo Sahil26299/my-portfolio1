@@ -11,7 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { Images } from '../../../Utils/Images';
 import { ColorSchema } from '../../../Utils/Context/ColorThemes';
 import { LightMode, DarkMode } from '@mui/icons-material';
@@ -19,7 +18,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import Introduction from '../Introduction/Introduction';
 import Services from '../Services/Services';
-import ExtraCurricular from '../ExtraCurricular/ExtraCurricular';
+// import ExtraCurricular from '../ExtraCurricular/ExtraCurricular';
 import ContactDetails from '../ContactDetails/ContactDetails';
 import { useLocation } from 'react-router-dom';
 import './AppBar.css'
@@ -27,7 +26,6 @@ const pages = {
   Home:'/',
   Profile:'/profile',
   Services:'/services',
-  Extra_Curricular : '/extra',
   Contact:'/contact'
 }
 function ResponsiveAppBar(props) {
@@ -76,7 +74,6 @@ function ResponsiveAppBar(props) {
       <AppBar position="sticky" style={{ backgroundColor: Colors.newVar.BGColor }} >
         <Container maxWidth="xl" >
           <Toolbar disableGutters >
-            {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
             <Typography
               variant="h6"
               noWrap
@@ -132,7 +129,6 @@ function ResponsiveAppBar(props) {
                 ))}
               </Menu>
             </Box>
-            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
             <Typography
               variant="h5"
               noWrap
@@ -159,7 +155,7 @@ function ResponsiveAppBar(props) {
                   component={Link}
                   to={pages[page]}
                   onClick={()=>handleCloseNavMenu(pages[page])}
-                  sx={{ color: SelectedTab==pages[page] ? Colors.newVar.HighlightColor : Colors.newVar.TXTColor, display: 'block', mx: 1, height:'100%', borderColor:'red', borderWidth:1 }}
+                  sx={{ color: SelectedTab === pages[page] ? Colors.newVar.HighlightColor : Colors.newVar.TXTColor, display: 'block', mx: 1, height:'100%', borderColor:'red', borderWidth:1 }}
                 >
                   {page?.indexOf('_')>-1 ? page?.split('_').join(' ') : page}
                 </Button>
@@ -189,7 +185,6 @@ function ResponsiveAppBar(props) {
             <Route path='/' element={<Home />} />
             <Route path="profile" element={<Introduction />} />
             <Route path="services" element={<Services />} />
-            <Route path="extra" element={<ExtraCurricular />} />
             <Route path="contact" element={<ContactDetails />} />
         </Routes>
     </>
